@@ -848,61 +848,34 @@ export type SectionNumberedListProps = {
 };
 
 export type SectionFaqProps = {
-  /** Genel genişlik */
   sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
-  /** Bölüm başlığı */
+  layoutPreset: "accordion" | "openNumbered";
   sectionTitle: string;
-  /** Başlık hizası */
   titleAlign: "left" | "center";
-  /** Başlık stili */
   headingStyle: "default" | "editorial";
-  /** Dikey boşluk */
   spacingPreset: "small" | "medium" | "large" | "extraLarge";
-  /** Bölüm arka plan rengi */
   sectionBgColor: string;
-  /** Başlık rengi */
   titleColor: string;
-  /** Soru 1 — Soru */
   faq1Question: string;
-  /** Soru 1 — Cevap */
   faq1Answer: string;
-  /** Soru 2 — Soru */
   faq2Question: string;
-  /** Soru 2 — Cevap */
   faq2Answer: string;
-  /** Soru 3 — Soru */
   faq3Question: string;
-  /** Soru 3 — Cevap */
   faq3Answer: string;
-  /** Soru 4 — Soru */
   faq4Question: string;
-  /** Soru 4 — Cevap */
   faq4Answer: string;
-  /** Soru 5 — Soru */
   faq5Question: string;
-  /** Soru 5 — Cevap */
   faq5Answer: string;
-  /** Soru 6 — Soru */
   faq6Question: string;
-  /** Soru 6 — Cevap */
   faq6Answer: string;
-  /** Soru 7 — Soru */
   faq7Question: string;
-  /** Soru 7 — Cevap */
   faq7Answer: string;
-  /** Soru 8 — Soru */
   faq8Question: string;
-  /** Soru 8 — Cevap */
   faq8Answer: string;
-  /** Soru 9 — Soru */
   faq9Question: string;
-  /** Soru 9 — Cevap */
   faq9Answer: string;
-  /** Soru 10 — Soru */
   faq10Question: string;
-  /** Soru 10 — Cevap */
   faq10Answer: string;
-  /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };
 

@@ -58,6 +58,10 @@
               {
                 "label": "İletişim",
                 "url": "/pages/i-letisim"
+              },
+              {
+                "label": "S.S.S.",
+                "url": "/pages/sikca-sorular-sorular"
               }
             ],
             "link1LabelName": "Müşteri hizmetleri",
@@ -571,6 +575,10 @@
               {
                 "label": "İletişim",
                 "url": "/pages/i-letisim"
+              },
+              {
+                "label": "S.S.S.",
+                "url": "/pages/sikca-sorular-sorular"
               }
             ],
             "link1LabelName": "Müşteri hizmetleri",
@@ -748,6 +756,10 @@
               {
                 "label": "İletişim",
                 "url": "/pages/i-letisim"
+              },
+              {
+                "label": "S.S.S.",
+                "url": "/pages/sikca-sorular-sorular"
               }
             ],
             "link1LabelName": "Müşteri hizmetleri",
@@ -920,6 +932,10 @@
               {
                 "label": "İletişim",
                 "url": "/pages/i-letisim"
+              },
+              {
+                "label": "S.S.S.",
+                "url": "/pages/sikca-sorular-sorular"
               }
             ],
             "link1LabelName": "Müşteri hizmetleri",
@@ -1097,6 +1113,10 @@
               {
                 "label": "İletişim",
                 "url": "/pages/i-letisim"
+              },
+              {
+                "label": "S.S.S.",
+                "url": "/pages/sikca-sorular-sorular"
               }
             ],
             "link1LabelName": "Müşteri hizmetleri",
@@ -1154,20 +1174,21 @@
           "type": "SectionFaq",
           "settings": {
             "sectionContainerWidth": "extraSmall",
+            "layoutPreset": "openNumbered",
             "sectionTitle": "Sıkça Sorulan Sorular",
             "titleAlign": "center",
             "headingStyle": "default",
             "spacingPreset": "small",
             "sectionBgColor": "",
             "titleColor": "",
-            "faq1Question": "Soru",
-            "faq1Answer": "Örnek Cevap",
-            "faq2Question": "Soru",
-            "faq2Answer": "Örnek Cevap",
-            "faq3Question": "Soru",
-            "faq3Answer": "Örnek Cevap",
-            "faq4Question": "",
-            "faq4Answer": "",
+            "faq1Question": "Siparişimi nasıl takip edebilirim?",
+            "faq1Answer": "Siparişiniz kargoya verildikten sonra size iletilen takip numarasıyla kargonuzun durumunu kolayca görüntüleyebilirsiniz.",
+            "faq2Question": "İade ve değişim yapabilir miyim?",
+            "faq2Answer": "Evet, ürününüzü teslim aldıktan sonra iade ve değişim koşullarımız kapsamında talep oluşturabilirsiniz.",
+            "faq3Question": "Ödeme yöntemleri nelerdir?",
+            "faq3Answer": "Web sitemiz üzerinden kredi kartı ve banka kartı ile güvenli bir şekilde ödeme yapabilirsiniz.",
+            "faq4Question": "Sipariş verdikten sonra ürünümün kargoya verilmesi ne kadar sürer, kargo sürecinde siparişimin durumunu nasıl takip edebilirim ve teslimat sırasında herhangi bir sorun yaşarsam sizinle nasıl iletişime geçebilirim?",
+            "faq4Answer": "Siparişleriniz genellikle 1-3 iş günü içerisinde kargoya teslim edilir. Kargonuz yola çıktığında takip numaranız SMS veya e-posta yoluyla tarafınıza iletilir. Bu numara ile siparişinizin güncel durumunu takip edebilirsiniz. Teslimat sırasında herhangi bir sorun yaşamanız durumunda müşteri hizmetlerimizle iletişime geçerek destek alabilirsiniz.",
             "faq5Question": "",
             "faq5Answer": "",
             "faq6Question": "",
@@ -1282,6 +1303,10 @@
           {
             "label": "İletişim",
             "url": "/pages/i-letisim"
+          },
+          {
+            "label": "S.S.S.",
+            "url": "/pages/sikca-sorular-sorular"
           }
         ],
         "link1LabelName": "Müşteri hizmetleri",

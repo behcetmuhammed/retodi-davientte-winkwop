@@ -36,6 +36,16 @@ function faqFields(n) {
 
 const settings = [
   sectionContainerWidthSelect,
+  {
+    id: 'layoutPreset',
+    label: 'Düzen',
+    type: 'select',
+    default: 'accordion',
+    options: [
+      { label: 'Açılır liste', value: 'accordion' },
+      { label: 'Numaralı satırlar', value: 'openNumbered' },
+    ],
+  },
   { id: 'sectionTitle', label: 'Bölüm başlığı', type: 'text', default: '' },
   {
     id: 'titleAlign',
@@ -88,6 +98,7 @@ const faqType = (n) => `
 
 const propsType = `export type SectionFaqProps = {
   sectionContainerWidth: ${widthUnion};
+  layoutPreset: "accordion" | "openNumbered";
   sectionTitle: string;
   titleAlign: "left" | "center";
   headingStyle: "default" | "editorial";

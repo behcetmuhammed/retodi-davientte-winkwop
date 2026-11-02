@@ -1,10 +1,10 @@
 import type { SectionFaqProps } from '../generated/types';
 import { panelBackgroundColor } from '../components/shared/panel-color-style';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { Container } from '../components/ui/container';
-import { Text } from '../components/ui/typography';
 import { cn } from '../lib/utils';
 import { SectionTitle } from './section-featured-collection/section-title';
+import { FaqAccordionList } from './section-faq/faq-accordion-list';
+import { FaqOpenList } from './section-faq/faq-open-list';
 import { normalizeFaqItems } from './section-faq/normalize-faq-items';
 
 const SPACING = {
@@ -15,13 +15,14 @@ const SPACING = {
 } as const;
 
 /**
- * Sıkça sorulan sorular: tek seferde bir soru açık kalabilir.
+ * Sıkça sorulan sorular: açılır liste veya numaralı açık satırlar.
  */
 export default function SectionFaq(props: SectionFaqProps) {
   const items = normalizeFaqItems(props);
   if (items.length === 0) return null;
 
   const sectionStyle = panelBackgroundColor(props.sectionBgColor);
+  const layout = props.layoutPreset === 'openNumbered' ? 'openNumbered' : 'accordion';
 
   return (
     <section
@@ -36,22 +37,11 @@ export default function SectionFaq(props: SectionFaqProps) {
           headingStyle={props.headingStyle}
           titleColor={props.titleColor}
         />
-        <Accordion type="single" collapsible>
-          {items.map((item) => (
-            <AccordionItem key={item.id} value={item.id}>
-              <AccordionTrigger headingLevel={3} className="text-base md:text-lg">
-                {item.question || '—'}
-              </AccordionTrigger>
-              <AccordionContent>
-                {item.answer ? (
-                  <Text size="sm" tone="muted" leading="relaxed" className="text-pretty md:text-base">
-                    {item.answer}
-                  </Text>
-                ) : null}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {layout === 'openNumbered' ? (
+          <FaqOpenList items={items} titleColor={props.titleColor} />
+        ) : (
+          <FaqAccordionList items={items} />
+        )}
       </Container>
     </section>
   );

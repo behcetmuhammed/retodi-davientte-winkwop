@@ -3712,13 +3712,15 @@
       "type": "SectionNumberedList"
     },
     {
-      "description": "Açılır-kapanır soru ve cevap listesi; en fazla 10 madde.",
+      "type": "SectionFaq",
       "name": "Sıkça sorulan sorular",
+      "description": "Açılır-kapanır soru ve cevap listesi; en fazla 10 madde.",
       "settings": [
         {
-          "default": "default",
           "id": "sectionContainerWidth",
           "label": "Genel genişlik",
+          "type": "select",
+          "default": "default",
           "options": [
             {
               "label": "Varsayılan",
@@ -3744,19 +3746,35 @@
               "label": "Çok Geniş",
               "value": "extraWide"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
+          "id": "layoutPreset",
+          "label": "Düzen",
+          "type": "select",
+          "default": "accordion",
+          "options": [
+            {
+              "label": "Açılır liste",
+              "value": "accordion"
+            },
+            {
+              "label": "Numaralı satırlar",
+              "value": "openNumbered"
+            }
+          ]
+        },
+        {
           "id": "sectionTitle",
           "label": "Bölüm başlığı",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "left",
           "id": "titleAlign",
           "label": "Başlık hizası",
+          "type": "select",
+          "default": "left",
           "options": [
             {
               "label": "Sol",
@@ -3766,13 +3784,13 @@
               "label": "Orta",
               "value": "center"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "default",
           "id": "headingStyle",
           "label": "Başlık stili",
+          "type": "select",
+          "default": "default",
           "options": [
             {
               "label": "Varsayılan",
@@ -3782,13 +3800,13 @@
               "label": "Editoryal (büyük harf)",
               "value": "editorial"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "medium",
           "id": "spacingPreset",
           "label": "Dikey boşluk",
+          "type": "select",
+          "default": "medium",
           "options": [
             {
               "label": "Küçük",
@@ -3806,143 +3824,141 @@
               "label": "Çok büyük",
               "value": "extraLarge"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "sectionBgColor",
           "label": "Bölüm arka plan rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "titleColor",
           "label": "Başlık rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq1Question",
           "label": "Soru 1 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq1Answer",
           "label": "Soru 1 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq2Question",
           "label": "Soru 2 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq2Answer",
           "label": "Soru 2 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq3Question",
           "label": "Soru 3 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq3Answer",
           "label": "Soru 3 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq4Question",
           "label": "Soru 4 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq4Answer",
           "label": "Soru 4 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq5Question",
           "label": "Soru 5 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq5Answer",
           "label": "Soru 5 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq6Question",
           "label": "Soru 6 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq6Answer",
           "label": "Soru 6 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq7Question",
           "label": "Soru 7 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq7Answer",
           "label": "Soru 7 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq8Question",
           "label": "Soru 8 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq8Answer",
           "label": "Soru 8 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq9Question",
           "label": "Soru 9 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq9Answer",
           "label": "Soru 9 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq10Question",
           "label": "Soru 10 — Soru",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "faq10Answer",
           "label": "Soru 10 — Cevap",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         }
-      ],
-      "type": "SectionFaq"
+      ]
     },
     {
       "description": "Link sütunları, iletişim, bülten ve telif şeridi.",
