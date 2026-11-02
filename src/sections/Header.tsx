@@ -1,14 +1,59 @@
+import { useState } from 'react';
 import type { HeaderProps } from '../generated/types';
+import { MainRow } from './header/main-row';
+import { UtilityBar } from './header/utility-bar';
 
 /**
- * Header
- *
- * Prop'lar geliştirme editöründe tanımlanır; tipleri otomatik güncellenir.
+ * Site üst bilgisi: duyuru şeridi, yardımcı bağlantılar, logo ve ana menü.
+ * Yerleşim `headerLayout` ile panelden seçilir.
  */
-export default function Header(_props: HeaderProps) {
+export default function Header(props: HeaderProps) {
+  const categories = Array.isArray(props.categories) ? props.categories : [];
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const social = {
+    facebookLink: props.facebookLink,
+    instagramLink: props.instagramLink,
+    whatsappLink: props.whatsappLink,
+    linkedinLink: props.linkedinLink,
+    openSocialLinksInNewTab: props.openSocialLinksInNewTab,
+  };
+
   return (
-    <section>
-      <p>Bu bölümü kodlamaya başlayın.</p>
-    </section>
+    <header role="banner" data-slot="site-header" className="sticky top-0 z-40">
+      <UtilityBar
+        link1LabelName={props.link1LabelName}
+        link1={props.link1}
+        link1Icon={props.link1Icon}
+        link1Position={props.link1Position}
+        link2LabelName={props.link2LabelName}
+        link2={props.link2}
+        link2Icon={props.link2Icon}
+        link2Position={props.link2Position}
+        openLinksInNewTab={props.openLinksInNewTab}
+        facebookLink={props.facebookLink}
+        instagramLink={props.instagramLink}
+        whatsappLink={props.whatsappLink}
+        linkedinLink={props.linkedinLink}
+        openSocialLinksInNewTab={props.openSocialLinksInNewTab}
+        text1={props.text1}
+        text2={props.text2}
+        text3={props.text3}
+        backgroundColor={props.backgroundColor}
+        textAndIconColor={props.textAndIconColor}
+      />
+      <MainRow
+        layout={props.headerLayout}
+        logo={props.logo}
+        logoWidthWeb={props.logoWidthWeb}
+        logoWidthMobile={props.logoWidthMobile}
+        invertLogoColors={props.invertLogoColors}
+        categories={categories}
+        page={props.page}
+        menuOpen={menuOpen}
+        onMenuOpenChange={setMenuOpen}
+        social={social}
+      />
+    </header>
   );
 }

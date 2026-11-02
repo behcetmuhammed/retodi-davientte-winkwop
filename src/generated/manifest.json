@@ -5,7 +5,215 @@
       "description": "",
       "name": "Header",
       "role": "header",
-      "settings": [],
+      "settings": [
+        {
+          "default": "a",
+          "id": "headerLayout",
+          "label": "Üst Menü Yerleşim Düzeni",
+          "options": [
+            {
+              "label": "Logo Sol – Menü Orta",
+              "value": "logoLeftMenuCenter"
+            },
+            {
+              "label": "Logo Orta – Menü Sol",
+              "value": "logoCenterMenuLeft"
+            },
+            {
+              "label": "Logo Orta – Menü Alt",
+              "value": "logoCenterMenuBelow"
+            },
+            {
+              "label": "Logo Sol – Menü Alt",
+              "value": "logoLeftMenuBelow"
+            },
+            {
+              "label": "Logo Sol – Menü Sola Yaslı",
+              "value": "logoLeftMenuLeft"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "",
+          "id": "logo",
+          "label": "Logo",
+          "type": "image"
+        },
+        {
+          "default": 50,
+          "id": "logoWidthWeb",
+          "label": "Logo Genişliği (Masaüstü)",
+          "max": 149,
+          "min": 25,
+          "step": 1,
+          "type": "range",
+          "unit": "px"
+        },
+        {
+          "default": 50,
+          "id": "logoWidthMobile",
+          "label": "Logo Genişliği (Mobil)",
+          "max": 100,
+          "min": 25,
+          "step": 1,
+          "type": "range",
+          "unit": "px"
+        },
+        {
+          "default": true,
+          "id": "invertLogoColors",
+          "info": "Siyah logoyu beyaza, beyaz logoyu siyaha dönüştürür.",
+          "label": "Logo Renklerini Ters Çevir",
+          "type": "boolean"
+        },
+        {
+          "default": [
+            {
+              "label": "Bağlantı",
+              "url": "/"
+            }
+          ],
+          "id": "categories",
+          "label": "Menüler",
+          "type": "links"
+        },
+        {
+          "default": "",
+          "id": "link1LabelName",
+          "label": "Bağlantı 1 Adı",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "link1",
+          "info": "Test",
+          "label": "Bağlantı 1 Yönlendirme Adresi",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "link1Icon",
+          "label": "Bağlantı 1 İkonu",
+          "type": "image"
+        },
+        {
+          "default": "a",
+          "id": "link1Position",
+          "label": "Bağlantı 1 Konumu",
+          "options": [
+            {
+              "label": "Sağ",
+              "value": "right"
+            },
+            {
+              "label": "Sol",
+              "value": "left"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "",
+          "id": "link2LabelName",
+          "label": "Bağlantı 2 Adı",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "link2",
+          "label": "Bağlantı 2 Yönlendirme Adresi",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "link2Icon",
+          "label": "Bağlantı 2 İkonu",
+          "type": "image"
+        },
+        {
+          "default": "a",
+          "id": "link2Position",
+          "label": "Bağlantı 2 Konumu",
+          "options": [
+            {
+              "label": "Sağ",
+              "value": "right"
+            },
+            {
+              "label": "Sol",
+              "value": "left"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": true,
+          "id": "openLinksInNewTab",
+          "label": "Bağlantıları Yeni Sekmede Aç",
+          "type": "boolean"
+        },
+        {
+          "default": "",
+          "id": "facebookLink",
+          "label": "Facebook Bağlantısı",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "instagramLink",
+          "label": "Instagram Bağlantısı",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "whatsappLink",
+          "label": "Whatsapp Bağlantısı",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "linkedinLink",
+          "label": "Linkedin Bağlantısı",
+          "type": "url"
+        },
+        {
+          "default": true,
+          "id": "openSocialLinksInNewTab",
+          "label": "Sosyal Medya Bağlantılarını Yeni Sekmede Aç",
+          "type": "boolean"
+        },
+        {
+          "default": "",
+          "id": "text1",
+          "label": "Metin 1",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "text2",
+          "label": "Metin 2",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "text3",
+          "label": "Metin 3",
+          "type": "text"
+        },
+        {
+          "default": "#111827",
+          "id": "backgroundColor",
+          "label": "Arka Plan Rengi",
+          "type": "color"
+        },
+        {
+          "default": "#111827",
+          "id": "textAndIconColor",
+          "label": "Metin ve İkon Rengi",
+          "type": "color"
+        }
+      ],
       "singleton": true,
       "type": "Header"
     },

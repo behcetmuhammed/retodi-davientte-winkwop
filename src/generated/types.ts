@@ -56,7 +56,56 @@ export type WinkwopPageContext = {
 };
 
 export type HeaderProps = {
-  // Bu bölüm için henüz alan tanımlanmadı
+  /** Üst Menü Yerleşim Düzeni */
+  headerLayout: "logoLeftMenuCenter" | "logoCenterMenuLeft" | "logoCenterMenuBelow" | "logoLeftMenuBelow" | "logoLeftMenuLeft";
+  /** Logo */
+  logo: string;
+  /** Logo Genişliği (Masaüstü) */
+  logoWidthWeb: number;
+  /** Logo Genişliği (Mobil) */
+  logoWidthMobile: number;
+  /** Logo Renklerini Ters Çevir — Siyah logoyu beyaza, beyaz logoyu siyaha dönüştürür. */
+  invertLogoColors: boolean;
+  /** Menüler */
+  categories: WinkwopLink[];
+  /** Bağlantı 1 Adı */
+  link1LabelName: string;
+  /** Bağlantı 1 Yönlendirme Adresi — Test */
+  link1: string;
+  /** Bağlantı 1 İkonu */
+  link1Icon: string;
+  /** Bağlantı 1 Konumu */
+  link1Position: "right" | "left";
+  /** Bağlantı 2 Adı */
+  link2LabelName: string;
+  /** Bağlantı 2 Yönlendirme Adresi */
+  link2: string;
+  /** Bağlantı 2 İkonu */
+  link2Icon: string;
+  /** Bağlantı 2 Konumu */
+  link2Position: "right" | "left";
+  /** Bağlantıları Yeni Sekmede Aç */
+  openLinksInNewTab: boolean;
+  /** Facebook Bağlantısı */
+  facebookLink: string;
+  /** Instagram Bağlantısı */
+  instagramLink: string;
+  /** Whatsapp Bağlantısı */
+  whatsappLink: string;
+  /** Linkedin Bağlantısı */
+  linkedinLink: string;
+  /** Sosyal Medya Bağlantılarını Yeni Sekmede Aç */
+  openSocialLinksInNewTab: boolean;
+  /** Metin 1 */
+  text1: string;
+  /** Metin 2 */
+  text2: string;
+  /** Metin 3 */
+  text3: string;
+  /** Arka Plan Rengi */
+  backgroundColor: string;
+  /** Metin ve İkon Rengi */
+  textAndIconColor: string;
   /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };

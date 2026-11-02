@@ -15,7 +15,7 @@
       "headingScale": 100
     },
     "layout": {
-      "containerWidth": 1200,
+      "containerWidth": 1440,
       "radius": 10,
       "sectionSpacing": 64
     },
@@ -36,7 +36,50 @@
         {
           "id": "header-kmkk0t",
           "type": "Header",
-          "settings": {}
+          "settings": {
+            "headerLayout": "logoCenterMenuBelow",
+            "logo": "https://cdn.winkwop.com/uploads/themes/v/fe22a4dc63984101a3d90f33d5e36539.png",
+            "logoWidthWeb": 149,
+            "logoWidthMobile": 100,
+            "invertLogoColors": false,
+            "categories": [
+              {
+                "label": "Ana Sayfa",
+                "url": "/"
+              },
+              {
+                "label": "Hakkımızda",
+                "url": "/pages/hakkimizda"
+              },
+              {
+                "label": "Koleksiyon",
+                "url": "/collections/all"
+              },
+              {
+                "label": "İletişim",
+                "url": "/pages/iletisim"
+              }
+            ],
+            "link1LabelName": "Müşteri hizmetleri",
+            "link1": "/pages/musteri-hizmetleri",
+            "link1Icon": "https://cdn.winkwop.com/uploads/themes/v/6f0a36c76b9c49539631b74293205069.png",
+            "link1Position": "left",
+            "link2LabelName": "find store",
+            "link2": "/pages/magazalar",
+            "link2Icon": "https://cdn.winkwop.com/uploads/themes/v/a7aefaaf4d2b47088b819f0f02209598.png",
+            "link2Position": "left",
+            "openLinksInNewTab": false,
+            "facebookLink": "#",
+            "instagramLink": "https://instagram.com",
+            "whatsappLink": "#",
+            "linkedinLink": "#",
+            "openSocialLinksInNewTab": true,
+            "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
+            "text2": "Yeni sezon koleksiyonu mağazada",
+            "text3": "Online özel %10 indirim",
+            "backgroundColor": "#000000",
+            "textAndIconColor": "#ffffff"
+          }
         },
         {
           "id": "herobanner-2rhyv1",
@@ -101,9 +144,52 @@
   },
   "shared": {
     "Header": {
-      "id": "Header-shared",
+      "id": "header-kmkk0t",
       "type": "Header",
-      "settings": {}
+      "settings": {
+        "headerLayout": "logoCenterMenuBelow",
+        "logo": "https://cdn.winkwop.com/uploads/themes/v/fe22a4dc63984101a3d90f33d5e36539.png",
+        "logoWidthWeb": 149,
+        "logoWidthMobile": 100,
+        "invertLogoColors": false,
+        "categories": [
+          {
+            "label": "Ana Sayfa",
+            "url": "/"
+          },
+          {
+            "label": "Hakkımızda",
+            "url": "/pages/hakkimizda"
+          },
+          {
+            "label": "Koleksiyon",
+            "url": "/collections/all"
+          },
+          {
+            "label": "İletişim",
+            "url": "/pages/iletisim"
+          }
+        ],
+        "link1LabelName": "Müşteri hizmetleri",
+        "link1": "/pages/musteri-hizmetleri",
+        "link1Icon": "https://cdn.winkwop.com/uploads/themes/v/6f0a36c76b9c49539631b74293205069.png",
+        "link1Position": "left",
+        "link2LabelName": "find store",
+        "link2": "/pages/magazalar",
+        "link2Icon": "https://cdn.winkwop.com/uploads/themes/v/a7aefaaf4d2b47088b819f0f02209598.png",
+        "link2Position": "left",
+        "openLinksInNewTab": false,
+        "facebookLink": "#",
+        "instagramLink": "https://instagram.com",
+        "whatsappLink": "#",
+        "linkedinLink": "#",
+        "openSocialLinksInNewTab": true,
+        "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
+        "text2": "Yeni sezon koleksiyonu mağazada",
+        "text3": "Online özel %10 indirim",
+        "backgroundColor": "#000000",
+        "textAndIconColor": "#ffffff"
+      }
     },
     "Footer": {
       "id": "Footer-shared",
