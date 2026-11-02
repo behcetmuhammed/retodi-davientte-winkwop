@@ -43,6 +43,7 @@ export type TypographySectionLayoutProps = {
   headingColor?: string;
   bodyColor?: string;
   sectionBgColor?: string;
+  sectionContainerWidth?: string;
   /** Bölüm kökü için ek sınıf (ör. arka plan). */
   className?: string;
   'data-slot'?: string;
@@ -83,6 +84,7 @@ export function TypographySectionLayout({
   headingColor,
   bodyColor,
   sectionBgColor,
+  sectionContainerWidth,
   className,
   'data-slot': dataSlot = 'typography-section',
 }: TypographySectionLayoutProps) {
@@ -127,7 +129,7 @@ export function TypographySectionLayout({
       className={cn('bg-background text-foreground', SPACING[spacingPreset], className)}
       style={sectionStyle}
     >
-      <Container>
+      <Container widthPreset={sectionContainerWidth}>
         <div className={cn('flex w-full flex-col gap-5 md:gap-6', WIDTH[contentWidth], block)}>
           {eyebrow?.trim() ? (
             <Eyebrow style={panelTextColor(eyebrowColor)}>{eyebrow}</Eyebrow>

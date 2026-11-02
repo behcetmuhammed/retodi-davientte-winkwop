@@ -27,7 +27,23 @@ const columnSelect = {
   options: ['3', '4', '6', '8', '12'].map((v) => ({ label: `${v} sütun`, value: v })),
 };
 
+const sectionContainerWidthSelect = {
+  id: 'sectionContainerWidth',
+  label: 'Genel genişlik',
+  type: 'select',
+  default: 'default',
+  options: [
+    { label: 'Varsayılan', value: 'default' },
+    { label: 'Çok Küçük', value: 'extraSmall' },
+    { label: 'Küçük', value: 'small' },
+    { label: 'Orta', value: 'medium' },
+    { label: 'Geniş', value: 'wide' },
+    { label: 'Çok Geniş', value: 'extraWide' },
+  ],
+};
+
 const section = [
+  sectionContainerWidthSelect,
   { id: 'headerTitle', label: 'Bölüm başlığı', type: 'text', default: '' },
   { id: 'headerSubTitle', label: 'Bölüm alt başlığı', type: 'text', default: '' },
   { id: 'headerTitleColor', label: 'Başlık rengi', type: 'color', default: '' },
@@ -101,7 +117,10 @@ const itemType = (n) => `
   item${n}OpenLinkInNewTab: boolean;
   item${n}ShowImageOverlay: boolean;`;
 
+const widthUnion = '"default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide"';
+
 const propsType = `export type SectionMediaGridProps = {
+  sectionContainerWidth: ${widthUnion};
   headerTitle: string;
   headerSubTitle: string;
   headerTitleColor: string;

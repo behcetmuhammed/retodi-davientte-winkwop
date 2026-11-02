@@ -74,7 +74,11 @@ export default function SectionFeaturedCollection(props: SectionFeaturedCollecti
 
   return (
     <section data-slot="featured-collection" className="bg-background py-10 md:py-14" style={sectionStyle}>
-      <Container size={fullWidth ? 'full' : 'page'} padding={fullWidth ? 'none' : 'default'}>
+      <Container
+        size={fullWidth ? 'full' : 'page'}
+        padding={fullWidth ? 'none' : 'default'}
+        widthPreset={fullWidth ? undefined : props.sectionContainerWidth}
+      >
         {content}
       </Container>
     </section>

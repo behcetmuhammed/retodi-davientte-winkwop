@@ -9,6 +9,8 @@ import Text from '../sections/Text';
 import RichText from '../sections/RichText';
 import SectionMediaGrid from '../sections/SectionMediaGrid';
 import SectionFeaturedCollection from '../sections/SectionFeaturedCollection';
+import SectionPageIntro from '../sections/SectionPageIntro';
+import SectionImageText from '../sections/SectionImageText';
 import Footer from '../sections/Footer';
 
 /** Winkwop bu haritayı kullanarak bölümlerinizi çizer. */
@@ -19,5 +21,7 @@ export const sections: Record<string, ComponentType<any>> = {
   RichText,
   SectionMediaGrid,
   SectionFeaturedCollection,
+  SectionPageIntro,
+  SectionImageText,
   Footer,
 };

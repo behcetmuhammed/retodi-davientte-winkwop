@@ -242,6 +242,7 @@ export type HeroBannerProps = {
 };
 
 export type TextProps = {
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
   /** Üst etiket */
   eyebrow: string;
   /** Başlık */
@@ -283,6 +284,7 @@ export type TextProps = {
 };
 
 export type RichTextProps = {
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
   /** Üst etiket */
   eyebrow: string;
   /** Başlık */
@@ -324,6 +326,7 @@ export type RichTextProps = {
 };
 
 export type SectionMediaGridProps = {
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
   /** Bölüm başlığı */
   headerTitle: string;
   /** Bölüm alt başlığı */
@@ -577,6 +580,7 @@ export type SectionMediaGridProps = {
 };
 
 export type SectionFeaturedCollectionProps = {
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
   captionDisplay: "always" | "hover";
   sectionTitle: string;
   titleAlign: "left" | "center";
@@ -630,6 +634,50 @@ export type SectionFeaturedCollectionProps = {
   item4CaptionTitle: string;
   item4ButtonLabel: string;
   item4ButtonUrl: string;
+  page: WinkwopPageContext;
+};
+
+export type SectionImageTextProps = {
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
+  image: string;
+  imageMobile: string;
+  imageMinHeight: number;
+  reverseLayout: boolean;
+  heading: string;
+  description: string;
+  headingStyle: "default" | "editorial";
+  primaryLabel: string;
+  primaryUrl: string;
+  primaryButtonStyle: "solid" | "outline" | "label" | "secondary";
+  openLinksInNewTab: boolean;
+  showBottomBorder: boolean;
+  sectionBgColor: string;
+  headingColor: string;
+  bodyColor: string;
+  spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  page: WinkwopPageContext;
+};
+
+export type SectionPageIntroProps = {
+  image: string;
+  imageMobile: string;
+  imageHeight: number;
+  imageHeightMobile: number;
+  showBottomFade: boolean;
+  fadeHeight: number;
+  fadeToColor: string;
+  heading: string;
+  eyebrow: string;
+  description: string;
+  descriptionAlign: "left" | "center" | "right" | "justify";
+  headingStyle: "default" | "editorial";
+  eyebrowColor: string;
+  headingColor: string;
+  bodyColor: string;
+  sectionBgColor: string;
+  contentAlign: "left" | "center" | "right";
+  contentWidth: "narrow" | "medium" | "wide";
+  spacingPreset: "small" | "medium" | "large" | "extraLarge";
   page: WinkwopPageContext;
 };
 

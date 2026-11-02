@@ -1,5 +1,20 @@
 import fs from 'node:fs';
 
+const sectionContainerWidthSelect = {
+  id: 'sectionContainerWidth',
+  label: 'Genel genişlik',
+  type: 'select',
+  default: 'default',
+  options: [
+    { label: 'Varsayılan', value: 'default' },
+    { label: 'Çok Küçük', value: 'extraSmall' },
+    { label: 'Küçük', value: 'small' },
+    { label: 'Orta', value: 'medium' },
+    { label: 'Geniş', value: 'wide' },
+    { label: 'Çok Geniş', value: 'extraWide' },
+  ],
+};
+
 const buttonStyleSelect = {
   type: 'select',
   default: 'label',
@@ -12,6 +27,7 @@ const buttonStyleSelect = {
 };
 
 const sectionFields = [
+  sectionContainerWidthSelect,
   {
     id: 'captionDisplay',
     label: 'Kutu yazıları (caption)',
@@ -114,7 +130,10 @@ const itemType = (n) => `
   item${n}ButtonLabel: string;
   item${n}ButtonUrl: string;`;
 
+const widthUnion = '"default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide"';
+
 const propsType = `export type SectionFeaturedCollectionProps = {
+  sectionContainerWidth: ${widthUnion};
   captionDisplay: "always" | "hover";
   sectionTitle: string;
   titleAlign: "left" | "center";

@@ -796,6 +796,38 @@
       "name": "Metin Bölümü",
       "settings": [
         {
+          "id": "sectionContainerWidth",
+          "label": "Genel genişlik",
+          "type": "select",
+          "default": "default",
+          "options": [
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            },
+            {
+              "label": "Çok Küçük",
+              "value": "extraSmall"
+            },
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Geniş",
+              "value": "wide"
+            },
+            {
+              "label": "Çok Geniş",
+              "value": "extraWide"
+            }
+          ]
+        },
+        {
           "default": "",
           "id": "eyebrow",
           "label": "Üst etiket",
@@ -1003,6 +1035,38 @@
       "name": "Zengin Metin Bölümü",
       "settings": [
         {
+          "id": "sectionContainerWidth",
+          "label": "Genel genişlik",
+          "type": "select",
+          "default": "default",
+          "options": [
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            },
+            {
+              "label": "Çok Küçük",
+              "value": "extraSmall"
+            },
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Geniş",
+              "value": "wide"
+            },
+            {
+              "label": "Çok Geniş",
+              "value": "extraWide"
+            }
+          ]
+        },
+        {
           "default": "",
           "id": "eyebrow",
           "label": "Üst etiket",
@@ -1209,6 +1273,38 @@
       "description": "12 sütunlu medya ızgarası; görseller, overlay metin ve CTA.",
       "name": "Izgara Media Bölümü",
       "settings": [
+        {
+          "id": "sectionContainerWidth",
+          "label": "Genel genişlik",
+          "type": "select",
+          "default": "default",
+          "options": [
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            },
+            {
+              "label": "Çok Küçük",
+              "value": "extraSmall"
+            },
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Geniş",
+              "value": "wide"
+            },
+            {
+              "label": "Çok Geniş",
+              "value": "extraWide"
+            }
+          ]
+        },
         {
           "default": "",
           "id": "headerTitle",
@@ -2536,6 +2632,38 @@
       "description": "Editoryal başlık ve 3–4 görselli koleksiyon ızgarası; isteğe bağlı caption kartı.",
       "settings": [
         {
+          "id": "sectionContainerWidth",
+          "label": "Genel genişlik",
+          "type": "select",
+          "default": "default",
+          "options": [
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            },
+            {
+              "label": "Çok Küçük",
+              "value": "extraSmall"
+            },
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Geniş",
+              "value": "wide"
+            },
+            {
+              "label": "Çok Geniş",
+              "value": "extraWide"
+            }
+          ]
+        },
+        {
           "id": "captionDisplay",
           "label": "Kutu yazıları (caption)",
           "type": "select",
@@ -2936,6 +3064,398 @@
           "label": "Kutu 4 — Düğme adresi",
           "type": "url",
           "default": ""
+        }
+      ]
+    },
+    {
+      "type": "SectionPageIntro",
+      "name": "Sayfa üst görseli",
+      "description": "Tam genişlik görsel, alt sis geçişi; başlık, etiket ve açıklama.",
+      "settings": [
+        {
+          "id": "image",
+          "label": "Görsel",
+          "type": "image",
+          "default": ""
+        },
+        {
+          "id": "imageMobile",
+          "label": "Görsel (mobil)",
+          "type": "image",
+          "default": ""
+        },
+        {
+          "id": "imageHeight",
+          "label": "Görsel yüksekliği (masaüstü)",
+          "type": "range",
+          "default": 420,
+          "min": 200,
+          "max": 800,
+          "step": 10,
+          "unit": "px"
+        },
+        {
+          "id": "imageHeightMobile",
+          "label": "Görsel yüksekliği (mobil)",
+          "type": "range",
+          "default": 320,
+          "min": 160,
+          "max": 600,
+          "step": 10,
+          "unit": "px"
+        },
+        {
+          "id": "showBottomFade",
+          "label": "Alt sis geçişi",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "id": "fadeHeight",
+          "label": "Sis yüksekliği",
+          "type": "range",
+          "default": 200,
+          "min": 80,
+          "max": 400,
+          "step": 10,
+          "unit": "px"
+        },
+        {
+          "id": "fadeToColor",
+          "label": "Sis hedef rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "heading",
+          "label": "Başlık",
+          "type": "text",
+          "default": ""
+        },
+        {
+          "id": "eyebrow",
+          "label": "Etiket (başlık altında)",
+          "type": "text",
+          "default": ""
+        },
+        {
+          "id": "description",
+          "label": "Açıklama",
+          "type": "textarea",
+          "default": ""
+        },
+        {
+          "id": "descriptionAlign",
+          "label": "Açıklama hizası",
+          "type": "select",
+          "default": "center",
+          "options": [
+            {
+              "label": "Sola hizalı",
+              "value": "left"
+            },
+            {
+              "label": "Ortalı",
+              "value": "center"
+            },
+            {
+              "label": "Sağa hizalı",
+              "value": "right"
+            },
+            {
+              "label": "İki yana yasla (justify)",
+              "value": "justify"
+            }
+          ]
+        },
+        {
+          "id": "headingStyle",
+          "label": "Başlık stili",
+          "type": "select",
+          "default": "default",
+          "options": [
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            },
+            {
+              "label": "Editoryal (büyük harf)",
+              "value": "editorial"
+            }
+          ]
+        },
+        {
+          "id": "eyebrowColor",
+          "label": "Etiket rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "headingColor",
+          "label": "Başlık rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "bodyColor",
+          "label": "Açıklama rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "sectionBgColor",
+          "label": "Bölüm arka plan rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "contentAlign",
+          "label": "Başlık ve etiket hizası",
+          "type": "select",
+          "default": "center",
+          "options": [
+            {
+              "label": "Sol",
+              "value": "left"
+            },
+            {
+              "label": "Orta",
+              "value": "center"
+            },
+            {
+              "label": "Sağ",
+              "value": "right"
+            }
+          ]
+        },
+        {
+          "id": "contentWidth",
+          "label": "Metin genişliği",
+          "type": "select",
+          "default": "medium",
+          "options": [
+            {
+              "label": "Dar",
+              "value": "narrow"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Geniş",
+              "value": "wide"
+            }
+          ]
+        },
+        {
+          "id": "spacingPreset",
+          "label": "Metin alt boşluk",
+          "type": "select",
+          "default": "medium",
+          "options": [
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Büyük",
+              "value": "large"
+            },
+            {
+              "label": "Çok büyük",
+              "value": "extraLarge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "SectionImageText",
+      "name": "Metin içeren görsel",
+      "description": "Görsel ve metin yan yana; isteğe bağlı ters düzen (görsel sağda).",
+      "settings": [
+        {
+          "id": "sectionContainerWidth",
+          "label": "Genel genişlik",
+          "type": "select",
+          "default": "default",
+          "options": [
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            },
+            {
+              "label": "Çok Küçük",
+              "value": "extraSmall"
+            },
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Geniş",
+              "value": "wide"
+            },
+            {
+              "label": "Çok Geniş",
+              "value": "extraWide"
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "label": "Görsel",
+          "type": "image",
+          "default": ""
+        },
+        {
+          "id": "imageMobile",
+          "label": "Görsel (mobil)",
+          "type": "image",
+          "default": ""
+        },
+        {
+          "id": "imageMinHeight",
+          "label": "Görsel minimum yükseklik",
+          "type": "range",
+          "default": 320,
+          "min": 200,
+          "max": 560,
+          "step": 10,
+          "unit": "px"
+        },
+        {
+          "id": "reverseLayout",
+          "label": "Görsel sağda (ters düzen)",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "id": "heading",
+          "label": "Başlık",
+          "type": "text",
+          "default": ""
+        },
+        {
+          "id": "description",
+          "label": "Açıklama",
+          "type": "textarea",
+          "default": ""
+        },
+        {
+          "id": "headingStyle",
+          "label": "Başlık stili",
+          "type": "select",
+          "default": "default",
+          "options": [
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            },
+            {
+              "label": "Editoryal (büyük harf)",
+              "value": "editorial"
+            }
+          ]
+        },
+        {
+          "id": "primaryLabel",
+          "label": "Düğme metni",
+          "type": "text",
+          "default": ""
+        },
+        {
+          "id": "primaryUrl",
+          "label": "Düğme adresi",
+          "type": "url",
+          "default": ""
+        },
+        {
+          "id": "primaryButtonStyle",
+          "label": "Düğme stili",
+          "type": "select",
+          "default": "solid",
+          "options": [
+            {
+              "label": "Dolu",
+              "value": "solid"
+            },
+            {
+              "label": "Çerçeveli",
+              "value": "outline"
+            },
+            {
+              "label": "Etiket (altı çizili)",
+              "value": "label"
+            },
+            {
+              "label": "İkincil",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
+          "id": "openLinksInNewTab",
+          "label": "Bağlantıları yeni sekmede aç",
+          "type": "boolean",
+          "default": false
+        },
+        {
+          "id": "showBottomBorder",
+          "label": "Alt ayırıcı çizgi",
+          "type": "boolean",
+          "default": true
+        },
+        {
+          "id": "sectionBgColor",
+          "label": "Bölüm arka plan rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "headingColor",
+          "label": "Başlık rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "bodyColor",
+          "label": "Açıklama rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "spacingPreset",
+          "label": "Dikey boşluk",
+          "type": "select",
+          "default": "medium",
+          "options": [
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Büyük",
+              "value": "large"
+            },
+            {
+              "label": "Çok büyük",
+              "value": "extraLarge"
+            }
+          ]
         }
       ]
     },

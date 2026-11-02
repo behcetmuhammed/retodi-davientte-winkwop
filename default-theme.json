@@ -154,6 +154,7 @@
           "id": "text-legacy",
           "type": "Text",
           "settings": {
+            "sectionContainerWidth": "default",
             "eyebrow": "Yeni Sezon",
             "heading": "The Rafaello Legacy",
             "description": "Rafaello, zamansız şıklığı modern çizgilerle buluşturan, İtalyan terziliğinin mirasını taşıyan bir lüks giyim markasıdır. Her dikişte kaliteyi hissedin.",
@@ -178,6 +179,7 @@
           "id": "featured-collection-home",
           "type": "SectionFeaturedCollection",
           "settings": {
+            "sectionContainerWidth": "default",
             "captionDisplay": "hover",
             "sectionTitle": "SEÇİLMİŞ KOLEKSİYON",
             "titleAlign": "center",
@@ -246,6 +248,7 @@
           "id": "text-gf8z0s",
           "type": "Text",
           "settings": {
+            "sectionContainerWidth": "default",
             "eyebrow": "",
             "heading": "",
             "description": "",
@@ -271,6 +274,7 @@
           "id": "richtext-m1hacv",
           "type": "RichText",
           "settings": {
+            "sectionContainerWidth": "default",
             "eyebrow": "",
             "heading": "",
             "htmlContent": "",
@@ -297,6 +301,7 @@
           "id": "sectionmediagrid-mv938d",
           "type": "SectionMediaGrid",
           "settings": {
+            "sectionContainerWidth": "default",
             "headerTitle": "THE RAFAELLO LEGACY",
             "headerSubTitle": "Rafaello, zamansız şıklığı modern çizgilerle buluşturan, İtalyan terziliğinin mirasını taşıyan bir lüks giyim markasıdır. Her dikişte kaliteyi hissedin.",
             "headerTitleColor": "#000000",
@@ -588,7 +593,180 @@
           }
         },
         {
+          "id": "sectionpageintro-dxm4k0",
+          "type": "SectionPageIntro",
+          "settings": {
+            "image": "https://cdn.winkwop.com/uploads/themes/v/269e9ef744354be7a03ddab984ca73bd.jpg",
+            "imageMobile": "https://cdn.winkwop.com/uploads/themes/v/b701c5cd556e4fc5921cc84a793de498.jpg",
+            "imageHeight": 420,
+            "imageHeightMobile": 320,
+            "showBottomFade": true,
+            "fadeHeight": 160,
+            "fadeToColor": "#ffffff",
+            "heading": "About Us",
+            "eyebrow": "Rafaello İstanbul",
+            "description": "RAFAELLO is a Turkish fashion brand that markets luxury ready-to-wear products globally, bringing timeless elegance and superior craftsmanship to the world of outerwear. RAFAELLO stands out as a lifestyle brand that empowers women to feel empowered, confident, and elegant. The company was founded in 1997 with the vision of a collection produced using contemporary industrial techniques. Women are always at the center of the brand.\n\nThe RAFAELLO woman is a strong, independent, and timeless woman. With a focus on style, comfort, and durability, Rafaello is where fashion meets function-whether you’re shopping wholesale or retail.",
+            "descriptionAlign": "center",
+            "headingStyle": "default",
+            "eyebrowColor": "",
+            "headingColor": "",
+            "bodyColor": "",
+            "sectionBgColor": "",
+            "contentAlign": "center",
+            "contentWidth": "medium",
+            "spacingPreset": "medium"
+          }
+        },
+        {
+          "id": "sectionimagetext-ukqo6v",
+          "type": "SectionImageText",
+          "settings": {
+            "sectionContainerWidth": "default",
+            "image": "",
+            "imageMobile": "https://cdn.winkwop.com/uploads/themes/v/ae0203311d7049728a6d0cfb4ce6c3ff.jpg",
+            "imageMinHeight": 440,
+            "reverseLayout": false,
+            "heading": "The Vision",
+            "description": "RAFAELLO stands out as a lifestyle brand that empowers women to feel empowered, confident, and elegant. With a focus on style, comfort, and durability, Rafaello is where fashion meets function—whether you’re shopping wholesale or retail.",
+            "headingStyle": "default",
+            "primaryLabel": "",
+            "primaryUrl": "",
+            "primaryButtonStyle": "solid",
+            "openLinksInNewTab": false,
+            "showBottomBorder": true,
+            "sectionBgColor": "",
+            "headingColor": "",
+            "bodyColor": "",
+            "spacingPreset": "medium"
+          }
+        },
+        {
           "id": "footer-y27xak",
+          "type": "Footer",
+          "settings": {
+            "backgroundColor": "#ffffff",
+            "textColor": "#000000",
+            "barBackgroundColor": "#000000",
+            "barTextColor": "#ffffff",
+            "customerCareTitle": "CUSTOMER CARE",
+            "customerCareLinks": [
+              {
+                "label": "Contact Us",
+                "url": "/pages/iletisim"
+              },
+              {
+                "label": "Find Store",
+                "url": "/pages/magazalar"
+              },
+              {
+                "label": "Shipping",
+                "url": "/pages/kargo"
+              },
+              {
+                "label": "Returns",
+                "url": "/pages/iade"
+              }
+            ],
+            "contactPhone": "+90 212 458 35 75",
+            "contactEmail": "info@rafaello.com",
+            "corporateTitle": "CORPORATE",
+            "corporateLinks": [
+              {
+                "label": "Careers",
+                "url": "/pages/kariyer"
+              },
+              {
+                "label": "MM World",
+                "url": "/pages/mm-world"
+              },
+              {
+                "label": "Sustainability",
+                "url": "/pages/surdurulebilirlik"
+              }
+            ],
+            "legalTitle": "LEGAL AREA",
+            "legalLinks": [
+              {
+                "label": "Privacy Policy",
+                "url": "/pages/gizlilik"
+              },
+              {
+                "label": "Cookie Policy",
+                "url": "/pages/cerez"
+              },
+              {
+                "label": "Legal Notes",
+                "url": "/pages/yasal"
+              }
+            ],
+            "newsletterTitle": "NEWSLETTER",
+            "newsletterDescription": "Yeniliklerden ve özel davetlerden haberdar olun.",
+            "emailPlaceholder": "E-Posta Adresiniz",
+            "subscribeButtonLabel": "ABONE OL",
+            "instagramLink": "https://instagram.com",
+            "facebookLink": "#",
+            "xLink": "#",
+            "openSocialLinksInNewTab": true,
+            "openLinksInNewTab": false,
+            "copyrightText": "© 2026 Rafaello"
+          }
+        }
+      ]
+    },
+    "pages_i_letisim": {
+      "path": "/pages/i-letisim",
+      "title": "İletişim",
+      "sections": [
+        {
+          "id": "header-34usoh",
+          "type": "Header",
+          "settings": {
+            "headerLayout": "logoCenterMenuBelow",
+            "logo": "https://cdn.winkwop.com/uploads/themes/v/fe22a4dc63984101a3d90f33d5e36539.png",
+            "logoWidthWeb": 149,
+            "logoWidthMobile": 100,
+            "invertLogoColors": false,
+            "categories": [
+              {
+                "label": "Ana Sayfa",
+                "url": "/"
+              },
+              {
+                "label": "Hakkımızda",
+                "url": "/pages/hakkimizda"
+              },
+              {
+                "label": "Koleksiyon",
+                "url": "/collections/all"
+              },
+              {
+                "label": "İletişim",
+                "url": "/pages/iletisim"
+              }
+            ],
+            "link1LabelName": "Müşteri hizmetleri",
+            "link1": "/pages/musteri-hizmetleri",
+            "link1Icon": "https://cdn.winkwop.com/uploads/themes/v/6f0a36c76b9c49539631b74293205069.png",
+            "link1Position": "left",
+            "link2LabelName": "find store",
+            "link2": "/pages/magazalar",
+            "link2Icon": "https://cdn.winkwop.com/uploads/themes/v/a7aefaaf4d2b47088b819f0f02209598.png",
+            "link2Position": "left",
+            "openLinksInNewTab": false,
+            "facebookLink": "#",
+            "instagramLink": "https://instagram.com",
+            "whatsappLink": "#",
+            "linkedinLink": "#",
+            "openSocialLinksInNewTab": true,
+            "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
+            "text2": "Yeni sezon koleksiyonu mağazada",
+            "text3": "Online özel %10 indirim",
+            "backgroundColor": "#000000",
+            "textAndIconColor": "#ffffff"
+          }
+        },
+        {
+          "id": "footer-lwdpet",
           "type": "Footer",
           "settings": {
             "backgroundColor": "#ffffff",

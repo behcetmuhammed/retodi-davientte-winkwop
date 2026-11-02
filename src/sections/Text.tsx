@@ -27,6 +27,7 @@ export default function Text(props: TextProps) {
       headingColor={props.headingColor}
       bodyColor={props.bodyColor}
       sectionBgColor={props.sectionBgColor}
+      sectionContainerWidth={props.sectionContainerWidth}
     />
   );
 }

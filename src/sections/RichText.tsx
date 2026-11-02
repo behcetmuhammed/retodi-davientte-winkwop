@@ -39,6 +39,7 @@ export default function RichText(props: RichTextProps) {
       headingColor={props.headingColor}
       bodyColor={props.bodyColor}
       sectionBgColor={props.sectionBgColor}
+      sectionContainerWidth={props.sectionContainerWidth}
     />
   );
 }

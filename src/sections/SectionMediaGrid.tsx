@@ -92,7 +92,11 @@ export default function SectionMediaGrid(props: SectionMediaGridProps) {
   if (bgColor) {
     return (
       <section data-slot="section-media-grid" className="w-full" style={sectionStyle}>
-        <Container size={containerSize} padding={containerPadding}>
+        <Container
+          size={containerSize}
+          padding={containerPadding}
+          widthPreset={fullWidth ? undefined : props.sectionContainerWidth}
+        >
           {content}
         </Container>
       </section>
@@ -101,7 +105,12 @@ export default function SectionMediaGrid(props: SectionMediaGridProps) {
 
   return (
     <section data-slot="section-media-grid">
-      <Container size={containerSize} padding={containerPadding} style={sectionStyle}>
+      <Container
+        size={containerSize}
+        padding={containerPadding}
+        widthPreset={fullWidth ? undefined : props.sectionContainerWidth}
+        style={sectionStyle}
+      >
         {content}
       </Container>
     </section>
