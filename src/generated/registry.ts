@@ -3,6 +3,7 @@
 
 import type { ComponentType } from 'react';
 import '../tailwind.css';
+import '../bootstrap-theme-settings';
 import Header from '../sections/Header';
 import HeroBanner from '../sections/HeroBanner';
 import Footer from '../sections/Footer';

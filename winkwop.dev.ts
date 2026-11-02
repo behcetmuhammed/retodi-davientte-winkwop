@@ -4,6 +4,10 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { build, type Plugin, type ViteDevServer } from 'vite';
+import {
+  winkwopThemeSettingsToCssVariables,
+  type WinkwopThemeSettings,
+} from './src/lib/winkwop-theme-settings';
 
 /**
  * Yerel editör köprüsü.
@@ -302,7 +306,10 @@ async function bundle(root: string, configFile: string | undefined): Promise<str
     .map((asset) => (typeof asset.source === 'string' ? asset.source : Buffer.from(asset.source).toString('utf8')))
     .join('\n');
 
-  return (css ? cssInjector(css) : '') + entry.code;
+  const layout = await readJson<{ settings?: WinkwopThemeSettings }>(root, LAYOUT_FILE);
+  const settingsBoot = themeSettingsInjector(layout?.settings);
+
+  return settingsBoot + (css ? cssInjector(css) : '') + entry.code;
 }
 
 /**
@@ -391,6 +398,16 @@ if (!sdk) throw new Error("Winkwop tema çalışma ortamı hazır değil (SDK yo
 export const winkwop = sdk;
 export default { winkwop: sdk };
 `;
+
+/** Yerel editör önizlemesi: `default-theme.json` → `settings` → `--wk-*` (panel ile aynı). */
+function themeSettingsInjector(settings: WinkwopThemeSettings | undefined): string {
+  const vars = winkwopThemeSettingsToCssVariables(settings);
+  if (Object.keys(vars).length === 0) return '';
+  return (
+    `(()=>{if(typeof document>"u")return;var v=${JSON.stringify(vars)};var el=document.documentElement;` +
+    `for(var k in v)if(Object.prototype.hasOwnProperty.call(v,k))el.style.setProperty(k,v[k]);})();\n`
+  );
+}
 
 /** Vitrin derleyicisiyle aynı: CSS paketin başında, kendini bir kez ekleyen blok. */
 function cssInjector(css: string): string {

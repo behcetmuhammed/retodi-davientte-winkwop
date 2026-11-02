@@ -4,6 +4,8 @@ import { configureWinkwop, winkwop } from 'winkwop-theme-sdk';
 import { sections } from './generated/registry';
 import manifest from './generated/manifest.json';
 import projectConfig from '../winkwop.config.json';
+import defaultTheme from '../default-theme.json';
+import { applyWinkwopThemeSettings, type WinkwopThemeSettings } from './lib/winkwop-theme-settings';
 import './styles.css';
 
 /**
@@ -251,6 +253,10 @@ function useRealStoreWarning() {
 function App() {
   const schemas: SectionSchema[] = (manifest as any)?.sections ?? [];
   const isRealStore = useRealStoreWarning();
+
+  React.useEffect(() => {
+    applyWinkwopThemeSettings(defaultTheme.settings as WinkwopThemeSettings);
+  }, []);
 
   return (
     <div className="wk-dev">
