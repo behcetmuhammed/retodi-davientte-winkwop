@@ -5,11 +5,12 @@ import type { HeroSlide } from './types';
 function readSlide(props: HeroBannerProps, index: 1 | 2 | 3 | 4): HeroSlide | null {
   const p = `slide${index}` as const;
   const image = (props[`${p}Image` as keyof HeroBannerProps] as string).trim();
-  if (!image) return null;
+  const imageMobile = (props[`${p}ImageMobile` as keyof HeroBannerProps] as string).trim();
+  if (!image && !imageMobile) return null;
 
   return {
-    image,
-    imageMobile: (props[`${p}ImageMobile` as keyof HeroBannerProps] as string).trim(),
+    image: image || imageMobile,
+    imageMobile: imageMobile || image,
     eyebrow: (props[`${p}Eyebrow` as keyof HeroBannerProps] as string).trim(),
     heading: (props[`${p}Heading` as keyof HeroBannerProps] as string).trim(),
     description: (props[`${p}Description` as keyof HeroBannerProps] as string).trim(),

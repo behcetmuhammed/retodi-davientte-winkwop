@@ -58,6 +58,8 @@ export type WinkwopPageContext = {
 export type HeaderProps = {
   /** Üst Menü Yerleşim Düzeni */
   headerLayout: "logoLeftMenuCenter" | "logoCenterMenuLeft" | "logoCenterMenuBelow" | "logoLeftMenuBelow" | "logoLeftMenuLeft";
+  /** Mobil üst menü düzeni */
+  mobileHeaderLayout: "trailingActions" | "leadingIconsCenterLogo";
   /** Logo */
   logo: string;
   /** Logo Genişliği (Masaüstü) */
@@ -74,6 +76,8 @@ export type HeaderProps = {
   link1: string;
   /** Bağlantı 1 İkonu */
   link1Icon: string;
+  /** Bağlantı 1 ikonu (mobil) */
+  link1IconMobile: string;
   /** Bağlantı 1 Konumu */
   link1Position: "right" | "left";
   /** Bağlantı 2 Adı */
@@ -82,6 +86,8 @@ export type HeaderProps = {
   link2: string;
   /** Bağlantı 2 İkonu */
   link2Icon: string;
+  /** Bağlantı 2 ikonu (mobil) */
+  link2IconMobile: string;
   /** Bağlantı 2 Konumu */
   link2Position: "right" | "left";
   /** Bağlantıları Yeni Sekmede Aç */
@@ -104,6 +110,22 @@ export type HeaderProps = {
   pinterestLink: string;
   /** Sosyal Medya Bağlantılarını Yeni Sekmede Aç */
   openSocialLinksInNewTab: boolean;
+  /** Facebook ikonu (mobil) */
+  facebookIconMobile: string;
+  /** Instagram ikonu (mobil) */
+  instagramIconMobile: string;
+  /** WhatsApp ikonu (mobil) */
+  whatsappIconMobile: string;
+  /** LinkedIn ikonu (mobil) */
+  linkedinIconMobile: string;
+  /** X ikonu (mobil) */
+  xIconMobile: string;
+  /** YouTube ikonu (mobil) */
+  youtubeIconMobile: string;
+  /** TikTok ikonu (mobil) */
+  tiktokIconMobile: string;
+  /** Pinterest ikonu (mobil) */
+  pinterestIconMobile: string;
   /** Metin 1 */
   text1: string;
   /** Metin 2 */

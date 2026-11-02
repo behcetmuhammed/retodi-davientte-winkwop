@@ -1,4 +1,3 @@
-import { BrandSocialLinks, hasAnyBrandSocialLink } from '../../components/shared/brand-social-links';
 import { MenuIcon, SearchIcon } from '../../components/icons';
 import { IconButton } from '../../components/ui/button';
 import { Container } from '../../components/ui/container';
@@ -8,6 +7,7 @@ import { useBreakpoint } from '../../hooks/use-media-query';
 import { clamp, cn } from '../../lib/utils';
 import { NavLinks } from './nav-links';
 import type { MainRowProps } from './types';
+import { hasAnyUtilityMenuLink, UtilityMenuLinks } from './utility-nav-links';
 
 const LOGO_WIDTH_WEB = { min: 25, max: 149 } as const;
 const LOGO_WIDTH_MOBILE = { min: 25, max: 100 } as const;
@@ -16,18 +16,6 @@ function resolveLogoWidthPx(value: number, bounds: { min: number; max: number })
   if (!Number.isFinite(value) || value <= 0) return undefined;
   return clamp(Math.round(value), bounds.min, bounds.max);
 }
-
-type SocialProps = {
-  facebookLink: string;
-  instagramLink: string;
-  whatsappLink: string;
-  linkedinLink: string;
-  xLink: string;
-  youtubeLink: string;
-  tiktokLink: string;
-  pinterestLink: string;
-  openSocialLinksInNewTab: boolean;
-};
 
 function HeaderLogo({
   logo,
@@ -72,59 +60,90 @@ function SearchButton() {
   );
 }
 
-function MobileControls(props: MainRowProps & { social: SocialProps }) {
-  const { categories, page, menuOpen, onMenuOpenChange, social } = props;
+function MobileMenuSheet(props: MainRowProps) {
+  const { categories, page, menuOpen, onMenuOpenChange } = props;
   const close = () => onMenuOpenChange(false);
+  const utilityLinks = {
+    link1LabelName: props.link1LabelName,
+    link1: props.link1,
+    link1Icon: props.link1Icon,
+    link1IconMobile: props.link1IconMobile,
+    link1Position: props.link1Position,
+    link2LabelName: props.link2LabelName,
+    link2: props.link2,
+    link2Icon: props.link2Icon,
+    link2IconMobile: props.link2IconMobile,
+    link2Position: props.link2Position,
+    openLinksInNewTab: props.openLinksInNewTab,
+  };
+  const showUtilityFooter = hasAnyUtilityMenuLink(utilityLinks);
+
   return (
-    <div className="flex items-center gap-1">
+    <Sheet open={menuOpen} onOpenChange={onMenuOpenChange}>
+      <SheetTrigger asChild>
+        <IconButton variant="ghost" size="sm" aria-label="Menüyü aç">
+          <MenuIcon />
+        </IconButton>
+      </SheetTrigger>
+      <SheetContent side="right" size="sm" className="flex flex-col">
+        <SheetHeader>
+          <SheetTitle>Menü</SheetTitle>
+        </SheetHeader>
+        <SheetBody className="flex flex-1 flex-col gap-6">
+          <NavLinks categories={categories} page={page} orientation="vertical" onNavigate={close} />
+          {showUtilityFooter ? (
+            <div className="mt-auto border-t border-border pt-4">
+              <UtilityMenuLinks {...utilityLinks} />
+            </div>
+          ) : null}
+        </SheetBody>
+      </SheetContent>
+    </Sheet>
+  );
+}
+
+function MobileLeadingIcons() {
+  return (
+    <div data-slot="header-mobile-leading" className="flex items-center gap-1 justify-self-start">
       <SearchButton />
-      <Sheet open={menuOpen} onOpenChange={onMenuOpenChange}>
-        <SheetTrigger asChild>
-          <IconButton variant="ghost" size="sm" aria-label="Menüyü aç">
-            <MenuIcon />
-          </IconButton>
-        </SheetTrigger>
-        <SheetContent side="right" size="sm" className="flex flex-col">
-          <SheetHeader>
-            <SheetTitle>Menü</SheetTitle>
-          </SheetHeader>
-          <SheetBody className="flex flex-1 flex-col gap-6">
-            <NavLinks categories={categories} page={page} orientation="vertical" onNavigate={close} />
-            {hasAnyBrandSocialLink(social) ? (
-              <div className="mt-auto border-t pt-4">
-                <BrandSocialLinks
-                  facebookLink={social.facebookLink}
-                  instagramLink={social.instagramLink}
-                  whatsappLink={social.whatsappLink}
-                  linkedinLink={social.linkedinLink}
-                  xLink={social.xLink}
-                  youtubeLink={social.youtubeLink}
-                  tiktokLink={social.tiktokLink}
-                  pinterestLink={social.pinterestLink}
-                  openInNewTab={social.openSocialLinksInNewTab}
-                  iconClassName="size-5"
-                  className="text-muted-foreground [&_a:hover]:text-foreground"
-                />
-              </div>
-            ) : null}
-          </SheetBody>
-        </SheetContent>
-      </Sheet>
     </div>
   );
 }
 
-function MobileMainBar(props: MainRowProps & { social: SocialProps }) {
+function MobileTrailingActions(props: MainRowProps) {
+  return (
+    <div className="flex items-center gap-1">
+      <SearchButton />
+      <MobileMenuSheet {...props} />
+    </div>
+  );
+}
+
+function MobileHeaderBar(props: MainRowProps) {
   const logoProps = {
     logo: props.logo,
     logoWidthWeb: props.logoWidthWeb,
     logoWidthMobile: props.logoWidthMobile,
     invertLogoColors: props.invertLogoColors,
   };
+  const centerLogo = props.mobileHeaderLayout === 'leadingIconsCenterLogo';
+
+  if (centerLogo) {
+    return (
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 py-3 md:hidden">
+        <MobileLeadingIcons />
+        <HeaderLogo {...logoProps} className="max-w-[min(100%,12rem)] justify-self-center" />
+        <div className="flex justify-end justify-self-end">
+          <MobileMenuSheet {...props} />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex items-center justify-between gap-3 py-3 md:hidden">
       <HeaderLogo {...logoProps} className="min-w-0 max-w-[70%]" />
-      <MobileControls {...props} social={props.social} />
+      <MobileTrailingActions {...props} />
     </div>
   );
 }
@@ -155,7 +174,7 @@ function BottomNavRow({ categories, page, showSearch = true }: BottomNavRowProps
   );
 }
 
-export function MainRow(props: MainRowProps & { social: SocialProps }) {
+export function MainRow(props: MainRowProps) {
   const { layout, logo, logoWidthWeb, logoWidthMobile, invertLogoColors, categories, page } = props;
   const logoProps = { logo, logoWidthWeb, logoWidthMobile, invertLogoColors };
 
@@ -163,7 +182,7 @@ export function MainRow(props: MainRowProps & { social: SocialProps }) {
     return (
       <div data-slot="header-main" className="border-b border-border bg-background text-foreground">
         <Container className="py-3 md:py-4">
-          <MobileMainBar {...props} social={props.social} />
+          <MobileHeaderBar {...props} />
           <div className="hidden grid-cols-[auto_1fr_auto] items-center gap-4 md:grid">
             <HeaderLogo {...logoProps} />
             <NavLinks categories={categories} page={page} className="justify-self-center" />
@@ -177,16 +196,14 @@ export function MainRow(props: MainRowProps & { social: SocialProps }) {
   if (layout === 'logoLeftMenuLeft') {
     return (
       <div data-slot="header-main" className="border-b border-border bg-background text-foreground">
-        <Container className="flex items-center gap-3 py-3 md:py-4">
-          <HeaderLogo {...logoProps} />
-          <ScrollArea orientation="horizontal" hideScrollbar className="hidden min-w-0 flex-1 md:block">
-            <NavLinks categories={categories} page={page} className="w-max gap-4 lg:gap-6" />
-          </ScrollArea>
-          <div className="hidden md:block">
+        <Container className="md:py-4">
+          <MobileHeaderBar {...props} />
+          <div className="hidden items-center gap-3 md:flex">
+            <HeaderLogo {...logoProps} />
+            <ScrollArea orientation="horizontal" hideScrollbar className="min-w-0 flex-1">
+              <NavLinks categories={categories} page={page} className="w-max gap-4 lg:gap-6" />
+            </ScrollArea>
             <SearchButton />
-          </div>
-          <div className="ml-auto md:hidden">
-            <MobileControls {...props} social={props.social} />
           </div>
         </Container>
       </div>
@@ -197,7 +214,7 @@ export function MainRow(props: MainRowProps & { social: SocialProps }) {
     return (
       <div data-slot="header-main" className="border-b border-border bg-background text-foreground">
         <Container className="py-3 md:py-4">
-          <MobileMainBar {...props} social={props.social} />
+          <MobileHeaderBar {...props} />
           <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4">
             <NavLinks categories={categories} page={page} className="justify-self-start" />
             <HeaderLogo {...logoProps} className="justify-self-center" />
@@ -214,7 +231,7 @@ export function MainRow(props: MainRowProps & { social: SocialProps }) {
     return (
       <div data-slot="header-main" className="border-b border-border bg-background text-foreground">
         <Container>
-          <MobileMainBar {...props} social={props.social} />
+          <MobileHeaderBar {...props} />
           <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:py-4 lg:py-6">
             <div aria-hidden />
             <HeaderLogo {...logoProps} className="justify-self-center" />
@@ -232,7 +249,7 @@ export function MainRow(props: MainRowProps & { social: SocialProps }) {
     return (
       <div data-slot="header-main" className="border-b border-border bg-background text-foreground">
         <Container>
-          <MobileMainBar {...props} social={props.social} />
+          <MobileHeaderBar {...props} />
           <div className="hidden items-center justify-between gap-4 py-6 md:flex md:py-8">
             <HeaderLogo {...logoProps} />
             <SearchButton />

@@ -20,14 +20,15 @@ export function SlideContent({
 }: SlideContentProps) {
   const light = slide.textTone === 'light';
   const align = slide.contentAlign;
+  const buttonSizeClass = 'h-8 px-3 text-xs md:h-9 md:px-4 md:text-sm';
 
   const primary =
     slide.primaryLabel && slide.primaryUrl ? (
       <Button
         asChild
         variant={heroPrimaryVariant(light, primaryButtonStyle)}
-        size="md"
-        className={heroLinkButtonClass(light, primaryButtonStyle, 'primary')}
+        size="sm"
+        className={cn(buttonSizeClass, heroLinkButtonClass(light, primaryButtonStyle, 'primary'))}
       >
         <a
           href={slide.primaryUrl}
@@ -44,8 +45,8 @@ export function SlideContent({
       <Button
         asChild
         variant={themeButtonVariant(secondaryButtonStyle)}
-        size="md"
-        className={heroLinkButtonClass(light, secondaryButtonStyle, 'secondary')}
+        size="sm"
+        className={cn(buttonSizeClass, heroLinkButtonClass(light, secondaryButtonStyle, 'secondary'))}
       >
         <a
           href={slide.secondaryUrl}
@@ -65,7 +66,7 @@ export function SlideContent({
     <div
       data-slot="hero-slide-content"
       className={cn(
-        'relative z-10 flex w-full max-w-xl flex-col gap-4 py-10 md:max-w-2xl md:py-14 lg:py-16',
+        'relative z-10 flex w-full max-w-xl flex-col gap-3 py-6 md:max-w-2xl md:gap-4 md:py-14 lg:py-16',
         align === 'center' && 'mx-auto items-center text-center',
         align === 'right' && 'ml-auto items-end text-right',
         align === 'left' && 'items-start text-left',
@@ -75,12 +76,24 @@ export function SlideContent({
         <Eyebrow className={cn(light ? 'text-background/80' : 'text-muted-foreground')}>{slide.eyebrow}</Eyebrow>
       ) : null}
       {slide.heading ? (
-        <Heading level={1} className={cn(light && 'text-background')}>
+        <Heading
+          level={1}
+          className={cn(
+            'text-2xl md:text-3xl lg:text-4xl',
+            light && 'text-background',
+          )}
+        >
           {slide.heading}
         </Heading>
       ) : null}
       {slide.description ? (
-        <Text size="lg" className={cn('text-pretty', light ? 'text-background/90' : 'text-muted-foreground')}>
+        <Text
+          size="sm"
+          className={cn(
+            'text-pretty md:text-lg',
+            light ? 'text-background/90' : 'text-muted-foreground',
+          )}
+        >
           {slide.description}
         </Text>
       ) : null}

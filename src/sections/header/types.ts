@@ -7,10 +7,12 @@ export type UtilityBarProps = Pick<
   | 'link1LabelName'
   | 'link1'
   | 'link1Icon'
+  | 'link1IconMobile'
   | 'link1Position'
   | 'link2LabelName'
   | 'link2'
   | 'link2Icon'
+  | 'link2IconMobile'
   | 'link2Position'
   | 'openLinksInNewTab'
   | 'facebookLink'
@@ -22,6 +24,14 @@ export type UtilityBarProps = Pick<
   | 'tiktokLink'
   | 'pinterestLink'
   | 'openSocialLinksInNewTab'
+  | 'facebookIconMobile'
+  | 'instagramIconMobile'
+  | 'whatsappIconMobile'
+  | 'linkedinIconMobile'
+  | 'xIconMobile'
+  | 'youtubeIconMobile'
+  | 'tiktokIconMobile'
+  | 'pinterestIconMobile'
   | 'text1'
   | 'text2'
   | 'text3'
@@ -29,7 +39,21 @@ export type UtilityBarProps = Pick<
   | 'textAndIconColor'
 >;
 
-export type MainRowProps = {
+export type MainRowProps = Pick<
+  HeaderProps,
+  | 'link1LabelName'
+  | 'link1'
+  | 'link1Icon'
+  | 'link1IconMobile'
+  | 'link1Position'
+  | 'link2LabelName'
+  | 'link2'
+  | 'link2Icon'
+  | 'link2IconMobile'
+  | 'link2Position'
+  | 'openLinksInNewTab'
+  | 'mobileHeaderLayout'
+> & {
   layout: HeaderLayout;
   logo: string;
   logoWidthWeb: number;

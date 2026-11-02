@@ -63,8 +63,8 @@ export function CarouselHero(props: CarouselHeroProps) {
       </CarouselContent>
       {showCarouselArrows && slides.length > 1 ? (
         <>
-          <CarouselPrevious className="hidden md:inline-flex" />
-          <CarouselNext className="hidden md:inline-flex" />
+          <CarouselPrevious className="z-20 size-7 md:size-8 [&_svg]:size-3.5 md:[&_svg]:size-4" />
+          <CarouselNext className="z-20 size-7 md:size-8 [&_svg]:size-3.5 md:[&_svg]:size-4" />
         </>
       ) : null}
       {showCarouselDots && slides.length > 1 ? (
