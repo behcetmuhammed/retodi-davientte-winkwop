@@ -56,8 +56,8 @@ function itemFields(n) {
     { id: `item${n}MediaType`, label: `${L}Medya türü`, type: 'select', default: 'image', options: [{ label: 'Görsel', value: 'image' }, { label: 'Video', value: 'video' }] },
     { id: `item${n}Image`, label: `${L}Görsel`, type: 'image', default: '' },
     { id: `item${n}ImageMobile`, label: `${L}Görsel (mobil)`, type: 'image', default: '' },
-    { id: `item${n}VideoUrl`, label: `${L}Video URL`, type: 'url', default: '' },
-    { id: `item${n}VideoUrlMobile`, label: `${L}Video URL (mobil)`, type: 'url', default: '' },
+    { id: `item${n}VideoUrl`, label: `${L}Video`, type: 'video', default: '' },
+    { id: `item${n}VideoUrlMobile`, label: `${L}Video (mobil)`, type: 'video', default: '' },
     { id: `item${n}ColumnSpan`, label: `${L}Sütun genişliği`, ...columnSelect },
     { id: `item${n}RowSpan`, label: `${L}Satır yüksekliği (birim)`, type: 'range', default: 1, min: 1, max: 5, step: 1 },
     { id: `item${n}Position`, label: `${L}Metin konumu`, ...positionSelect },
@@ -126,8 +126,18 @@ ${[1, 2, 3, 4, 5, 6].map(itemType).join('')}
   page: WinkwopPageContext;
 };`;
 
+const videoTypeAlias = `/** Panel video alanı (CDN adresi). */\nexport type WinkwopVideo = string;\n\n`;
+
 let types = fs.readFileSync('src/generated/types.ts', 'utf8');
+if (!types.includes('export type WinkwopVideo')) {
+  types = types.replace(
+    /export type WinkwopLink = \{ label: string; url: string \};\n\n/,
+    `export type WinkwopLink = { label: string; url: string };\n\n${videoTypeAlias}`,
+  );
+}
 types = types.replace(/export type SectionMediaGridProps = \{[\s\S]*?\};/, propsType);
+types = types.replace(/item(\d)VideoUrl: string;/g, 'item$1VideoUrl: WinkwopVideo;');
+types = types.replace(/item(\d)VideoUrlMobile: string;/g, 'item$1VideoUrlMobile: WinkwopVideo;');
 fs.writeFileSync('src/generated/types.ts', types);
 
 console.log('settings count', settings.length);

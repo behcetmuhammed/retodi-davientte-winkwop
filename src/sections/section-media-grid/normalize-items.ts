@@ -1,4 +1,5 @@
 import type { SectionMediaGridProps } from '../../generated/types';
+import { resolveVideoUrl, type VideoSettingValue } from './resolve-video-url';
 import type { MediaGridItem } from './types';
 
 function readItem(props: SectionMediaGridProps, index: 1 | 2 | 3 | 4 | 5 | 6): MediaGridItem {
@@ -9,8 +10,12 @@ function readItem(props: SectionMediaGridProps, index: 1 | 2 | 3 | 4 | 5 | 6): M
     mediaType: props[`${p}MediaType` as keyof SectionMediaGridProps] as MediaGridItem['mediaType'],
     image: (props[`${p}Image` as keyof SectionMediaGridProps] as string).trim(),
     imageMobile: (props[`${p}ImageMobile` as keyof SectionMediaGridProps] as string).trim(),
-    videoUrl: (props[`${p}VideoUrl` as keyof SectionMediaGridProps] as string).trim(),
-    videoUrlMobile: (props[`${p}VideoUrlMobile` as keyof SectionMediaGridProps] as string).trim(),
+    videoUrl: resolveVideoUrl(
+      props[`${p}VideoUrl` as keyof SectionMediaGridProps] as VideoSettingValue,
+    ),
+    videoUrlMobile: resolveVideoUrl(
+      props[`${p}VideoUrlMobile` as keyof SectionMediaGridProps] as VideoSettingValue,
+    ),
     columnSpan: parseInt(columnRaw, 10) || 4,
     rowSpan: Number(props[`${p}RowSpan` as keyof SectionMediaGridProps]) || 1,
     position: props[`${p}Position` as keyof SectionMediaGridProps] as MediaGridItem['position'],
