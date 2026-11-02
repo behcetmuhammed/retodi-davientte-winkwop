@@ -22,6 +22,18 @@
       "settings": [],
       "singleton": true,
       "type": "Footer"
+    },
+    {
+      "description": "",
+      "name": "Metin Bölümü",
+      "settings": [],
+      "type": "Text"
+    },
+    {
+      "description": "",
+      "name": "Zengin Metin Bölümü",
+      "settings": [],
+      "type": "RichText"
     }
   ]
 }

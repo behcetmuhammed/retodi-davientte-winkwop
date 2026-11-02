@@ -1,5 +1,4 @@
 import type { HeaderProps } from '../generated/types';
-import { Probe } from '../components/__probe/Probe';
 
 /**
  * Header
@@ -10,7 +9,6 @@ export default function Header(_props: HeaderProps) {
   return (
     <section>
       <p>Bu bölümü kodlamaya başlayın.</p>
-      <Probe />
     </section>
   );
 }

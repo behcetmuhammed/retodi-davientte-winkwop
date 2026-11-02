@@ -72,3 +72,15 @@ export type FooterProps = {
   /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };
+
+export type TextProps = {
+  // Bu bölüm için henüz alan tanımlanmadı
+  /** Bu sayfanın neyle ilgili olduğu */
+  page: WinkwopPageContext;
+};
+
+export type RichTextProps = {
+  // Bu bölüm için henüz alan tanımlanmadı
+  /** Bu sayfanın neyle ilgili olduğu */
+  page: WinkwopPageContext;
+};
