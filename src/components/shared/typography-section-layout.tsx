@@ -3,6 +3,7 @@ import { Button } from '../ui/button';
 import { Container } from '../ui/container';
 import { Eyebrow, Heading, Text } from '../ui/typography';
 import { cn } from '../../lib/utils';
+import { panelBackgroundColor, panelTextColor } from './panel-color-style';
 
 export type SectionContentAlign = 'left' | 'center' | 'right';
 export type SectionSpacingPreset = 'small' | 'medium' | 'large' | 'extraLarge';
@@ -36,6 +37,10 @@ export type TypographySectionLayoutProps = {
   contentAlign?: SectionContentAlign;
   spacingPreset?: SectionSpacingPreset;
   contentWidth?: SectionContentWidth;
+  eyebrowColor?: string;
+  headingColor?: string;
+  bodyColor?: string;
+  sectionBgColor?: string;
   /** Bölüm kökü için ek sınıf (ör. arka plan). */
   className?: string;
   'data-slot'?: string;
@@ -70,6 +75,10 @@ export function TypographySectionLayout({
   contentAlign = 'center',
   spacingPreset = 'medium',
   contentWidth = 'narrow',
+  eyebrowColor,
+  headingColor,
+  bodyColor,
+  sectionBgColor,
   className,
   'data-slot': dataSlot = 'typography-section',
 }: TypographySectionLayoutProps) {
@@ -111,18 +120,37 @@ export function TypographySectionLayout({
       ? 'font-heading text-2xl font-semibold tracking-[0.14em] uppercase md:text-3xl lg:text-4xl'
       : undefined;
 
+  const descriptionColorStyle = panelTextColor(bodyColor);
+  const sectionStyle = panelBackgroundColor(sectionBgColor);
+
   return (
-    <section data-slot={dataSlot} className={cn('bg-background text-foreground', SPACING[spacingPreset], className)}>
+    <section
+      data-slot={dataSlot}
+      className={cn('bg-background text-foreground', SPACING[spacingPreset], className)}
+      style={sectionStyle}
+    >
       <Container>
         <div className={cn('flex w-full flex-col gap-5 md:gap-6', WIDTH[contentWidth], block)}>
-          {eyebrow?.trim() ? <Eyebrow>{eyebrow}</Eyebrow> : null}
+          {eyebrow?.trim() ? (
+            <Eyebrow style={panelTextColor(eyebrowColor)}>{eyebrow}</Eyebrow>
+          ) : null}
           {heading?.trim() ? (
-            <Heading level={2} className={cn(editorial, headingStyle === 'editorial' && 'text-balance')}>
+            <Heading
+              level={2}
+              className={cn(editorial, headingStyle === 'editorial' && 'text-balance')}
+              style={panelTextColor(headingColor)}
+            >
               {heading}
             </Heading>
           ) : null}
           {description?.trim() ? (
-            <Text size="md" tone="muted" leading="relaxed" className="text-pretty">
+            <Text
+              size="md"
+              tone={descriptionColorStyle ? 'default' : 'muted'}
+              leading="relaxed"
+              className="text-pretty"
+              style={descriptionColorStyle}
+            >
               {description}
             </Text>
           ) : null}

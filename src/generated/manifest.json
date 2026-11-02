@@ -782,6 +782,30 @@
           "type": "select"
         },
         {
+          "id": "eyebrowColor",
+          "label": "Üst etiket rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "headingColor",
+          "label": "Başlık rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "bodyColor",
+          "label": "Gövde metni rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "sectionBgColor",
+          "label": "Bölüm arka plan rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
           "default": "",
           "id": "primaryLabel",
           "label": "Birincil düğme metni",
@@ -915,6 +939,30 @@
             }
           ],
           "type": "select"
+        },
+        {
+          "id": "eyebrowColor",
+          "label": "Üst etiket rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "headingColor",
+          "label": "Başlık rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "bodyColor",
+          "label": "Gövde metni rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
+          "id": "sectionBgColor",
+          "label": "Bölüm arka plan rengi",
+          "type": "color",
+          "default": ""
         },
         {
           "default": "",

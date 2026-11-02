@@ -265,6 +265,14 @@ export type TextProps = {
   contentWidth: "narrow" | "medium" | "wide";
   /** Bağlantıları yeni sekmede aç */
   openLinksInNewTab: boolean;
+  /** Üst etiket rengi */
+  eyebrowColor: string;
+  /** Başlık rengi */
+  headingColor: string;
+  /** Gövde metni rengi */
+  bodyColor: string;
+  /** Bölüm arka plan rengi */
+  sectionBgColor: string;
   /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };
@@ -294,6 +302,14 @@ export type RichTextProps = {
   contentWidth: "narrow" | "medium" | "wide";
   /** Bağlantıları yeni sekmede aç */
   openLinksInNewTab: boolean;
+  /** Üst etiket rengi */
+  eyebrowColor: string;
+  /** Başlık rengi */
+  headingColor: string;
+  /** Gövde metni rengi */
+  bodyColor: string;
+  /** Bölüm arka plan rengi */
+  sectionBgColor: string;
   /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };

@@ -21,6 +21,10 @@ export default function Text(props: TextProps) {
       contentAlign={props.contentAlign}
       spacingPreset={props.spacingPreset}
       contentWidth={props.contentWidth}
+      eyebrowColor={props.eyebrowColor}
+      headingColor={props.headingColor}
+      bodyColor={props.bodyColor}
+      sectionBgColor={props.sectionBgColor}
     />
   );
 }

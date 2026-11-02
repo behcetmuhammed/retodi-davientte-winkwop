@@ -1,5 +1,7 @@
+import { panelTextColor } from '../components/shared/panel-color-style';
 import { TypographySectionLayout } from '../components/shared/typography-section-layout';
 import { Prose } from '../components/ui/typography';
+import { cn } from '../lib/utils';
 import type { RichTextProps } from '../generated/types';
 
 /**
@@ -7,7 +9,14 @@ import type { RichTextProps } from '../generated/types';
  */
 export default function RichText(props: RichTextProps) {
   const html = props.htmlContent?.trim();
-  const body = html ? <Prose className="mx-0 max-w-none" dangerouslySetInnerHTML={{ __html: html }} /> : null;
+  const bodyColorStyle = panelTextColor(props.bodyColor);
+  const body = html ? (
+    <Prose
+      className={cn('mx-0 max-w-none', bodyColorStyle && '[&_a]:text-primary')}
+      style={bodyColorStyle}
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  ) : null;
 
   return (
     <TypographySectionLayout
@@ -24,6 +33,10 @@ export default function RichText(props: RichTextProps) {
       contentAlign={props.contentAlign}
       spacingPreset={props.spacingPreset}
       contentWidth={props.contentWidth}
+      eyebrowColor={props.eyebrowColor}
+      headingColor={props.headingColor}
+      bodyColor={props.bodyColor}
+      sectionBgColor={props.sectionBgColor}
     />
   );
 }
