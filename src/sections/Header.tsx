@@ -16,6 +16,10 @@ export default function Header(props: HeaderProps) {
     instagramLink: props.instagramLink,
     whatsappLink: props.whatsappLink,
     linkedinLink: props.linkedinLink,
+    xLink: props.xLink,
+    youtubeLink: props.youtubeLink,
+    tiktokLink: props.tiktokLink,
+    pinterestLink: props.pinterestLink,
     openSocialLinksInNewTab: props.openSocialLinksInNewTab,
   };
 
@@ -35,6 +39,10 @@ export default function Header(props: HeaderProps) {
         instagramLink={props.instagramLink}
         whatsappLink={props.whatsappLink}
         linkedinLink={props.linkedinLink}
+        xLink={props.xLink}
+        youtubeLink={props.youtubeLink}
+        tiktokLink={props.tiktokLink}
+        pinterestLink={props.pinterestLink}
         openSocialLinksInNewTab={props.openSocialLinksInNewTab}
         text1={props.text1}
         text2={props.text2}

@@ -1,4 +1,5 @@
-import { MenuIcon, SearchIcon, FacebookIcon, InstagramIcon, LinkedInIcon, WhatsAppIcon } from '../../components/icons';
+import { BrandSocialLinks, hasAnyBrandSocialLink } from '../../components/shared/brand-social-links';
+import { MenuIcon, SearchIcon } from '../../components/icons';
 import { IconButton } from '../../components/ui/button';
 import { Container } from '../../components/ui/container';
 import { ScrollArea } from '../../components/ui/scroll-area';
@@ -21,6 +22,10 @@ type SocialProps = {
   instagramLink: string;
   whatsappLink: string;
   linkedinLink: string;
+  xLink: string;
+  youtubeLink: string;
+  tiktokLink: string;
+  pinterestLink: string;
   openSocialLinksInNewTab: boolean;
 };
 
@@ -70,13 +75,6 @@ function SearchButton() {
 function MobileControls(props: MainRowProps & { social: SocialProps }) {
   const { categories, page, menuOpen, onMenuOpenChange, social } = props;
   const close = () => onMenuOpenChange(false);
-  const socialItems = [
-    { href: social.facebookLink, label: 'Facebook', Icon: FacebookIcon },
-    { href: social.instagramLink, label: 'Instagram', Icon: InstagramIcon },
-    { href: social.whatsappLink, label: 'WhatsApp', Icon: WhatsAppIcon },
-    { href: social.linkedinLink, label: 'LinkedIn', Icon: LinkedInIcon },
-  ].filter((s) => s.href.trim());
-
   return (
     <div className="flex items-center gap-1">
       <SearchButton />
@@ -92,22 +90,23 @@ function MobileControls(props: MainRowProps & { social: SocialProps }) {
           </SheetHeader>
           <SheetBody className="flex flex-1 flex-col gap-6">
             <NavLinks categories={categories} page={page} orientation="vertical" onNavigate={close} />
-            {socialItems.length > 0 && (
-              <div className="mt-auto flex gap-4 border-t pt-4">
-                {socialItems.map(({ href, label, Icon }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    aria-label={label}
-                    target={social.openSocialLinksInNewTab ? '_blank' : undefined}
-                    rel={social.openSocialLinksInNewTab ? 'noopener noreferrer' : undefined}
-                    className="text-muted-foreground hover:text-foreground"
-                  >
-                    <Icon className="size-5" />
-                  </a>
-                ))}
+            {hasAnyBrandSocialLink(social) ? (
+              <div className="mt-auto border-t pt-4">
+                <BrandSocialLinks
+                  facebookLink={social.facebookLink}
+                  instagramLink={social.instagramLink}
+                  whatsappLink={social.whatsappLink}
+                  linkedinLink={social.linkedinLink}
+                  xLink={social.xLink}
+                  youtubeLink={social.youtubeLink}
+                  tiktokLink={social.tiktokLink}
+                  pinterestLink={social.pinterestLink}
+                  openInNewTab={social.openSocialLinksInNewTab}
+                  iconClassName="size-5"
+                  className="text-muted-foreground [&_a:hover]:text-foreground"
+                />
               </div>
-            )}
+            ) : null}
           </SheetBody>
         </SheetContent>
       </Sheet>

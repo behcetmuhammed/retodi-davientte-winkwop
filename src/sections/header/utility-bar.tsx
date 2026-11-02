@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { FacebookIcon, InstagramIcon, LinkedInIcon, WhatsAppIcon } from '../../components/icons';
+import { BrandSocialLinks, hasAnyBrandSocialLink } from '../../components/shared/brand-social-links';
 import { Container } from '../../components/ui/container';
 import { cn } from '../../lib/utils';
 import { AnnouncementBar } from './announcement-bar';
@@ -44,44 +44,6 @@ function linkSlot(
   return <UtilityLink label={label} href={href} icon={icon} newTab={newTab} />;
 }
 
-function SocialLinks({
-  facebookLink,
-  instagramLink,
-  whatsappLink,
-  linkedinLink,
-  newTab,
-  className,
-}: Pick<UtilityBarProps, 'facebookLink' | 'instagramLink' | 'whatsappLink' | 'linkedinLink'> & {
-  newTab: boolean;
-  className?: string;
-}) {
-  const items = [
-    { href: facebookLink, label: 'Facebook', Icon: FacebookIcon },
-    { href: instagramLink, label: 'Instagram', Icon: InstagramIcon },
-    { href: whatsappLink, label: 'WhatsApp', Icon: WhatsAppIcon },
-    { href: linkedinLink, label: 'LinkedIn', Icon: LinkedInIcon },
-  ].filter((item) => item.href.trim());
-
-  if (items.length === 0) return null;
-
-  return (
-    <div className={cn('flex items-center gap-3', className)}>
-      {items.map(({ href, label, Icon }) => (
-        <a
-          key={label}
-          href={href}
-          aria-label={label}
-          target={newTab ? '_blank' : undefined}
-          rel={newTab ? 'noopener noreferrer' : undefined}
-          className="transition-opacity hover:opacity-80"
-        >
-          <Icon className="size-3.5" />
-        </a>
-      ))}
-    </div>
-  );
-}
-
 export function UtilityBar(props: UtilityBarProps) {
   const {
     link1LabelName,
@@ -118,12 +80,16 @@ export function UtilityBar(props: UtilityBarProps) {
     <div className="flex min-w-0 flex-1 items-center justify-end gap-3 md:gap-4">
       {linkSlot('right', link1Position, link1LabelName, link1, link1Icon, openLinksInNewTab)}
       {linkSlot('right', link2Position, link2LabelName, link2, link2Icon, openLinksInNewTab)}
-      <SocialLinks
+      <BrandSocialLinks
         facebookLink={social.facebookLink}
         instagramLink={social.instagramLink}
         whatsappLink={social.whatsappLink}
         linkedinLink={social.linkedinLink}
-        newTab={social.openSocialLinksInNewTab}
+        xLink={social.xLink}
+        youtubeLink={social.youtubeLink}
+        tiktokLink={social.tiktokLink}
+        pinterestLink={social.pinterestLink}
+        openInNewTab={social.openSocialLinksInNewTab}
         className="hidden shrink-0 sm:flex"
       />
     </div>
@@ -132,7 +98,7 @@ export function UtilityBar(props: UtilityBarProps) {
   const hasBar =
     announcements.length > 0 ||
     [link1, link2].some((u) => u.trim()) ||
-    [social.facebookLink, social.instagramLink, social.whatsappLink, social.linkedinLink].some((u) => u.trim());
+    hasAnyBrandSocialLink(social);
 
   if (!hasBar) return null;
 

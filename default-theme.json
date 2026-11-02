@@ -57,7 +57,7 @@
               },
               {
                 "label": "İletişim",
-                "url": "/pages/iletisim"
+                "url": "/pages/i-letisim"
               }
             ],
             "link1LabelName": "Müşteri hizmetleri",
@@ -73,6 +73,10 @@
             "instagramLink": "https://instagram.com",
             "whatsappLink": "#",
             "linkedinLink": "#",
+            "xLink": "#",
+            "youtubeLink": "#",
+            "tiktokLink": "#",
+            "pinterestLink": "#",
             "openSocialLinksInNewTab": true,
             "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
             "text2": "Yeni sezon koleksiyonu mağazada",
@@ -568,7 +572,7 @@
               },
               {
                 "label": "İletişim",
-                "url": "/pages/iletisim"
+                "url": "/pages/i-letisim"
               }
             ],
             "link1LabelName": "Müşteri hizmetleri",
@@ -584,6 +588,10 @@
             "instagramLink": "https://instagram.com",
             "whatsappLink": "#",
             "linkedinLink": "#",
+            "xLink": "#",
+            "youtubeLink": "#",
+            "tiktokLink": "#",
+            "pinterestLink": "#",
             "openSocialLinksInNewTab": true,
             "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
             "text2": "Yeni sezon koleksiyonu mağazada",
@@ -621,7 +629,7 @@
           "id": "sectionimagetext-ukqo6v",
           "type": "SectionImageText",
           "settings": {
-            "sectionContainerWidth": "default",
+            "sectionContainerWidth": "small",
             "image": "",
             "imageMobile": "https://cdn.winkwop.com/uploads/themes/v/ae0203311d7049728a6d0cfb4ce6c3ff.jpg",
             "imageMinHeight": 440,
@@ -741,7 +749,7 @@
               },
               {
                 "label": "İletişim",
-                "url": "/pages/iletisim"
+                "url": "/pages/i-letisim"
               }
             ],
             "link1LabelName": "Müşteri hizmetleri",
@@ -757,12 +765,59 @@
             "instagramLink": "https://instagram.com",
             "whatsappLink": "#",
             "linkedinLink": "#",
+            "xLink": "#",
+            "youtubeLink": "#",
+            "tiktokLink": "#",
+            "pinterestLink": "#",
             "openSocialLinksInNewTab": true,
             "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
             "text2": "Yeni sezon koleksiyonu mağazada",
             "text3": "Online özel %10 indirim",
             "backgroundColor": "#000000",
             "textAndIconColor": "#ffffff"
+          }
+        },
+        {
+          "id": "sectionpageintro-diiyl2",
+          "type": "SectionPageIntro",
+          "settings": {
+            "image": "",
+            "imageMobile": "https://cdn.winkwop.com/uploads/themes/v/017c265b6c794212ab08d6a81ea467ac.jpg",
+            "imageHeight": 420,
+            "imageHeightMobile": 320,
+            "showBottomFade": true,
+            "fadeHeight": 200,
+            "fadeToColor": "#ffffff",
+            "heading": "Contact Us",
+            "eyebrow": "",
+            "description": "Müşteri hizmetlerimiz size yardımcı olmaktan memnuniyet duyar.\n\nWhatsApp: +90 555 555 55 55\nTelefon: +90 555 555 55 55\nE-posta: info@test.com\n\nDetaylı adres ve mağaza bilgileri aşağıdaki bölümde; formu doldurarak doğrudan mesaj gönderebilirsiniz.",
+            "descriptionAlign": "left",
+            "headingStyle": "default",
+            "eyebrowColor": "",
+            "headingColor": "",
+            "bodyColor": "",
+            "sectionBgColor": "",
+            "contentAlign": "center",
+            "contentWidth": "medium",
+            "spacingPreset": "medium"
+          }
+        },
+        {
+          "id": "sectioncontact-iletisim",
+          "type": "SectionContact",
+          "settings": {
+            "sectionContainerWidth": "default",
+            "group1Title": "Showroom",
+            "group1Body": "Test Mahallesi, Test 3. Sokak No:12/1\nTest, İstanbul, Türkiye\n\nTelefon: +90 555 555 55 55",
+            "group2Title": "Shop",
+            "group2Body": "Test Caddesi No:45\nTest, İstanbul\n\nTelefon: +90 555 555 55 55",
+            "group3Title": "Factory",
+            "group3Body": "Organize Sanayi Bölgesi\nTest / Kocaeli\n\nTelefon: +90 555 555 55 55",
+            "namePlaceholder": "Adınız Soyadınız",
+            "emailPlaceholder": "E-Posta Adresiniz",
+            "messagePlaceholder": "Mesajınız...",
+            "submitButtonLabel": "GÖNDER",
+            "sectionBgColor": ""
           }
         },
         {
@@ -841,7 +896,7 @@
   },
   "shared": {
     "Header": {
-      "id": "header-kmkk0t",
+      "id": "header-thavrl",
       "type": "Header",
       "settings": {
         "headerLayout": "logoCenterMenuBelow",
@@ -864,7 +919,7 @@
           },
           {
             "label": "İletişim",
-            "url": "/pages/iletisim"
+            "url": "/pages/i-letisim"
           }
         ],
         "link1LabelName": "Müşteri hizmetleri",
@@ -880,6 +935,10 @@
         "instagramLink": "https://instagram.com",
         "whatsappLink": "#",
         "linkedinLink": "#",
+        "xLink": "#",
+        "youtubeLink": "#",
+        "tiktokLink": "#",
+        "pinterestLink": "#",
         "openSocialLinksInNewTab": true,
         "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
         "text2": "Yeni sezon koleksiyonu mağazada",

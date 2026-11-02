@@ -94,6 +94,14 @@ export type HeaderProps = {
   whatsappLink: string;
   /** Linkedin Bağlantısı */
   linkedinLink: string;
+  /** X (Twitter) bağlantısı */
+  xLink: string;
+  /** YouTube bağlantısı */
+  youtubeLink: string;
+  /** TikTok bağlantısı */
+  tiktokLink: string;
+  /** Pinterest bağlantısı */
+  pinterestLink: string;
   /** Sosyal Medya Bağlantılarını Yeni Sekmede Aç */
   openSocialLinksInNewTab: boolean;
   /** Metin 1 */
@@ -678,6 +686,22 @@ export type SectionPageIntroProps = {
   contentAlign: "left" | "center" | "right";
   contentWidth: "narrow" | "medium" | "wide";
   spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  page: WinkwopPageContext;
+};
+
+export type SectionContactProps = {
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
+  group1Title: string;
+  group1Body: string;
+  group2Title: string;
+  group2Body: string;
+  group3Title: string;
+  group3Body: string;
+  namePlaceholder: string;
+  emailPlaceholder: string;
+  messagePlaceholder: string;
+  submitButtonLabel: string;
+  sectionBgColor: string;
   page: WinkwopPageContext;
 };
 
