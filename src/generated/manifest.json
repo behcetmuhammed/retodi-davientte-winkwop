@@ -218,10 +218,800 @@
       "type": "Header"
     },
     {
-      "description": "",
+      "description": "Ana sayfa kahraman alanı: tek slayt veya karusel.",
       "name": "Hero Banner",
-      "settings": [],
+      "settings": [
+        {
+          "default": "carousel",
+          "id": "displayMode",
+          "label": "Görünüm",
+          "options": [
+            {
+              "label": "Tek slayt",
+              "value": "single"
+            },
+            {
+              "label": "Karusel",
+              "value": "carousel"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "fullBleed",
+          "id": "widthMode",
+          "label": "Genişlik",
+          "options": [
+            {
+              "label": "Tam genişlik",
+              "value": "fullBleed"
+            },
+            {
+              "label": "Sayfa içi",
+              "value": "contained"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "medium",
+          "id": "heightPreset",
+          "label": "Yükseklik",
+          "options": [
+            {
+              "label": "İlk görsele uyarla",
+              "value": "adapt"
+            },
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Büyük",
+              "value": "large"
+            },
+            {
+              "label": "Çok büyük",
+              "value": "extraLarge"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": true,
+          "id": "carouselLoop",
+          "label": "Karusel döngü",
+          "type": "boolean"
+        },
+        {
+          "default": true,
+          "id": "carouselAutoplay",
+          "label": "Otomatik geçiş",
+          "type": "boolean"
+        },
+        {
+          "default": 6000,
+          "id": "carouselAutoplayMs",
+          "label": "Geçiş süresi (ms)",
+          "max": 12000,
+          "min": 3000,
+          "step": 500,
+          "type": "range"
+        },
+        {
+          "default": true,
+          "id": "showCarouselArrows",
+          "label": "Ok düğmeleri",
+          "type": "boolean"
+        },
+        {
+          "default": true,
+          "id": "showCarouselDots",
+          "label": "Nokta göstergeleri",
+          "type": "boolean"
+        },
+        {
+          "default": false,
+          "id": "openLinksInNewTab",
+          "label": "Bağlantıları yeni sekmede aç",
+          "type": "boolean"
+        },
+        {
+          "default": "",
+          "id": "slide1Image",
+          "label": "Slayt 1 — Görsel (masaüstü)",
+          "type": "image"
+        },
+        {
+          "default": "",
+          "id": "slide1ImageMobile",
+          "label": "Slayt 1 — Görsel (mobil)",
+          "type": "image"
+        },
+        {
+          "default": "",
+          "id": "slide1Eyebrow",
+          "label": "Slayt 1 — Üst etiket",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide1Heading",
+          "label": "Slayt 1 — Başlık",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide1Description",
+          "label": "Slayt 1 — Açıklama",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide1PrimaryLabel",
+          "label": "Slayt 1 — Birincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide1PrimaryUrl",
+          "label": "Slayt 1 — Birincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "slide1SecondaryLabel",
+          "label": "Slayt 1 — İkincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide1SecondaryUrl",
+          "label": "Slayt 1 — İkincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "center",
+          "id": "slide1ContentAlign",
+          "label": "Slayt 1 — Metin hizası",
+          "options": [
+            {
+              "label": "Sol",
+              "value": "left"
+            },
+            {
+              "label": "Orta",
+              "value": "center"
+            },
+            {
+              "label": "Sağ",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "light",
+          "id": "slide1TextTone",
+          "label": "Slayt 1 — Metin tonu",
+          "options": [
+            {
+              "label": "Açık metin",
+              "value": "light"
+            },
+            {
+              "label": "Koyu metin",
+              "value": "dark"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "",
+          "id": "slide1OverlayColor",
+          "label": "Slayt 1 — Kaplama rengi",
+          "type": "color"
+        },
+        {
+          "default": 40,
+          "id": "slide1OverlayOpacity",
+          "label": "Slayt 1 — Kaplama opaklığı",
+          "max": 90,
+          "min": 0,
+          "step": 5,
+          "type": "range"
+        },
+        {
+          "default": "",
+          "id": "slide2Image",
+          "label": "Slayt 2 — Görsel (masaüstü)",
+          "type": "image"
+        },
+        {
+          "default": "",
+          "id": "slide2ImageMobile",
+          "label": "Slayt 2 — Görsel (mobil)",
+          "type": "image"
+        },
+        {
+          "default": "",
+          "id": "slide2Eyebrow",
+          "label": "Slayt 2 — Üst etiket",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide2Heading",
+          "label": "Slayt 2 — Başlık",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide2Description",
+          "label": "Slayt 2 — Açıklama",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide2PrimaryLabel",
+          "label": "Slayt 2 — Birincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide2PrimaryUrl",
+          "label": "Slayt 2 — Birincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "slide2SecondaryLabel",
+          "label": "Slayt 2 — İkincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide2SecondaryUrl",
+          "label": "Slayt 2 — İkincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "center",
+          "id": "slide2ContentAlign",
+          "label": "Slayt 2 — Metin hizası",
+          "options": [
+            {
+              "label": "Sol",
+              "value": "left"
+            },
+            {
+              "label": "Orta",
+              "value": "center"
+            },
+            {
+              "label": "Sağ",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "light",
+          "id": "slide2TextTone",
+          "label": "Slayt 2 — Metin tonu",
+          "options": [
+            {
+              "label": "Açık metin",
+              "value": "light"
+            },
+            {
+              "label": "Koyu metin",
+              "value": "dark"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "",
+          "id": "slide2OverlayColor",
+          "label": "Slayt 2 — Kaplama rengi",
+          "type": "color"
+        },
+        {
+          "default": 40,
+          "id": "slide2OverlayOpacity",
+          "label": "Slayt 2 — Kaplama opaklığı",
+          "max": 90,
+          "min": 0,
+          "step": 5,
+          "type": "range"
+        },
+        {
+          "default": "",
+          "id": "slide3Image",
+          "label": "Slayt 3 — Görsel (masaüstü)",
+          "type": "image"
+        },
+        {
+          "default": "",
+          "id": "slide3ImageMobile",
+          "label": "Slayt 3 — Görsel (mobil)",
+          "type": "image"
+        },
+        {
+          "default": "",
+          "id": "slide3Eyebrow",
+          "label": "Slayt 3 — Üst etiket",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide3Heading",
+          "label": "Slayt 3 — Başlık",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide3Description",
+          "label": "Slayt 3 — Açıklama",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide3PrimaryLabel",
+          "label": "Slayt 3 — Birincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide3PrimaryUrl",
+          "label": "Slayt 3 — Birincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "slide3SecondaryLabel",
+          "label": "Slayt 3 — İkincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide3SecondaryUrl",
+          "label": "Slayt 3 — İkincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "center",
+          "id": "slide3ContentAlign",
+          "label": "Slayt 3 — Metin hizası",
+          "options": [
+            {
+              "label": "Sol",
+              "value": "left"
+            },
+            {
+              "label": "Orta",
+              "value": "center"
+            },
+            {
+              "label": "Sağ",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "light",
+          "id": "slide3TextTone",
+          "label": "Slayt 3 — Metin tonu",
+          "options": [
+            {
+              "label": "Açık metin",
+              "value": "light"
+            },
+            {
+              "label": "Koyu metin",
+              "value": "dark"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "",
+          "id": "slide3OverlayColor",
+          "label": "Slayt 3 — Kaplama rengi",
+          "type": "color"
+        },
+        {
+          "default": 40,
+          "id": "slide3OverlayOpacity",
+          "label": "Slayt 3 — Kaplama opaklığı",
+          "max": 90,
+          "min": 0,
+          "step": 5,
+          "type": "range"
+        },
+        {
+          "default": "",
+          "id": "slide4Image",
+          "label": "Slayt 4 — Görsel (masaüstü)",
+          "type": "image"
+        },
+        {
+          "default": "",
+          "id": "slide4ImageMobile",
+          "label": "Slayt 4 — Görsel (mobil)",
+          "type": "image"
+        },
+        {
+          "default": "",
+          "id": "slide4Eyebrow",
+          "label": "Slayt 4 — Üst etiket",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide4Heading",
+          "label": "Slayt 4 — Başlık",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide4Description",
+          "label": "Slayt 4 — Açıklama",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide4PrimaryLabel",
+          "label": "Slayt 4 — Birincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide4PrimaryUrl",
+          "label": "Slayt 4 — Birincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "slide4SecondaryLabel",
+          "label": "Slayt 4 — İkincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "slide4SecondaryUrl",
+          "label": "Slayt 4 — İkincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "center",
+          "id": "slide4ContentAlign",
+          "label": "Slayt 4 — Metin hizası",
+          "options": [
+            {
+              "label": "Sol",
+              "value": "left"
+            },
+            {
+              "label": "Orta",
+              "value": "center"
+            },
+            {
+              "label": "Sağ",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "light",
+          "id": "slide4TextTone",
+          "label": "Slayt 4 — Metin tonu",
+          "options": [
+            {
+              "label": "Açık metin",
+              "value": "light"
+            },
+            {
+              "label": "Koyu metin",
+              "value": "dark"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "",
+          "id": "slide4OverlayColor",
+          "label": "Slayt 4 — Kaplama rengi",
+          "type": "color"
+        },
+        {
+          "default": 40,
+          "id": "slide4OverlayOpacity",
+          "label": "Slayt 4 — Kaplama opaklığı",
+          "max": 90,
+          "min": 0,
+          "step": 5,
+          "type": "range"
+        }
+      ],
       "type": "HeroBanner"
+    },
+    {
+      "description": "Ortalanmış başlık, açıklama ve isteğe bağlı düğmeler.",
+      "name": "Metin Bölümü",
+      "settings": [
+        {
+          "default": "",
+          "id": "eyebrow",
+          "label": "Üst etiket",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "heading",
+          "label": "Başlık",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "description",
+          "label": "Açıklama",
+          "type": "textarea"
+        },
+        {
+          "default": "editorial",
+          "id": "headingStyle",
+          "label": "Başlık stili",
+          "options": [
+            {
+              "label": "Editoryal (büyük harf)",
+              "value": "editorial"
+            },
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "",
+          "id": "primaryLabel",
+          "label": "Birincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "primaryUrl",
+          "label": "Birincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "secondaryLabel",
+          "label": "İkincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "secondaryUrl",
+          "label": "İkincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "center",
+          "id": "contentAlign",
+          "label": "Metin hizası",
+          "options": [
+            {
+              "label": "Sol",
+              "value": "left"
+            },
+            {
+              "label": "Orta",
+              "value": "center"
+            },
+            {
+              "label": "Sağ",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "medium",
+          "id": "spacingPreset",
+          "label": "Dikey boşluk",
+          "options": [
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Büyük",
+              "value": "large"
+            },
+            {
+              "label": "Çok büyük",
+              "value": "extraLarge"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "narrow",
+          "id": "contentWidth",
+          "label": "İçerik genişliği",
+          "options": [
+            {
+              "label": "Dar",
+              "value": "narrow"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Geniş",
+              "value": "wide"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": false,
+          "id": "openLinksInNewTab",
+          "label": "Bağlantıları yeni sekmede aç",
+          "type": "boolean"
+        }
+      ],
+      "type": "Text"
+    },
+    {
+      "description": "HTML içerik, başlık ve düğmelerle kurumsal metin bloğu.",
+      "name": "Zengin Metin Bölümü",
+      "settings": [
+        {
+          "default": "",
+          "id": "eyebrow",
+          "label": "Üst etiket",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "heading",
+          "label": "Başlık",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "htmlContent",
+          "label": "Zengin metin (HTML)",
+          "type": "textarea"
+        },
+        {
+          "default": "default",
+          "id": "headingStyle",
+          "label": "Başlık stili",
+          "options": [
+            {
+              "label": "Editoryal (büyük harf)",
+              "value": "editorial"
+            },
+            {
+              "label": "Varsayılan",
+              "value": "default"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "",
+          "id": "primaryLabel",
+          "label": "Birincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "primaryUrl",
+          "label": "Birincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "",
+          "id": "secondaryLabel",
+          "label": "İkincil düğme metni",
+          "type": "text"
+        },
+        {
+          "default": "",
+          "id": "secondaryUrl",
+          "label": "İkincil düğme adresi",
+          "type": "url"
+        },
+        {
+          "default": "center",
+          "id": "contentAlign",
+          "label": "Metin hizası",
+          "options": [
+            {
+              "label": "Sol",
+              "value": "left"
+            },
+            {
+              "label": "Orta",
+              "value": "center"
+            },
+            {
+              "label": "Sağ",
+              "value": "right"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "medium",
+          "id": "spacingPreset",
+          "label": "Dikey boşluk",
+          "options": [
+            {
+              "label": "Küçük",
+              "value": "small"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Büyük",
+              "value": "large"
+            },
+            {
+              "label": "Çok büyük",
+              "value": "extraLarge"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": "narrow",
+          "id": "contentWidth",
+          "label": "İçerik genişliği",
+          "options": [
+            {
+              "label": "Dar",
+              "value": "narrow"
+            },
+            {
+              "label": "Orta",
+              "value": "medium"
+            },
+            {
+              "label": "Geniş",
+              "value": "wide"
+            }
+          ],
+          "type": "select"
+        },
+        {
+          "default": false,
+          "id": "openLinksInNewTab",
+          "label": "Bağlantıları yeni sekmede aç",
+          "type": "boolean"
+        }
+      ],
+      "type": "RichText"
     },
     {
       "description": "",
@@ -233,15 +1023,9 @@
     },
     {
       "description": "",
-      "name": "Metin Bölümü",
+      "name": "Izgara Media Bölümü",
       "settings": [],
-      "type": "Text"
-    },
-    {
-      "description": "",
-      "name": "Zengin Metin Bölümü",
-      "settings": [],
-      "type": "RichText"
+      "type": "SectionMediaGrid"
     }
   ]
 }

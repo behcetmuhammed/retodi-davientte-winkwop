@@ -111,7 +111,186 @@ export type HeaderProps = {
 };
 
 export type HeroBannerProps = {
-  // Bu bölüm için henüz alan tanımlanmadı
+  /** Görünüm */
+  displayMode: "single" | "carousel";
+  /** Genişlik */
+  widthMode: "fullBleed" | "contained";
+  /** Yükseklik */
+  heightPreset: "adapt" | "small" | "medium" | "large" | "extraLarge";
+  /** Karusel döngü */
+  carouselLoop: boolean;
+  /** Otomatik geçiş */
+  carouselAutoplay: boolean;
+  /** Geçiş süresi (ms) */
+  carouselAutoplayMs: number;
+  /** Ok düğmeleri */
+  showCarouselArrows: boolean;
+  /** Nokta göstergeleri */
+  showCarouselDots: boolean;
+  /** Bağlantıları yeni sekmede aç */
+  openLinksInNewTab: boolean;
+  /** Slayt 1 — Görsel (masaüstü) */
+  slide1Image: string;
+  /** Slayt 1 — Görsel (mobil) */
+  slide1ImageMobile: string;
+  /** Slayt 1 — Üst etiket */
+  slide1Eyebrow: string;
+  /** Slayt 1 — Başlık */
+  slide1Heading: string;
+  /** Slayt 1 — Açıklama */
+  slide1Description: string;
+  /** Slayt 1 — Birincil düğme metni */
+  slide1PrimaryLabel: string;
+  /** Slayt 1 — Birincil düğme adresi */
+  slide1PrimaryUrl: string;
+  /** Slayt 1 — İkincil düğme metni */
+  slide1SecondaryLabel: string;
+  /** Slayt 1 — İkincil düğme adresi */
+  slide1SecondaryUrl: string;
+  /** Slayt 1 — Metin hizası */
+  slide1ContentAlign: "left" | "center" | "right";
+  /** Slayt 1 — Metin tonu */
+  slide1TextTone: "light" | "dark";
+  /** Slayt 1 — Kaplama rengi */
+  slide1OverlayColor: string;
+  /** Slayt 1 — Kaplama opaklığı */
+  slide1OverlayOpacity: number;
+  /** Slayt 2 — Görsel (masaüstü) */
+  slide2Image: string;
+  /** Slayt 2 — Görsel (mobil) */
+  slide2ImageMobile: string;
+  /** Slayt 2 — Üst etiket */
+  slide2Eyebrow: string;
+  /** Slayt 2 — Başlık */
+  slide2Heading: string;
+  /** Slayt 2 — Açıklama */
+  slide2Description: string;
+  /** Slayt 2 — Birincil düğme metni */
+  slide2PrimaryLabel: string;
+  /** Slayt 2 — Birincil düğme adresi */
+  slide2PrimaryUrl: string;
+  /** Slayt 2 — İkincil düğme metni */
+  slide2SecondaryLabel: string;
+  /** Slayt 2 — İkincil düğme adresi */
+  slide2SecondaryUrl: string;
+  /** Slayt 2 — Metin hizası */
+  slide2ContentAlign: "left" | "center" | "right";
+  /** Slayt 2 — Metin tonu */
+  slide2TextTone: "light" | "dark";
+  /** Slayt 2 — Kaplama rengi */
+  slide2OverlayColor: string;
+  /** Slayt 2 — Kaplama opaklığı */
+  slide2OverlayOpacity: number;
+  /** Slayt 3 — Görsel (masaüstü) */
+  slide3Image: string;
+  /** Slayt 3 — Görsel (mobil) */
+  slide3ImageMobile: string;
+  /** Slayt 3 — Üst etiket */
+  slide3Eyebrow: string;
+  /** Slayt 3 — Başlık */
+  slide3Heading: string;
+  /** Slayt 3 — Açıklama */
+  slide3Description: string;
+  /** Slayt 3 — Birincil düğme metni */
+  slide3PrimaryLabel: string;
+  /** Slayt 3 — Birincil düğme adresi */
+  slide3PrimaryUrl: string;
+  /** Slayt 3 — İkincil düğme metni */
+  slide3SecondaryLabel: string;
+  /** Slayt 3 — İkincil düğme adresi */
+  slide3SecondaryUrl: string;
+  /** Slayt 3 — Metin hizası */
+  slide3ContentAlign: "left" | "center" | "right";
+  /** Slayt 3 — Metin tonu */
+  slide3TextTone: "light" | "dark";
+  /** Slayt 3 — Kaplama rengi */
+  slide3OverlayColor: string;
+  /** Slayt 3 — Kaplama opaklığı */
+  slide3OverlayOpacity: number;
+  /** Slayt 4 — Görsel (masaüstü) */
+  slide4Image: string;
+  /** Slayt 4 — Görsel (mobil) */
+  slide4ImageMobile: string;
+  /** Slayt 4 — Üst etiket */
+  slide4Eyebrow: string;
+  /** Slayt 4 — Başlık */
+  slide4Heading: string;
+  /** Slayt 4 — Açıklama */
+  slide4Description: string;
+  /** Slayt 4 — Birincil düğme metni */
+  slide4PrimaryLabel: string;
+  /** Slayt 4 — Birincil düğme adresi */
+  slide4PrimaryUrl: string;
+  /** Slayt 4 — İkincil düğme metni */
+  slide4SecondaryLabel: string;
+  /** Slayt 4 — İkincil düğme adresi */
+  slide4SecondaryUrl: string;
+  /** Slayt 4 — Metin hizası */
+  slide4ContentAlign: "left" | "center" | "right";
+  /** Slayt 4 — Metin tonu */
+  slide4TextTone: "light" | "dark";
+  /** Slayt 4 — Kaplama rengi */
+  slide4OverlayColor: string;
+  /** Slayt 4 — Kaplama opaklığı */
+  slide4OverlayOpacity: number;
+  /** Bu sayfanın neyle ilgili olduğu */
+  page: WinkwopPageContext;
+};
+
+export type TextProps = {
+  /** Üst etiket */
+  eyebrow: string;
+  /** Başlık */
+  heading: string;
+  /** Açıklama */
+  description: string;
+  /** Başlık stili */
+  headingStyle: "editorial" | "default";
+  /** Birincil düğme metni */
+  primaryLabel: string;
+  /** Birincil düğme adresi */
+  primaryUrl: string;
+  /** İkincil düğme metni */
+  secondaryLabel: string;
+  /** İkincil düğme adresi */
+  secondaryUrl: string;
+  /** Metin hizası */
+  contentAlign: "left" | "center" | "right";
+  /** Dikey boşluk */
+  spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  /** İçerik genişliği */
+  contentWidth: "narrow" | "medium" | "wide";
+  /** Bağlantıları yeni sekmede aç */
+  openLinksInNewTab: boolean;
+  /** Bu sayfanın neyle ilgili olduğu */
+  page: WinkwopPageContext;
+};
+
+export type RichTextProps = {
+  /** Üst etiket */
+  eyebrow: string;
+  /** Başlık */
+  heading: string;
+  /** Zengin metin (HTML) */
+  htmlContent: string;
+  /** Başlık stili */
+  headingStyle: "editorial" | "default";
+  /** Birincil düğme metni */
+  primaryLabel: string;
+  /** Birincil düğme adresi */
+  primaryUrl: string;
+  /** İkincil düğme metni */
+  secondaryLabel: string;
+  /** İkincil düğme adresi */
+  secondaryUrl: string;
+  /** Metin hizası */
+  contentAlign: "left" | "center" | "right";
+  /** Dikey boşluk */
+  spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  /** İçerik genişliği */
+  contentWidth: "narrow" | "medium" | "wide";
+  /** Bağlantıları yeni sekmede aç */
+  openLinksInNewTab: boolean;
   /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };
@@ -122,13 +301,7 @@ export type FooterProps = {
   page: WinkwopPageContext;
 };
 
-export type TextProps = {
-  // Bu bölüm için henüz alan tanımlanmadı
-  /** Bu sayfanın neyle ilgili olduğu */
-  page: WinkwopPageContext;
-};
-
-export type RichTextProps = {
+export type SectionMediaGridProps = {
   // Bu bölüm için henüz alan tanımlanmadı
   /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;

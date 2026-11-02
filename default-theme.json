@@ -84,7 +84,87 @@
         {
           "id": "herobanner-2rhyv1",
           "type": "HeroBanner",
-          "settings": {}
+          "settings": {
+            "displayMode": "carousel",
+            "widthMode": "fullBleed",
+            "heightPreset": "adapt",
+            "carouselLoop": false,
+            "carouselAutoplay": true,
+            "carouselAutoplayMs": 6000,
+            "showCarouselArrows": true,
+            "showCarouselDots": true,
+            "openLinksInNewTab": false,
+            "slide1Image": "https://cdn.winkwop.com/uploads/themes/v/7c096085f5574d90a021cc4e3d1088c8.jpg",
+            "slide1ImageMobile": "https://cdn.winkwop.com/uploads/themes/v/1d372fac0f9e4613ac13c570cc5b0130.jpg",
+            "slide1Eyebrow": "Yeni sezon",
+            "slide1Heading": "Zamansız parçalar",
+            "slide1Description": "Koleksiyonumuzu keşfedin — sınırlı süre ücretsiz kargo.",
+            "slide1PrimaryLabel": "Alışverişe başla",
+            "slide1PrimaryUrl": "/collections/all",
+            "slide1SecondaryLabel": "Hakkımızda",
+            "slide1SecondaryUrl": "/pages/hakkimizda",
+            "slide1ContentAlign": "left",
+            "slide1TextTone": "light",
+            "slide1OverlayColor": "#111827",
+            "slide1OverlayOpacity": 10,
+            "slide2Image": "",
+            "slide2ImageMobile": "https://cdn.winkwop.com/uploads/themes/v/bae9fe63f30c454db95e3eafdb9910d7.jpg",
+            "slide2Eyebrow": "Online özel",
+            "slide2Heading": "%10 indirim",
+            "slide2Description": "Seçili ürünlerde geçerli. Kod panelden yönetilir.",
+            "slide2PrimaryLabel": "Kampanyayı gör",
+            "slide2PrimaryUrl": "/collections/all",
+            "slide2SecondaryLabel": "",
+            "slide2SecondaryUrl": "",
+            "slide2ContentAlign": "center",
+            "slide2TextTone": "light",
+            "slide2OverlayColor": "",
+            "slide2OverlayOpacity": 10,
+            "slide3Image": "https://cdn.winkwop.com/uploads/themes/v/1c34b0aedbc04b34978d5579f55c1886.jpg",
+            "slide3ImageMobile": "https://cdn.winkwop.com/uploads/themes/v/27c869435d8c4b168a2ccaecb2700e4f.jpg",
+            "slide3Eyebrow": "",
+            "slide3Heading": "",
+            "slide3Description": "",
+            "slide3PrimaryLabel": "",
+            "slide3PrimaryUrl": "",
+            "slide3SecondaryLabel": "",
+            "slide3SecondaryUrl": "",
+            "slide3ContentAlign": "center",
+            "slide3TextTone": "light",
+            "slide3OverlayColor": "",
+            "slide3OverlayOpacity": 10,
+            "slide4Image": "",
+            "slide4ImageMobile": "",
+            "slide4Eyebrow": "",
+            "slide4Heading": "",
+            "slide4Description": "",
+            "slide4PrimaryLabel": "",
+            "slide4PrimaryUrl": "",
+            "slide4SecondaryLabel": "",
+            "slide4SecondaryUrl": "",
+            "slide4ContentAlign": "center",
+            "slide4TextTone": "light",
+            "slide4OverlayColor": "",
+            "slide4OverlayOpacity": 40
+          }
+        },
+        {
+          "id": "text-legacy",
+          "type": "Text",
+          "settings": {
+            "eyebrow": "",
+            "heading": "The Rafaello Legacy",
+            "description": "Rafaello, zamansız şıklığı modern çizgilerle buluşturan, İtalyan terziliğinin mirasını taşıyan bir lüks giyim markasıdır. Her dikişte kaliteyi hissedin.",
+            "headingStyle": "editorial",
+            "primaryLabel": "Koleksiyonu keşfet",
+            "primaryUrl": "/collections/all",
+            "secondaryLabel": "Mağazalarımız",
+            "secondaryUrl": "/pages/magazalar",
+            "contentAlign": "center",
+            "spacingPreset": "large",
+            "contentWidth": "narrow",
+            "openLinksInNewTab": false
+          }
         },
         {
           "id": "legaltext-ze5hyq",
@@ -94,6 +174,48 @@
             "heading": "",
             "emptyText": ""
           }
+        },
+        {
+          "id": "text-gf8z0s",
+          "type": "Text",
+          "settings": {
+            "eyebrow": "",
+            "heading": "",
+            "description": "",
+            "headingStyle": "editorial",
+            "primaryLabel": "",
+            "primaryUrl": "",
+            "secondaryLabel": "",
+            "secondaryUrl": "",
+            "contentAlign": "center",
+            "spacingPreset": "medium",
+            "contentWidth": "narrow",
+            "openLinksInNewTab": false
+          }
+        },
+        {
+          "id": "richtext-m1hacv",
+          "type": "RichText",
+          "settings": {
+            "eyebrow": "",
+            "heading": "",
+            "htmlContent": "",
+            "headingStyle": "default",
+            "primaryLabel": "",
+            "primaryUrl": "",
+            "secondaryLabel": "",
+            "secondaryUrl": "",
+            "contentAlign": "center",
+            "spacingPreset": "medium",
+            "contentWidth": "narrow",
+            "openLinksInNewTab": false,
+            "yeniAlan": "dwadwa dwa dwa dwa dwa dwad"
+          }
+        },
+        {
+          "id": "sectionmediagrid-mv938d",
+          "type": "SectionMediaGrid",
+          "settings": {}
         },
         {
           "id": "footer-posyjj",
@@ -127,7 +249,7 @@
       "sections": []
     },
     "not_found": {
-      "path": "/404",
+      "path": "/sayfa-bulunamadi",
       "sections": [
         {
           "id": "not-found-1",
