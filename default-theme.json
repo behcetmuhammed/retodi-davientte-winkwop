@@ -1,0 +1,114 @@
+{
+  "settings": {
+    "colors": {
+      "primary": "#111827",
+      "onPrimary": "#ffffff",
+      "background": "#ffffff",
+      "text": "#111827",
+      "muted": "#6b7280",
+      "border": "#e5e7eb"
+    },
+    "typography": {
+      "fontFamily": "theme",
+      "headingFont": "theme",
+      "baseSize": 16,
+      "headingScale": 100
+    },
+    "layout": {
+      "containerWidth": 1200,
+      "radius": 10,
+      "sectionSpacing": 64
+    },
+    "seo": {
+      "siteName": "",
+      "titleTemplate": "%s",
+      "defaultTitle": "Test",
+      "defaultDescription": "Deneme",
+      "favicon": "https://cdn.winkwop.com/uploads/themes/v/4c106023963246eb8720d4f294a47f6a.png",
+      "ogImage": "https://cdn.winkwop.com/uploads/themes/v/b17e2b4985934e11899458013f3d23a6.png",
+      "noindex": false
+    }
+  },
+  "pages": {
+    "home": {
+      "path": "/",
+      "sections": [
+        {
+          "id": "header-kmkk0t",
+          "type": "Header",
+          "settings": {}
+        },
+        {
+          "id": "herobanner-2rhyv1",
+          "type": "HeroBanner",
+          "settings": {}
+        },
+        {
+          "id": "legaltext-ze5hyq",
+          "type": "LegalText",
+          "settings": {
+            "agreement": "distance_selling",
+            "heading": "",
+            "emptyText": ""
+          }
+        },
+        {
+          "id": "footer-posyjj",
+          "type": "Footer",
+          "settings": {}
+        }
+      ]
+    },
+    "products": {
+      "path": "/products",
+      "sections": []
+    },
+    "product": {
+      "path": "/products/:slug",
+      "sections": []
+    },
+    "category": {
+      "path": "/collections/:slug",
+      "sections": []
+    },
+    "search": {
+      "path": "/search",
+      "sections": []
+    },
+    "cart": {
+      "path": "/cart",
+      "sections": []
+    },
+    "checkout": {
+      "path": "/checkout",
+      "sections": []
+    },
+    "not_found": {
+      "path": "/404",
+      "sections": [
+        {
+          "id": "not-found-1",
+          "type": "NotFound",
+          "settings": {
+            "title": "Aradığınız sayfa bulunamadı",
+            "text": "Sayfa kaldırılmış ya da adresi değişmiş olabilir. Aradığınızı bulmak için arama yapabilir ya da ana sayfaya dönebilirsiniz.",
+            "showSearch": true,
+            "buttonLabel": "Ana sayfaya dön"
+          }
+        }
+      ]
+    }
+  },
+  "shared": {
+    "Header": {
+      "id": "Header-shared",
+      "type": "Header",
+      "settings": {}
+    },
+    "Footer": {
+      "id": "Footer-shared",
+      "type": "Footer",
+      "settings": {}
+    }
+  }
+}

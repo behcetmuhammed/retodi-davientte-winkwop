@@ -1,0 +1,27 @@
+{
+  "globalSettings": [],
+  "sections": [
+    {
+      "description": "",
+      "name": "Header",
+      "role": "header",
+      "settings": [],
+      "singleton": true,
+      "type": "Header"
+    },
+    {
+      "description": "",
+      "name": "Hero Banner",
+      "settings": [],
+      "type": "HeroBanner"
+    },
+    {
+      "description": "",
+      "name": "Footer",
+      "role": "footer",
+      "settings": [],
+      "singleton": true,
+      "type": "Footer"
+    }
+  ]
+}

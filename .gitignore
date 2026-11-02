@@ -1,0 +1,26 @@
+# Bu dosya `create` sırasında `.gitignore` olarak yeniden adlandırılır.
+# Depoda `_gitignore` durmak zorunda: npm yayınlarken `.gitignore` adlı dosyalar
+# pakete alınmaz, yani şablon kurulan projeye hiç ulaşmazdı.
+
+node_modules/
+dist/
+
+# Yerel önizleme ve derleme önbellekleri
+.vite/
+*.tsbuildinfo
+
+.env
+.env.*
+!.env.example
+
+# `winkwop.config.json` BİLEREK yok sayılmıyor: hangi temaya ait olduğunuzu
+# taşıyor ve ekipçe paylaşılması gerekiyor. İçinde sır yok - kimlik bilgileri
+# `~/.winkwop/credentials.json` altında durur.
+
+# Editör / işletim sistemi
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*

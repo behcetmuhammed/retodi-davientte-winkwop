@@ -1,0 +1,31 @@
+/*
+ * Tailwind giriş dosyası.
+ *
+ * Bu dosya varsa tema Tailwind kullanıyor demektir: CLI `pull` sırasında
+ * registry'ye import satırını ekler, `deploy` sırasında da bu dosyayı
+ * genişletilmiş saf CSS'e çevirip öyle yükler (derleme sunucusu npm paketi
+ * çözemez, `@import "tailwindcss"` orada anlamsızdır).
+ *
+ * Tailwind istemiyorsanız bu dosyayı silin; her şey eskisi gibi çalışır.
+ */
+
+@import "tailwindcss";
+@import "./styles/theme.css";
+@import "./styles/globals.css";
+
+/*
+ * Sınıf taraması. Yollar bu dosyaya görelidir.
+ * Yeni bir klasörde Tailwind sınıfı kullanacaksanız buraya ekleyin, yoksa
+ * o sınıflar çıktıya girmez.
+ */
+@source "./sections/**/*.{ts,tsx,js,jsx}";
+@source "./lib/**/*.{ts,tsx,js,jsx}";
+@source "./components/**/*.{ts,tsx,js,jsx}";
+@source "./hooks/**/*.{ts,tsx,js,jsx}";
+
+/*
+ * Mağaza sahibinin panelden seçtiği renk/tipografi ayarları `--wk-*` CSS
+ * değişkenleri olarak gelir. Bu değişkenler `styles/theme.css` içinde kitin
+ * semantik token'larına (`bg-primary`, `text-muted-foreground`,
+ * `rounded-lg`, `font-heading`...) bağlanır.
+ */

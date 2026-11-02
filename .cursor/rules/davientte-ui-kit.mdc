@@ -1,0 +1,37 @@
+---
+description: Davientte UI kit kataloğu - hangi ihtiyaç için hangi bileşen, hook ve yardımcı kullanılır; import yolları
+alwaysApply: true
+---
+
+# Davientte UI Kit Kataloğu
+
+Bir ihtiyaç için önce bu listeye bak; varsa yeniden yazma. Her dosyanın başındaki JSDoc `@example` blokları kullanımı gösterir, bileşeni kullanmadan önce oku. Canlı örnekler: `npm run dev` → `/kit.html`.
+
+**Import:** dosya yolundan, göreli olarak: `import { Button } from '../components/ui/button'`. (`ui/index.ts` henüz tüm bileşenleri dışa aktarmıyor.) İkonlar: `'../components/icons'`.
+
+## ui – `src/components/ui/<dosya>`
+- **Eylem:** `button` (Button, IconButton – `aria-label` zorunlu; variant: default|secondary|outline|ghost|link|destructive; size: xs|sm|md|lg|icon*; `loading`, `asChild`), `button-group`, `toggle`, `toggle-group`
+- **Form:** `field` (Field, FieldLabel, FieldDescription, FieldError – kontrollere aria'yı otomatik bağlar), `input` (şifre göster/gizle dahil), `input-group`, `textarea` (autoResize, showCount), `label`, `checkbox`, `radio-group`, `switch`, `select`, `calendar` (single|range|multiple, tr-TR), `rating`
+- **Katman:** `dialog`, `alert-dialog`, `sheet` (yan panel: sepet, filtre, mobil menü), `drawer` (alttan), `popover`, `tooltip` (`<Tooltip content>`), `hover-card`, `dropdown-menu`, `context-menu`, `menubar`, `command` (arama paleti), `toast` + `toaster` (`toast.success(...)`; sayfada tek `<Toaster />`)
+- **Gezinme:** `navigation-menu` (mega menü), `breadcrumb` (`<Breadcrumbs items>` kısa yol), `pagination` (`<Pagination page totalPages onPageChange|getHref>`), `tabs` (variant default|line), `sidebar`
+- **Görüntüleme:** `card`, `badge`, `alert`, `avatar` (+AvatarGroup), `empty`, `skeleton` (+SkeletonText), `spinner`, `progress` (+CircularProgress), `separator`, `kbd`, `typography` (Heading, Text, Lead, Eyebrow, Prose…), `aspect-ratio`
+- **Veri / medya:** `table` (sıralanabilir TableHead), `chart` (Chart bar|line|area, DonutChart – bağımlılıksız SVG), `carousel` (scroll-snap; loop, autoplay, dots)
+- **Yerleşim:** `container` (sayfa genişliği), `grid` (`cols={{ base: 1, md: 2, lg: 4 }}` veya `minItemWidth`), `stack` (Stack, HStack, VStack), `scroll-area`, `resizable`, `accordion`, `collapsible`
+- **Altyapı:** `slot` (asChild), `portal`, `visually-hidden`, `menu` (menülerin ortak çekirdeği – doğrudan kullanma)
+
+## shared / layouts
+`src/components/shared` (page-header, search-input, filter-bar, stat-card, file-upload, image-upload, empty-state, error-state, loading-state, copy-button…) ve `src/components/layouts` (dashboard, auth, main, split, centered) planlı; dosya yoksa ihtiyaç anında bu klasöre, kit bileşenlerinden oluşturarak yaz.
+
+## hooks – `src/hooks/<dosya>`
+`useControllableState` (kontrollü/kontrolsüz prop), `useMediaQuery` / `useIsMobile` / `useBreakpoint` (SSR güvenli), `useMounted`, `usePagination` + `getPaginationRange`, `useClickOutside`, `useEventListener`, `useScrollLock`, `useFocusTrap`, `useDismissableLayer`, `useFloating`, `usePresence` (çıkış animasyonu), `useRovingFocus` (ok tuşlarıyla gezinme), `useIsomorphicLayoutEffect`
+
+## lib – `src/lib/<dosya>`
+- `utils`: `cn`, `variants` (cva benzeri), `composeRefs`, `composeEventHandlers`, `clamp`
+- `format`: `formatCurrency` (₺), `formatNumber`, `formatCompact`, `formatPercent`, `formatDate`, `formatBytes`, `formatPhone`, `formatIban`, `slugify` (Türkçe), `truncate`, `titleCase`
+- `date`: `addDays`, `addMonths`, `isSameDay`, `startOfWeek` (Pazartesi), `parseDate`, `toISODate`, `formatRelative` ("3 gün önce")…
+- `validation`: `v.required() / email() / minLength(n) / phone() / tcKimlik() / iban() / vergiNo() / matches(field)`, `validate(values, rules)`
+- `storage`: `storage.get/set/remove`, `session` (SSR ve gizli modda güvenli)
+- `constants`: `BREAKPOINTS`, `DEFAULT_PAGE_SIZE`, `UPLOAD`, `KEYS`…
+
+## İkonlar – `src/components/icons`
+Lucide çizimleri `XxxIcon` adıyla (ShoppingCartIcon, HeartIcon, MapPinIcon…); marka ikonları `InstagramIcon`, `XBrandIcon`, `WhatsAppIcon`… İkon yoksa Lucide SVG'sini dosyadaki çeviri tablosuna göre tek satırla ekle. `lucide-react` kurma.

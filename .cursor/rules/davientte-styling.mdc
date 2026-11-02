@@ -1,0 +1,40 @@
+---
+description: Davientte stil ve responsive kuralları - yalnızca standart Tailwind breakpoint'leri, tema token'ları, cn() kullanımı
+alwaysApply: true
+---
+
+# Stil ve Responsive Kuralları
+
+## Breakpoint'ler
+- Özel `@media` yazma; CSS dosyalarına da medya sorgusu ekleme.
+- Yalnızca Tailwind standart breakpoint'leri: `sm` `md` `lg` `xl` (gerekirse `2xl`). Mobil öncelikli yaz: önek yok = mobil, üst ekranlar `md:`/`lg:` ile.
+- Keyfi breakpoint (`max-[1024px]:`, `min-[900px]:`) ve `max-*` varyantları kullanma.
+- Ölçüler tasarımla birebir olmak zorunda değil; en yakın Tailwind ölçeğini seç.
+
+```tsx
+// ❌ Yanlış
+<div className="max-[1024px]:gap-8 max-[1024px]:max-w-[960px]" />
+<div className="max-lg:m-4 max-md:max-w-5xl" />
+<div className="w-[347px] mt-[13px] text-[15px]" />
+
+// ✅ Doğru
+<div className="gap-6 lg:gap-8 max-w-4xl md:max-w-5xl lg:max-w-6xl" />
+<div className="m-4 lg:m-0" />
+<div className="w-80 mt-3 text-sm" />
+```
+
+Sayfa genişliği için `<Container>` (ui/container) veya `max-w-(--container-page)` kullan; mağaza ayarındaki içerik genişliğini izler.
+
+## Renk, radius, font – yalnızca token
+- Renkler semantik sınıflardan: `bg-background` `text-foreground` `bg-primary` `text-primary-foreground` `bg-muted` `text-muted-foreground` `bg-accent` `border-border` `ring-ring` `bg-card` `bg-popover` `text-destructive` `text-success` `text-warning` `text-info`.
+- Ham renk yazma: `bg-[#123456]`, `text-gray-500`, `bg-white`, `border-zinc-200` ❌. Saydamlık gerekiyorsa `bg-primary/10`.
+- Radius: `rounded-xs|sm|md|lg|xl|full` (mağazanın `--wk-radius` değerine göre ölçeklenir). Font: `font-sans`, başlıklar `font-heading`.
+- Koyu tema `[data-theme="dark"]` ile otomatik gelir; `dark:` varyantını yalnızca token'ın yetmediği istisnalarda kullan.
+- Yeni token gerekiyorsa `src/styles/theme.css`'e `--dv-*` olarak ekle (`--wk-*` varsa ona bağla), bileşene sabit değer gömme.
+
+## Class kullanımı
+- Koşullu/birleşik class için `cn()` (`src/lib/utils`); string birleştirme veya template literal kullanma.
+- Varyantlı bileşenlerde `variants()` (cva benzeri, `src/lib/utils`) kullan.
+- Gereksiz class yazma: varsayılanı tekrar etme (`flex flex-row`, `font-normal` gereksiz), aynı işi yapan iki class koyma, boş wrapper açma.
+- Inline `style` yalnızca dinamik değerler için (yüzde, ölçülen yükseklik, CSS değişkeni).
+- Animasyonlar tema içindeki `animate-dv-*` sınıflarıyla; `prefers-reduced-motion` globals.css'te ele alınıyor.

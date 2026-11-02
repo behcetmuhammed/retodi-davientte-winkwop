@@ -1,0 +1,33 @@
+---
+description: Davientte kit bileşeni yazma kuralları - API kalıpları, erişilebilirlik, SSR, performans
+globs: src/components/**/*.tsx,src/hooks/**/*.ts,src/lib/**/*.ts
+alwaysApply: false
+---
+
+# Kit Bileşeni Yazma Kuralları
+
+Yeni bir `ui/`, `shared/` veya `layouts/` bileşeni yazarken ya da mevcut birini değiştirirken mevcut dosyaların kalıbını izle (örnek referans: `ui/button.tsx`, `ui/tabs.tsx`, `ui/dialog.tsx`).
+
+## API kalıbı
+- Fonksiyon bileşeni + named export; `default export` yalnızca `src/sections/*` için.
+- Prop tipi `ComponentProps<'element'> & {...}`; kalan prop'ları kök öğeye yay (`...props`), `className`'i `cn(base, className)` ile en sona ekle.
+- React 19: `ref` normal prop olarak gelir, `forwardRef` kullanma. Context sağlayıcı `<Ctx value={...}>`.
+- Varyantlar `variants({ base, variants, defaultVariants })` ile; `xxxVariants` olarak dışa aktar ki başka bileşen (ör. link) aynı görünümü alsın.
+- Kök öğeye `data-slot="bilesen-adi"`; durumlar `data-state="open|closed|active|checked"`, stil bunlara `data-[state=open]:` ile bağlanır.
+- Kontrollü + kontrolsüz kullanım: `value/defaultValue/onValueChange` veya `open/defaultOpen/onOpenChange` + `useControllableState`.
+- Bileşik bileşenler (Tabs, Accordion) context ile; context dışında kullanılırsa anlaşılır Türkçe hata fırlat.
+- Başka öğe olarak render gerekiyorsa `asChild` + `Slot`.
+- Dosya başında Türkçe JSDoc ve en az bir `@example`.
+
+## Erişilebilirlik (zorunlu)
+- Doğru native öğe (button, a, input) ve ARIA rolleri; ikon-butonlarda `aria-label`.
+- Klavye: Escape kapatır, ok tuşları listelerde gezinir (`useRovingFocus`), odak görünür: `focus-visible:ring-[3px] focus-visible:ring-ring`.
+- Katmanlar: `Portal` + `useFocusTrap` + `useDismissableLayer` + `useScrollLock` (Dialog kalıbı). Kapanınca odak tetikleyiciye döner.
+- Form kontrolleri `useFieldControl` ile Field'a bağlanır (id, aria-describedby, aria-invalid).
+
+## SSR ve performans
+- Render saf olmalı; tarayıcı API'leri effect içinde. Portal içeriği mount sonrası çizilir; DOM ölçümü gereken hook'lar elemanı callback ref/state ile izlemeli.
+- Modül seviyesinde yan etkili kod yazma (tree-shaking için). Fabrika ile üretilen sabitlerde `/* @__NO_SIDE_EFFECTS__ */` kullan (bkz. `icons/index.tsx`).
+- Gereksiz `useMemo/useCallback` ekleme; yalnızca pahalı hesap veya alt bileşene geçen stabil referans için.
+- Animasyonlar CSS (`animate-dv-*`, `transition-*`); çıkış animasyonu için `usePresence`. JS animasyon kütüphanesi ekleme.
+- Yeni dosyayı yazınca kit sayfasına (`src/kit/`) örnek ekle; `npx tsc --noEmit` ve `npm run build` ile doğrula.

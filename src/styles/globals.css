@@ -1,0 +1,52 @@
+/*
+ * Kitin ortak stilleri. Bu CSS mağaza sayfasının içine enjekte edildiği için
+ * global reset yoktur; kurallar yalnızca kitin kendi işaretlediği öğelere
+ * (`data-slot`, `.dv-*`) uygulanır.
+ */
+
+@layer base {
+  [data-slot] {
+    border-color: var(--color-border);
+  }
+
+  [data-slot]:focus-visible {
+    outline: none;
+  }
+
+  [data-slot] ::placeholder {
+    color: var(--color-muted-foreground);
+  }
+}
+
+@layer utilities {
+  .dv-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklab, var(--color-foreground) 20%, transparent) transparent;
+  }
+
+  .dv-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dv-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: color-mix(in oklab, var(--color-foreground) 20%, transparent);
+  }
+
+  .dv-scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .dv-scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-slot],
+  [data-slot] * {
+    animation-duration: 1ms !important;
+    transition-duration: 1ms !important;
+  }
+}

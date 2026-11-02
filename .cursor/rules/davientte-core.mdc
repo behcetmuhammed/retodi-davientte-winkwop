@@ -1,0 +1,34 @@
+---
+description: Davientte geliştirme kuralları - marka tutarlılığı, performans, Clean Code/SOLID, bileşen yeniden kullanımı ve Winkwop platform kısıtları
+alwaysApply: true
+---
+
+# Davientte – Geliştirme Kuralları
+
+Davientte, Winkwop (IKAS benzeri SaaS) üzerinde çalışan bir mağaza temasıdır: React 19, Vite, Tailwind v4, `winkwop-theme-sdk`. Kullanıcıyla Türkçe konuş; arayüz metinleri ve JSDoc Türkçe olsun.
+
+## Öncelikler
+1. **Marka tutarlılığı (çok önemli):** Yeni her ekran/bölüm mevcut bileşenlerle aynı görünmeli. Renk, radius, font, boşluk ve gölge yalnızca tema token'larından gelir (bkz. `davientte-styling`). Minimalist ve kurumsal: gradyan, gereksiz gölge ve dekoratif efekt yok.
+2. **Performans:** Bundle ve First Load JS düşük kalmalı. Gereksiz JS, state, effect, wrapper `div` ve class ekleme. CSS ile çözülebilen şeyi JS ile çözme.
+3. **Clean Code + SOLID:** Küçük, tek sorumluluklu bileşenler; anlamlı isimler; erken dönüş; prop'larla genişletme (open/closed). Kod ne yaptığını kendisi anlatsın, yorum yalnızca kodun gösteremediği kısıt için.
+
+## Bileşen kullanımı – önce mevcut olanı kullan
+Yeni bir şey yazmadan önce sırayla bak:
+- `src/components/ui` – temel kit (Button, Input, Select, Dialog, Tabs, Table, Toast…). Katalog: `davientte-ui-kit` kuralı.
+- `src/components/shared` – birden çok yerde kullanılan bileşik bileşenler.
+- `src/components/layouts` – sayfa iskeletleri.
+- `src/components/icons` – tüm ikonlar (Lucide çizimleri + marka ikonları).
+- `src/hooks`, `src/lib` – hook'lar ve yardımcılar (`cn`, `formatCurrency`, `v.required()`…).
+
+Kod tekrarı yasak. Aynı yapı ikinci kez gerekiyorsa ortak bir bileşene çıkar: `src/components/shared/<ad>.tsx` (gerekirse `src/components/shared/<ad>/index.tsx` klasörü). Eksik bir temel bileşen gerekiyorsa `ui/` altına kit kurallarıyla yaz (bkz. `davientte-component-authoring`).
+
+## Winkwop platform kısıtları (bozulursa deploy başarısız olur)
+- **İzinli npm paketleri yalnızca:** `react`, `react-dom`, `clsx`, `tailwind-merge`, `embla-carousel-react`, `motion`, `tailwindcss`, `winkwop-theme-sdk`. `lucide-react`, `swiper`, `radix`, `framer-motion` vb. **reddedilir**. Yeni paket ekleme; ikon gerekiyorsa `src/components/icons`'a ekle.
+- **Göreli import kullan** (`../components/ui/button`). Path alias (`@/`) yok.
+- **Dinamik `import()` ve `React.lazy` yasak**; tema tek bundle olarak derlenir.
+- **SSR uyumlu yaz:** render sırasında `window`/`document`/`localStorage` kullanma; bunlar yalnızca `useEffect` içinde. Tarayıcıya bağlı değerler için `useMediaQuery`, `useMounted`, `storage` (lib) kullan. `Math.random()`/`Date.now()` ile render çıktısı üretme (hydration uyuşmazlığı).
+- Section'lar birbirini import edemez; ortak parçalar `components/` altında olur.
+- `--wk-*` değişkenlerini (mağaza ayarları) asla ezme; tema bunları `src/styles/theme.css` içinde okur.
+
+## Doğrulama
+Değişiklikten sonra `npx tsc --noEmit` ve `npm run build` (proje npm kullanır) çalıştır. Build tek `dist/theme.js` üretmeli; boyut beklenmedik şekilde artarsa sebebini bul.

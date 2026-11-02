@@ -1,0 +1,156 @@
+/*
+ * Davientte design token'ları.
+ *
+ * Mağaza sahibinin panelde seçtiği değerler `--wk-*` değişkenleriyle gelir;
+ * her token önce onlara bakar, yoksa buradaki varsayılana düşer. Türetilen
+ * tonlar (muted, accent, ring...) `color-mix` ile mağaza renklerinden üretilir,
+ * böylece marka rengi değişince bütün kit birlikte uyum sağlar.
+ *
+ * Bileşenler yalnızca aşağıdaki semantik sınıfları kullanır (`bg-primary`,
+ * `text-muted-foreground`, `border-border`...). Ham renk yazılmaz.
+ */
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --dv-background: var(--wk-color-background, #ffffff);
+  --dv-foreground: var(--wk-color-text, #0a0a0b);
+  --dv-primary: var(--wk-color-primary, #18181b);
+  --dv-primary-foreground: var(--wk-color-on-primary, #fafafa);
+  --dv-muted-foreground: var(--wk-color-muted, #71717a);
+  --dv-border: var(--wk-color-border, #e4e4e7);
+
+  --dv-card: var(--dv-background);
+  --dv-card-foreground: var(--dv-foreground);
+  --dv-popover: var(--dv-background);
+  --dv-popover-foreground: var(--dv-foreground);
+  --dv-muted: color-mix(in oklab, var(--dv-foreground) 4%, var(--dv-background));
+  --dv-secondary: color-mix(in oklab, var(--dv-foreground) 6%, var(--dv-background));
+  --dv-secondary-foreground: var(--dv-foreground);
+  --dv-accent: color-mix(in oklab, var(--dv-foreground) 6%, var(--dv-background));
+  --dv-accent-foreground: var(--dv-foreground);
+  --dv-input: var(--dv-border);
+  --dv-ring: color-mix(in oklab, var(--dv-primary) 45%, transparent);
+  --dv-overlay: rgb(9 9 11 / 0.45);
+
+  --dv-destructive: #dc2626;
+  --dv-destructive-foreground: #ffffff;
+  --dv-success: #16a34a;
+  --dv-success-foreground: #ffffff;
+  --dv-warning: #d97706;
+  --dv-warning-foreground: #ffffff;
+  --dv-info: #2563eb;
+  --dv-info-foreground: #ffffff;
+
+  --dv-chart-1: var(--dv-primary);
+  --dv-chart-2: #2563eb;
+  --dv-chart-3: #0d9488;
+  --dv-chart-4: #d97706;
+  --dv-chart-5: #9333ea;
+
+  --dv-radius: var(--wk-radius, 8px);
+  --dv-container: var(--wk-container-width, 1200px);
+}
+
+[data-theme="dark"] {
+  --dv-background: #09090b;
+  --dv-foreground: #fafafa;
+  --dv-primary: #fafafa;
+  --dv-primary-foreground: #18181b;
+  --dv-muted-foreground: #a1a1aa;
+  --dv-border: #27272a;
+  --dv-muted: #18181b;
+  --dv-secondary: #27272a;
+  --dv-accent: #27272a;
+  --dv-card: #0c0c0e;
+  --dv-popover: #0c0c0e;
+  --dv-ring: color-mix(in oklab, #fafafa 35%, transparent);
+  --dv-overlay: rgb(0 0 0 / 0.6);
+  --dv-destructive: #ef4444;
+  --dv-success: #22c55e;
+  --dv-warning: #f59e0b;
+  --dv-info: #3b82f6;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--dv-background);
+  --color-foreground: var(--dv-foreground);
+  --color-card: var(--dv-card);
+  --color-card-foreground: var(--dv-card-foreground);
+  --color-popover: var(--dv-popover);
+  --color-popover-foreground: var(--dv-popover-foreground);
+  --color-primary: var(--dv-primary);
+  --color-primary-foreground: var(--dv-primary-foreground);
+  --color-secondary: var(--dv-secondary);
+  --color-secondary-foreground: var(--dv-secondary-foreground);
+  --color-muted: var(--dv-muted);
+  --color-muted-foreground: var(--dv-muted-foreground);
+  --color-accent: var(--dv-accent);
+  --color-accent-foreground: var(--dv-accent-foreground);
+  --color-border: var(--dv-border);
+  --color-input: var(--dv-input);
+  --color-ring: var(--dv-ring);
+  --color-overlay: var(--dv-overlay);
+  --color-destructive: var(--dv-destructive);
+  --color-destructive-foreground: var(--dv-destructive-foreground);
+  --color-success: var(--dv-success);
+  --color-success-foreground: var(--dv-success-foreground);
+  --color-warning: var(--dv-warning);
+  --color-warning-foreground: var(--dv-warning-foreground);
+  --color-info: var(--dv-info);
+  --color-info-foreground: var(--dv-info-foreground);
+  --color-chart-1: var(--dv-chart-1);
+  --color-chart-2: var(--dv-chart-2);
+  --color-chart-3: var(--dv-chart-3);
+  --color-chart-4: var(--dv-chart-4);
+  --color-chart-5: var(--dv-chart-5);
+
+  --radius-xs: calc(var(--dv-radius) * 0.4);
+  --radius-sm: calc(var(--dv-radius) * 0.6);
+  --radius-md: calc(var(--dv-radius) * 0.8);
+  --radius-lg: var(--dv-radius);
+  --radius-xl: calc(var(--dv-radius) * 1.4);
+
+  --font-sans: var(--wk-font-body, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif);
+  --font-heading: var(--wk-font-heading, var(--font-sans));
+
+  --container-page: var(--dv-container);
+}
+
+@theme {
+  --animate-dv-fade-in: dv-fade-in 150ms ease-out;
+  --animate-dv-fade-out: dv-fade-out 120ms ease-in forwards;
+  --animate-dv-zoom-in: dv-zoom-in 150ms ease-out;
+  --animate-dv-zoom-out: dv-zoom-out 120ms ease-in forwards;
+  --animate-dv-slide-in-right: dv-slide-in-right 220ms cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-dv-slide-out-right: dv-slide-out-right 180ms ease-in forwards;
+  --animate-dv-slide-in-left: dv-slide-in-left 220ms cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-dv-slide-out-left: dv-slide-out-left 180ms ease-in forwards;
+  --animate-dv-slide-in-top: dv-slide-in-top 220ms cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-dv-slide-out-top: dv-slide-out-top 180ms ease-in forwards;
+  --animate-dv-slide-in-bottom: dv-slide-in-bottom 220ms cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-dv-slide-out-bottom: dv-slide-out-bottom 180ms ease-in forwards;
+  --animate-dv-accordion-down: dv-accordion-down 180ms ease-out;
+  --animate-dv-accordion-up: dv-accordion-up 160ms ease-in forwards;
+  --animate-dv-indeterminate: dv-indeterminate 1.4s ease-in-out infinite;
+
+  @keyframes dv-fade-in { from { opacity: 0; } }
+  @keyframes dv-fade-out { to { opacity: 0; } }
+  @keyframes dv-zoom-in { from { opacity: 0; transform: scale(0.96); } }
+  @keyframes dv-zoom-out { to { opacity: 0; transform: scale(0.96); } }
+  @keyframes dv-slide-in-right { from { transform: translateX(100%); } }
+  @keyframes dv-slide-out-right { to { transform: translateX(100%); } }
+  @keyframes dv-slide-in-left { from { transform: translateX(-100%); } }
+  @keyframes dv-slide-out-left { to { transform: translateX(-100%); } }
+  @keyframes dv-slide-in-top { from { transform: translateY(-100%); } }
+  @keyframes dv-slide-out-top { to { transform: translateY(-100%); } }
+  @keyframes dv-slide-in-bottom { from { transform: translateY(100%); } }
+  @keyframes dv-slide-out-bottom { to { transform: translateY(100%); } }
+  @keyframes dv-accordion-down { from { height: 0; } to { height: var(--dv-collapsible-height); } }
+  @keyframes dv-accordion-up { from { height: var(--dv-collapsible-height); } to { height: 0; } }
+  @keyframes dv-indeterminate {
+    0% { transform: translateX(-100%) scaleX(0.4); }
+    100% { transform: translateX(250%) scaleX(0.4); }
+  }
+}

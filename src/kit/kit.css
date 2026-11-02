@@ -1,0 +1,10 @@
+/* Yalnızca yerel `/kit.html` örnek sayfası için; tema paketine girmez. */
+@import "../tailwind.css";
+@source "./";
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
