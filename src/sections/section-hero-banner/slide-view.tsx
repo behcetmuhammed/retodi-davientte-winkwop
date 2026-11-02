@@ -3,7 +3,7 @@ import { cn } from '../../lib/utils';
 import { HeroHeightShell } from './hero-height-shell';
 import { SlideContent } from './slide-content';
 import { SlideMedia } from './slide-media';
-import type { HeroHeightPreset, HeroSlide, HeroWidthMode } from './types';
+import type { HeroHeightPreset, HeroLayoutConfig, HeroSlide, HeroWidthMode } from './types';
 
 type SlideViewProps = {
   slide: HeroSlide;
@@ -11,6 +11,8 @@ type SlideViewProps = {
   heightPreset: HeroHeightPreset;
   adaptImageSrc?: string;
   openLinksInNewTab: boolean;
+  primaryButtonStyle: HeroLayoutConfig['primaryButtonStyle'];
+  secondaryButtonStyle: HeroLayoutConfig['secondaryButtonStyle'];
   priority?: boolean;
   className?: string;
 };
@@ -18,21 +20,32 @@ type SlideViewProps = {
 function SlideInner({
   slide,
   openLinksInNewTab,
+  primaryButtonStyle,
+  secondaryButtonStyle,
   priority,
   contained,
 }: {
   slide: HeroSlide;
   openLinksInNewTab: boolean;
+  primaryButtonStyle: HeroLayoutConfig['primaryButtonStyle'];
+  secondaryButtonStyle: HeroLayoutConfig['secondaryButtonStyle'];
   priority?: boolean;
   contained?: boolean;
 }) {
+  const content = (
+    <SlideContent
+      slide={slide}
+      openLinksInNewTab={openLinksInNewTab}
+      primaryButtonStyle={primaryButtonStyle}
+      secondaryButtonStyle={secondaryButtonStyle}
+    />
+  );
+
   if (contained) {
     return (
       <>
         <SlideMedia slide={slide} priority={priority} />
-        <div className="relative flex size-full items-center px-4 sm:px-6 lg:px-8">
-          <SlideContent slide={slide} openLinksInNewTab={openLinksInNewTab} />
-        </div>
+        <div className="relative flex size-full items-center px-4 sm:px-6 lg:px-8">{content}</div>
       </>
     );
   }
@@ -40,9 +53,7 @@ function SlideInner({
   return (
     <>
       <SlideMedia slide={slide} priority={priority} />
-      <Container className="relative flex w-full justify-start">
-        <SlideContent slide={slide} openLinksInNewTab={openLinksInNewTab} />
-      </Container>
+      <Container className="relative flex w-full justify-start">{content}</Container>
     </>
   );
 }
@@ -53,6 +64,8 @@ export function SlideView({
   heightPreset,
   adaptImageSrc,
   openLinksInNewTab,
+  primaryButtonStyle,
+  secondaryButtonStyle,
   priority,
   className,
 }: SlideViewProps) {
@@ -62,7 +75,14 @@ export function SlideView({
       adaptImageSrc={adaptImageSrc ?? slide.image}
       className={cn('flex items-center', contained && 'size-full')}
     >
-      <SlideInner slide={slide} openLinksInNewTab={openLinksInNewTab} priority={priority} contained={contained} />
+      <SlideInner
+        slide={slide}
+        openLinksInNewTab={openLinksInNewTab}
+        primaryButtonStyle={primaryButtonStyle}
+        secondaryButtonStyle={secondaryButtonStyle}
+        priority={priority}
+        contained={contained}
+      />
     </HeroHeightShell>
   );
 

@@ -33,4 +33,6 @@ export type HeroLayoutConfig = Pick<
   | 'showCarouselArrows'
   | 'showCarouselDots'
   | 'openLinksInNewTab'
+  | 'primaryButtonStyle'
+  | 'secondaryButtonStyle'
 >;

@@ -39,5 +39,7 @@ export function pickLayoutConfig(props: HeroBannerProps) {
     showCarouselArrows: props.showCarouselArrows,
     showCarouselDots: props.showCarouselDots,
     openLinksInNewTab: props.openLinksInNewTab,
+    primaryButtonStyle: props.primaryButtonStyle,
+    secondaryButtonStyle: props.secondaryButtonStyle,
   };
 }

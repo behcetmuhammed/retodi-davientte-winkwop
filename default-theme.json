@@ -94,6 +94,8 @@
             "showCarouselArrows": true,
             "showCarouselDots": true,
             "openLinksInNewTab": false,
+            "primaryButtonStyle": "solid",
+            "secondaryButtonStyle": "outline",
             "slide1Image": "https://cdn.winkwop.com/uploads/themes/v/7c096085f5574d90a021cc4e3d1088c8.jpg",
             "slide1ImageMobile": "https://cdn.winkwop.com/uploads/themes/v/1d372fac0f9e4613ac13c570cc5b0130.jpg",
             "slide1Eyebrow": "Yeni sezon",
@@ -164,10 +166,70 @@
             "primaryUrl": "/collections/all",
             "secondaryLabel": "Mağazalarımız",
             "secondaryUrl": "/pages/magazalar",
+            "primaryButtonStyle": "solid",
+            "secondaryButtonStyle": "outline",
             "contentAlign": "center",
             "spacingPreset": "large",
             "contentWidth": "narrow",
             "openLinksInNewTab": false
+          }
+        },
+        {
+          "id": "featured-collection-home",
+          "type": "SectionFeaturedCollection",
+          "settings": {
+            "captionDisplay": "always",
+            "sectionTitle": "SEÇİLMİŞ KOLEKSİYON",
+            "titleAlign": "center",
+            "headingStyle": "editorial",
+            "titleColor": "#000000",
+            "sectionBgColor": "#ffffff",
+            "layoutPreset": "fourEqual",
+            "columnGap": 16,
+            "rowHeight": 520,
+            "rowHeightMobile": 360,
+            "useFullWidth": true,
+            "useFullWidthMobile": true,
+            "hideOnDesktop": false,
+            "hideOnMobile": false,
+            "marginTop": 0,
+            "marginBottom": 0,
+            "marginTopMobile": 0,
+            "marginBottomMobile": 0,
+            "itemButtonStyle": "label",
+            "openLinksInNewTab": false,
+            "item1Image": "https://cdn.winkwop.com/uploads/themes/v/4f969d09c6034e7d9ddd73864ede2f36.webp",
+            "item1ImageMobile": "https://cdn.winkwop.com/uploads/themes/v/956302c5a0f24c00a11378efed9045b2.webp",
+            "item1LinkUrl": "/collections/all",
+            "item1ShowCaptionCard": false,
+            "item1CaptionEyebrow": "",
+            "item1CaptionTitle": "",
+            "item1ButtonLabel": "",
+            "item1ButtonUrl": "",
+            "item2Image": "https://cdn.winkwop.com/uploads/themes/v/3c3f44a76aa743938064d13affcc2b03.webp",
+            "item2ImageMobile": "https://cdn.winkwop.com/uploads/themes/v/a7ab5641ed474328987d95cca4902c22.webp",
+            "item2LinkUrl": "/collections/all",
+            "item2ShowCaptionCard": true,
+            "item2CaptionEyebrow": "PRODUCTS",
+            "item2CaptionTitle": "MISS RAFAELLO ISTANBUL – SPRING & SUMMER 2026",
+            "item2ButtonLabel": "",
+            "item2ButtonUrl": "",
+            "item3Image": "https://cdn.winkwop.com/uploads/themes/v/7c096085f5574d90a021cc4e3d1088c8.jpg",
+            "item3ImageMobile": "https://cdn.winkwop.com/uploads/themes/v/1d372fac0f9e4613ac13c570cc5b0130.jpg",
+            "item3LinkUrl": "/collections/all",
+            "item3ShowCaptionCard": false,
+            "item3CaptionEyebrow": "",
+            "item3CaptionTitle": "",
+            "item3ButtonLabel": "",
+            "item3ButtonUrl": "",
+            "item4Image": "https://cdn.winkwop.com/uploads/themes/v/1c34b0aedbc04b34978d5579f55c1886.jpg",
+            "item4ImageMobile": "https://cdn.winkwop.com/uploads/themes/v/27c869435d8c4b168a2ccaecb2700e4f.jpg",
+            "item4LinkUrl": "/collections/all",
+            "item4ShowCaptionCard": false,
+            "item4CaptionEyebrow": "",
+            "item4CaptionTitle": "",
+            "item4ButtonLabel": "",
+            "item4ButtonUrl": ""
           }
         },
         {
@@ -196,6 +258,8 @@
             "primaryUrl": "",
             "secondaryLabel": "",
             "secondaryUrl": "",
+            "primaryButtonStyle": "solid",
+            "secondaryButtonStyle": "outline",
             "contentAlign": "center",
             "spacingPreset": "medium",
             "contentWidth": "narrow",
@@ -219,6 +283,8 @@
             "primaryUrl": "",
             "secondaryLabel": "",
             "secondaryUrl": "",
+            "primaryButtonStyle": "solid",
+            "secondaryButtonStyle": "outline",
             "contentAlign": "center",
             "spacingPreset": "medium",
             "contentWidth": "narrow",
@@ -238,6 +304,8 @@
             "headerButtonLabel": "Yeni Sezon",
             "headerButtonUrl": "/#",
             "openHeaderLinkInNewTab": false,
+            "headerButtonStyle": "outline",
+            "itemButtonStyle": "solid",
             "bgColor": "#ffffff",
             "desktopRowHeight": 160,
             "mobileRowHeight": 180,
@@ -358,7 +426,43 @@
         {
           "id": "footer-posyjj",
           "type": "Footer",
-          "settings": {}
+          "settings": {
+            "backgroundColor": "#ffffff",
+            "textColor": "#000000",
+            "barBackgroundColor": "#000000",
+            "barTextColor": "#ffffff",
+            "customerCareTitle": "CUSTOMER CARE",
+            "customerCareLinks": [
+              { "label": "Contact Us", "url": "/pages/iletisim" },
+              { "label": "Find Store", "url": "/pages/magazalar" },
+              { "label": "Shipping", "url": "/pages/kargo" },
+              { "label": "Returns", "url": "/pages/iade" }
+            ],
+            "contactPhone": "+90 212 458 35 75",
+            "contactEmail": "info@rafaello.com",
+            "corporateTitle": "CORPORATE",
+            "corporateLinks": [
+              { "label": "Careers", "url": "/pages/kariyer" },
+              { "label": "MM World", "url": "/pages/mm-world" },
+              { "label": "Sustainability", "url": "/pages/surdurulebilirlik" }
+            ],
+            "legalTitle": "LEGAL AREA",
+            "legalLinks": [
+              { "label": "Privacy Policy", "url": "/pages/gizlilik" },
+              { "label": "Cookie Policy", "url": "/pages/cerez" },
+              { "label": "Legal Notes", "url": "/pages/yasal" }
+            ],
+            "newsletterTitle": "NEWSLETTER",
+            "newsletterDescription": "Yeniliklerden ve özel davetlerden haberdar olun.",
+            "emailPlaceholder": "E-Posta Adresiniz",
+            "subscribeButtonLabel": "ABONE OL",
+            "instagramLink": "https://instagram.com",
+            "facebookLink": "#",
+            "xLink": "#",
+            "openSocialLinksInNewTab": true,
+            "openLinksInNewTab": false,
+            "copyrightText": "© 2026 Rafaello"
+          }
         }
       ]
     },
@@ -454,7 +558,43 @@
     "Footer": {
       "id": "Footer-shared",
       "type": "Footer",
-      "settings": {}
+      "settings": {
+        "backgroundColor": "#ffffff",
+        "textColor": "#000000",
+        "barBackgroundColor": "#000000",
+        "barTextColor": "#ffffff",
+        "customerCareTitle": "CUSTOMER CARE",
+        "customerCareLinks": [
+          { "label": "Contact Us", "url": "/pages/iletisim" },
+          { "label": "Find Store", "url": "/pages/magazalar" },
+          { "label": "Shipping", "url": "/pages/kargo" },
+          { "label": "Returns", "url": "/pages/iade" }
+        ],
+        "contactPhone": "+90 212 458 35 75",
+        "contactEmail": "info@rafaello.com",
+        "corporateTitle": "CORPORATE",
+        "corporateLinks": [
+          { "label": "Careers", "url": "/pages/kariyer" },
+          { "label": "MM World", "url": "/pages/mm-world" },
+          { "label": "Sustainability", "url": "/pages/surdurulebilirlik" }
+        ],
+        "legalTitle": "LEGAL AREA",
+        "legalLinks": [
+          { "label": "Privacy Policy", "url": "/pages/gizlilik" },
+          { "label": "Cookie Policy", "url": "/pages/cerez" },
+          { "label": "Legal Notes", "url": "/pages/yasal" }
+        ],
+        "newsletterTitle": "NEWSLETTER",
+        "newsletterDescription": "Yeniliklerden ve özel davetlerden haberdar olun.",
+        "emailPlaceholder": "E-Posta Adresiniz",
+        "subscribeButtonLabel": "ABONE OL",
+        "instagramLink": "https://instagram.com",
+        "facebookLink": "#",
+        "xLink": "#",
+        "openSocialLinksInNewTab": true,
+        "openLinksInNewTab": false,
+        "copyrightText": "© 2026 Rafaello"
+      }
     }
   }
 }

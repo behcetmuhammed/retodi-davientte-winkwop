@@ -1,4 +1,4 @@
-import { Button } from '../../components/ui/button';
+import { ThemeSectionLinkButton, type ThemeButtonStyle } from '../../components/shared/theme-section-button';
 import { Heading, Text } from '../../components/ui/typography';
 import { cn } from '../../lib/utils';
 
@@ -10,6 +10,7 @@ type SectionHeaderProps = {
   buttonLabel: string;
   buttonUrl: string;
   openInNewTab: boolean;
+  buttonStyle: ThemeButtonStyle | string;
   className?: string;
 };
 
@@ -21,6 +22,7 @@ export function SectionHeader({
   buttonLabel,
   buttonUrl,
   openInNewTab,
+  buttonStyle,
   className,
 }: SectionHeaderProps) {
   const hasTitle = !!title;
@@ -57,15 +59,13 @@ export function SectionHeader({
       )}
       {hasButton ? (
         <div className="shrink-0">
-          <Button asChild variant="outline" size="sm">
-            <a
-              href={buttonUrl}
-              target={openInNewTab ? '_blank' : undefined}
-              rel={openInNewTab ? 'noopener noreferrer' : undefined}
-            >
-              {buttonLabel}
-            </a>
-          </Button>
+          <ThemeSectionLinkButton
+            style={buttonStyle}
+            href={buttonUrl}
+            label={buttonLabel}
+            openInNewTab={openInNewTab}
+            size="sm"
+          />
         </div>
       ) : null}
     </div>

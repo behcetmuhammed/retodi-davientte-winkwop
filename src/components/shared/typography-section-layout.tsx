@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { Button } from '../ui/button';
 import { Container } from '../ui/container';
+import { ThemeSectionLinkButton, type ThemeButtonStyle } from './theme-section-button';
 import { Eyebrow, Heading, Text } from '../ui/typography';
 import { cn } from '../../lib/utils';
 import { panelBackgroundColor, panelTextColor } from './panel-color-style';
@@ -34,6 +34,8 @@ export type TypographySectionLayoutProps = {
   secondaryLabel?: string;
   secondaryUrl?: string;
   openLinksInNewTab?: boolean;
+  primaryButtonStyle?: ThemeButtonStyle | string;
+  secondaryButtonStyle?: ThemeButtonStyle | string;
   contentAlign?: SectionContentAlign;
   spacingPreset?: SectionSpacingPreset;
   contentWidth?: SectionContentWidth;
@@ -72,6 +74,8 @@ export function TypographySectionLayout({
   secondaryLabel,
   secondaryUrl,
   openLinksInNewTab = false,
+  primaryButtonStyle = 'solid',
+  secondaryButtonStyle = 'outline',
   contentAlign = 'center',
   spacingPreset = 'medium',
   contentWidth = 'narrow',
@@ -87,28 +91,22 @@ export function TypographySectionLayout({
 
   const primary =
     primaryLabel?.trim() && primaryUrl?.trim() ? (
-      <Button asChild variant="default" size="md">
-        <a
-          href={primaryUrl}
-          target={openLinksInNewTab ? '_blank' : undefined}
-          rel={openLinksInNewTab ? 'noopener noreferrer' : undefined}
-        >
-          {primaryLabel}
-        </a>
-      </Button>
+      <ThemeSectionLinkButton
+        style={primaryButtonStyle}
+        href={primaryUrl.trim()}
+        label={primaryLabel.trim()}
+        openInNewTab={openLinksInNewTab}
+      />
     ) : null;
 
   const secondary =
     secondaryLabel?.trim() && secondaryUrl?.trim() ? (
-      <Button asChild variant="outline" size="md">
-        <a
-          href={secondaryUrl}
-          target={openLinksInNewTab ? '_blank' : undefined}
-          rel={openLinksInNewTab ? 'noopener noreferrer' : undefined}
-        >
-          {secondaryLabel}
-        </a>
-      </Button>
+      <ThemeSectionLinkButton
+        style={secondaryButtonStyle}
+        href={secondaryUrl.trim()}
+        label={secondaryLabel.trim()}
+        openInNewTab={openLinksInNewTab}
+      />
     ) : null;
 
   const hasActions = primary || secondary;

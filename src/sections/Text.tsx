@@ -18,6 +18,8 @@ export default function Text(props: TextProps) {
       secondaryLabel={props.secondaryLabel}
       secondaryUrl={props.secondaryUrl}
       openLinksInNewTab={props.openLinksInNewTab}
+      primaryButtonStyle={props.primaryButtonStyle}
+      secondaryButtonStyle={props.secondaryButtonStyle}
       contentAlign={props.contentAlign}
       spacingPreset={props.spacingPreset}
       contentWidth={props.contentWidth}

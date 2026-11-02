@@ -7,7 +7,15 @@ type SingleHeroProps = HeroLayoutConfig & {
 };
 
 export function SingleHero(props: SingleHeroProps) {
-  const { slide, widthMode, heightPreset, openLinksInNewTab, adaptImageSrc } = props;
+  const {
+    slide,
+    widthMode,
+    heightPreset,
+    openLinksInNewTab,
+    adaptImageSrc,
+    primaryButtonStyle,
+    secondaryButtonStyle,
+  } = props;
   return (
     <SlideView
       slide={slide}
@@ -15,6 +23,8 @@ export function SingleHero(props: SingleHeroProps) {
       heightPreset={heightPreset}
       adaptImageSrc={adaptImageSrc}
       openLinksInNewTab={openLinksInNewTab}
+      primaryButtonStyle={primaryButtonStyle}
+      secondaryButtonStyle={secondaryButtonStyle}
       priority
     />
   );

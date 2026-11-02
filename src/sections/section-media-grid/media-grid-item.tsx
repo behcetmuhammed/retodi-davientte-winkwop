@@ -1,4 +1,4 @@
-import { Button } from '../../components/ui/button';
+import { ThemeSectionLinkButton, themeButtonVariant, type ThemeButtonStyle } from '../../components/shared/theme-section-button';
 import { cn } from '../../lib/utils';
 import {
   getColumnSpan,
@@ -24,6 +24,7 @@ type MediaGridItemProps = {
   item: MediaGridItemData;
   isMobile: boolean;
   enableMediaHoverZoom?: boolean;
+  itemButtonStyle?: ThemeButtonStyle | string;
 };
 
 function pickImage(item: MediaGridItemData, isMobile: boolean): string {
@@ -36,7 +37,12 @@ function pickVideo(item: MediaGridItemData, isMobile: boolean): string {
   return item.videoUrl || item.videoUrlMobile;
 }
 
-export function MediaGridItem({ item, isMobile, enableMediaHoverZoom = true }: MediaGridItemProps) {
+export function MediaGridItem({
+  item,
+  isMobile,
+  enableMediaHoverZoom = true,
+  itemButtonStyle = 'solid',
+}: MediaGridItemProps) {
   const columnSpan = getColumnSpan(item.columnSpan);
   const rowSpan = getRowSpan(item.rowSpan);
   const itemStyle = getMediaGridItemStyle(isMobile, columnSpan, rowSpan);
@@ -127,20 +133,18 @@ export function MediaGridItem({ item, isMobile, enableMediaHoverZoom = true }: M
         ) : null}
         {hasButtonTitle && href ? (
           <div className={cn('flex flex-wrap gap-3', buttonAlignClass)}>
-            <Button
-              asChild
-              variant={lightSurfaceButtons ? 'default' : 'secondary'}
+            <ThemeSectionLinkButton
+              style={itemButtonStyle}
+              href={href}
+              label={item.buttonLabel}
+              openInNewTab={openInNewTab}
               size="sm"
-              className={cn(!lightSurfaceButtons && 'border-background/40 bg-background/10 text-background hover:bg-background/20')}
-            >
-              <a
-                href={href}
-                target={openInNewTab ? '_blank' : undefined}
-                rel={openInNewTab ? 'noopener noreferrer' : undefined}
-              >
-                {item.buttonLabel}
-              </a>
-            </Button>
+              className={cn(
+                !lightSurfaceButtons &&
+                  themeButtonVariant(itemButtonStyle) !== 'link' &&
+                  'border-background/40 bg-background/10 text-background hover:bg-background/20',
+              )}
+            />
           </div>
         ) : null}
       </>

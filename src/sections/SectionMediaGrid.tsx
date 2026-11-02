@@ -69,6 +69,7 @@ export default function SectionMediaGrid(props: SectionMediaGridProps) {
           buttonLabel={props.headerButtonLabel.trim()}
           buttonUrl={props.headerButtonUrl.trim()}
           openInNewTab={props.openHeaderLinkInNewTab}
+          buttonStyle={props.headerButtonStyle}
         />
       ) : null}
       <div className={cn(MEDIA_GRID_CLASSNAME, insetClass)} style={gridStyle}>
@@ -78,6 +79,7 @@ export default function SectionMediaGrid(props: SectionMediaGridProps) {
             item={item}
             isMobile={isMobile}
             enableMediaHoverZoom={enableZoom}
+            itemButtonStyle={props.itemButtonStyle}
           />
         ))}
       </div>

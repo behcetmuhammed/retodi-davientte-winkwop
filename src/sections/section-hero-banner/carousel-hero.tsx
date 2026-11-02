@@ -29,6 +29,8 @@ export function CarouselHero(props: CarouselHeroProps) {
     showCarouselArrows,
     showCarouselDots,
     adaptImageSrc,
+    primaryButtonStyle,
+    secondaryButtonStyle,
   } = props;
 
   const mounted = useMounted();
@@ -52,6 +54,8 @@ export function CarouselHero(props: CarouselHeroProps) {
               heightPreset={heightPreset}
               adaptImageSrc={adaptImageSrc}
               openLinksInNewTab={openLinksInNewTab}
+              primaryButtonStyle={primaryButtonStyle}
+              secondaryButtonStyle={secondaryButtonStyle}
               priority={index === 0}
             />
           </CarouselItem>

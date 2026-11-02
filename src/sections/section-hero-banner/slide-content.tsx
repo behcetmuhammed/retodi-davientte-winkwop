@@ -1,20 +1,34 @@
 import { Button } from '../../components/ui/button';
+import { themeButtonVariant, type ThemeButtonStyle } from '../../components/shared/theme-section-button';
 import { Eyebrow, Heading, Text } from '../../components/ui/typography';
 import { cn } from '../../lib/utils';
+import { heroLinkButtonClass, heroPrimaryVariant } from './hero-button-classes';
 import type { HeroSlide } from './types';
 
 type SlideContentProps = {
   slide: HeroSlide;
   openLinksInNewTab: boolean;
+  primaryButtonStyle: ThemeButtonStyle | string;
+  secondaryButtonStyle: ThemeButtonStyle | string;
 };
 
-export function SlideContent({ slide, openLinksInNewTab }: SlideContentProps) {
+export function SlideContent({
+  slide,
+  openLinksInNewTab,
+  primaryButtonStyle,
+  secondaryButtonStyle,
+}: SlideContentProps) {
   const light = slide.textTone === 'light';
   const align = slide.contentAlign;
 
   const primary =
     slide.primaryLabel && slide.primaryUrl ? (
-      <Button asChild variant={light ? 'secondary' : 'default'} size="md">
+      <Button
+        asChild
+        variant={heroPrimaryVariant(light, primaryButtonStyle)}
+        size="md"
+        className={heroLinkButtonClass(light, primaryButtonStyle, 'primary')}
+      >
         <a
           href={slide.primaryUrl}
           target={openLinksInNewTab ? '_blank' : undefined}
@@ -29,9 +43,9 @@ export function SlideContent({ slide, openLinksInNewTab }: SlideContentProps) {
     slide.secondaryLabel && slide.secondaryUrl ? (
       <Button
         asChild
-        variant="outline"
+        variant={themeButtonVariant(secondaryButtonStyle)}
         size="md"
-        className={cn(light && 'border-background/40 bg-background/10 text-background hover:bg-background/20')}
+        className={heroLinkButtonClass(light, secondaryButtonStyle, 'secondary')}
       >
         <a
           href={slide.secondaryUrl}
