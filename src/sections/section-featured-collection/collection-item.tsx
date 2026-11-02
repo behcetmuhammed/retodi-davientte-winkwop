@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
 import { ThemeSectionLinkButton, type ThemeButtonStyle } from '../../components/shared/theme-section-button';
-import { Eyebrow, Heading } from '../../components/ui/typography';
+import { Eyebrow } from '../../components/ui/typography';
 import { cn } from '../../lib/utils';
 import type { CollectionItem as CollectionItemData } from './types';
 
@@ -61,12 +61,9 @@ export function CollectionItem({
             <Eyebrow className="mb-2 text-muted-foreground">{item.captionEyebrow}</Eyebrow>
           ) : null}
           {item.captionTitle ? (
-            <Heading
-              level={3}
-              className="font-heading text-sm font-semibold tracking-[0.12em] uppercase md:text-base"
-            >
+            <p className="font-heading text-xs font-semibold leading-snug tracking-[0.12em] uppercase md:text-sm">
               {item.captionTitle}
-            </Heading>
+            </p>
           ) : null}
           {hasButton ? (
             <div className="mt-4 flex justify-center">

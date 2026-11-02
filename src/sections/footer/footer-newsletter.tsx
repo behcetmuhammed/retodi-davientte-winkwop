@@ -1,5 +1,4 @@
 import { useState, type CSSProperties, type FormEvent } from 'react';
-import { Button } from '../../components/ui/button';
 import { toast } from '../../components/ui/toast';
 import { v } from '../../lib/validation';
 import { cn } from '../../lib/utils';
@@ -56,8 +55,8 @@ export function FooterNewsletter({
           {description}
         </p>
       ) : null}
-      <form className="flex flex-col gap-6" onSubmit={onSubmit} noValidate>
-        <div className="relative flex items-end gap-4 border-b border-border pb-2">
+      <form className="w-full max-w-md" onSubmit={onSubmit} noValidate>
+        <div className="flex items-center gap-3 border-b border-foreground/25 pb-2">
           <label className="sr-only" htmlFor="footer-newsletter-email">
             {emailPlaceholder || 'E-posta'}
           </label>
@@ -69,12 +68,16 @@ export function FooterNewsletter({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder={emailPlaceholder}
-            className="min-w-0 flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+            className="min-w-0 flex-1 border-0 bg-transparent py-1 text-sm leading-none outline-none placeholder:text-muted-foreground"
             style={textStyle}
           />
-          <Button type="submit" variant="ghost" size="sm" className="shrink-0 px-0 font-medium tracking-widest uppercase">
+          <button
+            type="submit"
+            className="shrink-0 border-0 bg-transparent p-0 text-sm font-semibold leading-none tracking-widest uppercase outline-none transition-opacity hover:opacity-70 focus-visible:ring-2 focus-visible:ring-ring"
+            style={textStyle}
+          >
             {subscribeButtonLabel || 'Abone ol'}
-          </Button>
+          </button>
         </div>
       </form>
       <FooterSocial

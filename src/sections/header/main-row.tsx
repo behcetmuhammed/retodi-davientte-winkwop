@@ -216,10 +216,14 @@ export function MainRow(props: MainRowProps & { social: SocialProps }) {
       <div data-slot="header-main" className="border-b border-border bg-background text-foreground">
         <Container>
           <MobileMainBar {...props} social={props.social} />
-          <div className="hidden justify-center py-2 md:flex md:py-4">
-            <HeaderLogo {...logoProps} />
+          <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:py-4 lg:py-6">
+            <div aria-hidden />
+            <HeaderLogo {...logoProps} className="justify-self-center" />
+            <div className="justify-self-end">
+              <SearchButton />
+            </div>
           </div>
-          <BottomNavRow categories={categories} page={page} />
+          <BottomNavRow categories={categories} page={page} showSearch={false} />
         </Container>
       </div>
     );

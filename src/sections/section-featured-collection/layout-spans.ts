@@ -4,7 +4,7 @@ import type { CollectionLayoutPreset } from './types';
 const THREE_COL_GRID =
   'grid grid-cols-1 gap-[var(--fc-gap)] md:grid-cols-12 auto-rows-[var(--fc-row-height)]';
 const FOUR_EQUAL_GRID =
-  'grid grid-cols-2 gap-[var(--fc-gap)] md:grid-cols-4 auto-rows-[var(--fc-row-height)]';
+  'grid grid-cols-1 gap-[var(--fc-gap)] md:grid-cols-4 auto-rows-[var(--fc-row-height)]';
 
 const SPANS: Record<CollectionLayoutPreset, readonly number[] | null> = {
   fourEqual: null,
