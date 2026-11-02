@@ -201,9 +201,34 @@ export function Carousel({ orientation = 'horizontal', loop = false, autoplay, o
   );
 }
 
-export function CarouselContent({ className, viewportClassName, ...props }: ComponentProps<'div'> & { viewportClassName?: string }) {
+export function CarouselContent({
+  className,
+  viewportClassName,
+  passVerticalWheel = true,
+  ...props
+}: ComponentProps<'div'> & { viewportClassName?: string; passVerticalWheel?: boolean }) {
   const { viewportRef, orientation, onScroll, setPaused } = useCarousel();
   const frame = useRef(0);
+  const horizontal = orientation === 'horizontal';
+
+  useEffect(() => {
+    if (!horizontal || !passVerticalWheel) return;
+    const vp = viewportRef.current;
+    if (!vp) return;
+
+    const onWheel = (event: WheelEvent) => {
+      const { deltaX, deltaY } = event;
+      if (deltaY === 0 && deltaX === 0) return;
+      if (Math.abs(deltaY) <= Math.abs(deltaX)) return;
+
+      event.preventDefault();
+      window.scrollBy({ top: deltaY, left: 0, behavior: 'auto' });
+    };
+
+    vp.addEventListener('wheel', onWheel, { passive: false });
+    return () => vp.removeEventListener('wheel', onWheel);
+  }, [horizontal, passVerticalWheel, viewportRef]);
+
   return (
     <div
       ref={viewportRef}
@@ -214,8 +239,10 @@ export function CarouselContent({ className, viewportClassName, ...props }: Comp
       }}
       onTouchStart={() => setPaused(true)}
       className={cn(
-        'overscroll-contain dv-scrollbar-none',
-        orientation === 'horizontal' ? 'snap-x snap-mandatory overflow-x-auto overflow-y-hidden' : 'h-full snap-y snap-mandatory overflow-y-auto',
+        'dv-scrollbar-none',
+        horizontal
+          ? 'overscroll-x-contain snap-x snap-mandatory overflow-x-auto overflow-y-hidden'
+          : 'overscroll-contain h-full snap-y snap-mandatory overflow-y-auto',
         viewportClassName,
       )}
     >
