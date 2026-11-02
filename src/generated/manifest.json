@@ -1330,205 +1330,176 @@
           ]
         },
         {
-          "default": "",
+          "id": "headerEyebrow",
+          "label": "Etiket",
+          "type": "text",
+          "default": ""
+        },
+        {
+          "id": "headerEyebrowColor",
+          "label": "Etiket rengi",
+          "type": "color",
+          "default": ""
+        },
+        {
           "id": "headerTitle",
-          "label": "Bölüm başlığı",
-          "type": "text"
+          "label": "Başlık",
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
-          "id": "headerSubTitle",
-          "label": "Bölüm alt başlığı",
-          "type": "text"
-        },
-        {
-          "default": "",
           "id": "headerTitleColor",
           "label": "Başlık rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
+          "id": "headerSubTitle",
+          "label": "Alt başlık (sağ sütun)",
+          "type": "textarea",
+          "default": ""
+        },
+        {
           "id": "headerSubTitleColor",
-          "label": "Alt başlık rengi",
-          "type": "color"
+          "label": "Sağ metin rengi",
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
-          "id": "headerButtonLabel",
-          "label": "Üst düğme metni",
-          "type": "text"
-        },
-        {
-          "default": "",
-          "id": "headerButtonUrl",
-          "label": "Üst düğme adresi",
-          "type": "url"
-        },
-        {
-          "default": false,
-          "id": "openHeaderLinkInNewTab",
-          "label": "Üst düğme yeni sekme",
-          "type": "boolean"
-        },
-        {
-          "default": "outline",
-          "id": "headerButtonStyle",
-          "label": "Üst düğme stili",
-          "options": [
-            {
-              "label": "Dolu",
-              "value": "solid"
-            },
-            {
-              "label": "Çerçeveli",
-              "value": "outline"
-            },
-            {
-              "label": "Etiket (altı çizili)",
-              "value": "label"
-            },
-            {
-              "label": "İkincil",
-              "value": "secondary"
-            }
-          ],
-          "type": "select"
-        },
-        {
-          "default": "solid",
-          "id": "itemButtonStyle",
-          "label": "Kutu düğme stili",
-          "options": [
-            {
-              "label": "Dolu",
-              "value": "solid"
-            },
-            {
-              "label": "Çerçeveli",
-              "value": "outline"
-            },
-            {
-              "label": "Etiket (altı çizili)",
-              "value": "label"
-            },
-            {
-              "label": "İkincil",
-              "value": "secondary"
-            }
-          ],
-          "type": "select"
-        },
-        {
-          "default": "",
           "id": "bgColor",
           "label": "Arka plan rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": 290,
           "id": "desktopRowHeight",
           "label": "Satır yüksekliği (masaüstü)",
-          "max": 600,
-          "min": 120,
-          "step": 10,
           "type": "range",
+          "default": 290,
+          "min": 120,
+          "max": 600,
+          "step": 10,
           "unit": "px"
         },
         {
-          "default": 180,
           "id": "mobileRowHeight",
           "label": "Satır yüksekliği (mobil)",
-          "max": 400,
-          "min": 80,
-          "step": 10,
           "type": "range",
+          "default": 180,
+          "min": 80,
+          "max": 400,
+          "step": 10,
           "unit": "px"
         },
         {
-          "default": 24,
           "id": "columnSpacing",
           "label": "Kutu aralığı",
-          "max": 64,
-          "min": 0,
-          "step": 2,
           "type": "range",
+          "default": 24,
+          "min": 0,
+          "max": 64,
+          "step": 2,
           "unit": "px"
         },
         {
-          "default": true,
           "id": "enableMediaHoverZoom",
           "label": "Hover zoom",
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         {
-          "default": true,
+          "id": "itemButtonStyle",
+          "label": "Kutu düğme stili",
+          "type": "select",
+          "default": "solid",
+          "options": [
+            {
+              "label": "Dolu",
+              "value": "solid"
+            },
+            {
+              "label": "Çerçeveli",
+              "value": "outline"
+            },
+            {
+              "label": "Etiket (altı çizili)",
+              "value": "label"
+            },
+            {
+              "label": "İkincil",
+              "value": "secondary"
+            }
+          ]
+        },
+        {
           "id": "useFullWidth",
           "label": "Tam genişlik (masaüstü)",
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         {
-          "default": true,
           "id": "useFullWidthMobile",
           "label": "Tam genişlik (mobil)",
-          "type": "boolean"
+          "type": "boolean",
+          "default": true
         },
         {
-          "default": false,
           "id": "hideOnDesktop",
           "label": "Masaüstünde gizle",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": false,
           "id": "hideOnMobile",
           "label": "Mobilde gizle",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": 0,
           "id": "marginTop",
           "label": "Üst boşluk (masaüstü)",
-          "max": 120,
-          "min": 0,
-          "step": 4,
           "type": "range",
+          "default": 0,
+          "min": 0,
+          "max": 120,
+          "step": 4,
           "unit": "px"
         },
         {
-          "default": 0,
           "id": "marginBottom",
           "label": "Alt boşluk (masaüstü)",
-          "max": 120,
-          "min": 0,
-          "step": 4,
           "type": "range",
+          "default": 0,
+          "min": 0,
+          "max": 120,
+          "step": 4,
           "unit": "px"
         },
         {
-          "default": 0,
           "id": "marginTopMobile",
           "label": "Üst boşluk (mobil)",
-          "max": 80,
-          "min": 0,
-          "step": 4,
           "type": "range",
+          "default": 0,
+          "min": 0,
+          "max": 80,
+          "step": 4,
           "unit": "px"
         },
         {
-          "default": 0,
           "id": "marginBottomMobile",
           "label": "Alt boşluk (mobil)",
-          "max": 80,
-          "min": 0,
-          "step": 4,
           "type": "range",
+          "default": 0,
+          "min": 0,
+          "max": 80,
+          "step": 4,
           "unit": "px"
         },
         {
-          "default": "image",
           "id": "item1MediaType",
           "label": "Kutu 1 — Medya türü",
+          "type": "select",
+          "default": "image",
           "options": [
             {
               "label": "Görsel",
@@ -1538,37 +1509,37 @@
               "label": "Video",
               "value": "video"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item1Image",
           "label": "Kutu 1 — Görsel",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1ImageMobile",
           "label": "Kutu 1 — Görsel (mobil)",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1VideoUrl",
           "label": "Kutu 1 — Video",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1VideoUrlMobile",
           "label": "Kutu 1 — Video (mobil)",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "4",
           "id": "item1ColumnSpan",
           "label": "Kutu 1 — Sütun genişliği",
+          "type": "select",
+          "default": "4",
           "options": [
             {
               "label": "3 sütun",
@@ -1590,22 +1561,22 @@
               "label": "12 sütun",
               "value": "12"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": 1,
           "id": "item1RowSpan",
           "label": "Kutu 1 — Satır yüksekliği (birim)",
-          "max": 5,
+          "type": "range",
+          "default": 1,
           "min": 1,
-          "step": 1,
-          "type": "range"
+          "max": 5,
+          "step": 1
         },
         {
-          "default": "bottom-center",
           "id": "item1Position",
           "label": "Kutu 1 — Metin konumu",
+          "type": "select",
+          "default": "bottom-center",
           "options": [
             {
               "label": "Üst sol",
@@ -1655,67 +1626,67 @@
               "label": "Görsel altı sağ",
               "value": "outside-bottom-right"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item1SubTitle",
           "label": "Kutu 1 — Üst etiket",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1Title",
           "label": "Kutu 1 — Başlık",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1Content",
           "label": "Kutu 1 — İçerik (HTML)",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1TitleColor",
           "label": "Kutu 1 — Başlık rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1SubTitleColor",
           "label": "Kutu 1 — Etiket rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1ButtonLabel",
           "label": "Kutu 1 — Düğme metni",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item1ButtonUrl",
           "label": "Kutu 1 — Düğme / kart adresi",
-          "type": "url"
+          "type": "url",
+          "default": ""
         },
         {
-          "default": false,
           "id": "item1OpenLinkInNewTab",
           "label": "Kutu 1 — Yeni sekmede aç",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": false,
           "id": "item1ShowImageOverlay",
           "label": "Kutu 1 — Koyu kaplama",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": "image",
           "id": "item2MediaType",
           "label": "Kutu 2 — Medya türü",
+          "type": "select",
+          "default": "image",
           "options": [
             {
               "label": "Görsel",
@@ -1725,37 +1696,37 @@
               "label": "Video",
               "value": "video"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item2Image",
           "label": "Kutu 2 — Görsel",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2ImageMobile",
           "label": "Kutu 2 — Görsel (mobil)",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2VideoUrl",
           "label": "Kutu 2 — Video",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2VideoUrlMobile",
           "label": "Kutu 2 — Video (mobil)",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "4",
           "id": "item2ColumnSpan",
           "label": "Kutu 2 — Sütun genişliği",
+          "type": "select",
+          "default": "4",
           "options": [
             {
               "label": "3 sütun",
@@ -1777,22 +1748,22 @@
               "label": "12 sütun",
               "value": "12"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": 1,
           "id": "item2RowSpan",
           "label": "Kutu 2 — Satır yüksekliği (birim)",
-          "max": 5,
+          "type": "range",
+          "default": 1,
           "min": 1,
-          "step": 1,
-          "type": "range"
+          "max": 5,
+          "step": 1
         },
         {
-          "default": "bottom-center",
           "id": "item2Position",
           "label": "Kutu 2 — Metin konumu",
+          "type": "select",
+          "default": "bottom-center",
           "options": [
             {
               "label": "Üst sol",
@@ -1842,67 +1813,67 @@
               "label": "Görsel altı sağ",
               "value": "outside-bottom-right"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item2SubTitle",
           "label": "Kutu 2 — Üst etiket",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2Title",
           "label": "Kutu 2 — Başlık",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2Content",
           "label": "Kutu 2 — İçerik (HTML)",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2TitleColor",
           "label": "Kutu 2 — Başlık rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2SubTitleColor",
           "label": "Kutu 2 — Etiket rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2ButtonLabel",
           "label": "Kutu 2 — Düğme metni",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item2ButtonUrl",
           "label": "Kutu 2 — Düğme / kart adresi",
-          "type": "url"
+          "type": "url",
+          "default": ""
         },
         {
-          "default": false,
           "id": "item2OpenLinkInNewTab",
           "label": "Kutu 2 — Yeni sekmede aç",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": false,
           "id": "item2ShowImageOverlay",
           "label": "Kutu 2 — Koyu kaplama",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": "image",
           "id": "item3MediaType",
           "label": "Kutu 3 — Medya türü",
+          "type": "select",
+          "default": "image",
           "options": [
             {
               "label": "Görsel",
@@ -1912,37 +1883,37 @@
               "label": "Video",
               "value": "video"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item3Image",
           "label": "Kutu 3 — Görsel",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3ImageMobile",
           "label": "Kutu 3 — Görsel (mobil)",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3VideoUrl",
           "label": "Kutu 3 — Video",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3VideoUrlMobile",
           "label": "Kutu 3 — Video (mobil)",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "4",
           "id": "item3ColumnSpan",
           "label": "Kutu 3 — Sütun genişliği",
+          "type": "select",
+          "default": "4",
           "options": [
             {
               "label": "3 sütun",
@@ -1964,22 +1935,22 @@
               "label": "12 sütun",
               "value": "12"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": 1,
           "id": "item3RowSpan",
           "label": "Kutu 3 — Satır yüksekliği (birim)",
-          "max": 5,
+          "type": "range",
+          "default": 1,
           "min": 1,
-          "step": 1,
-          "type": "range"
+          "max": 5,
+          "step": 1
         },
         {
-          "default": "bottom-center",
           "id": "item3Position",
           "label": "Kutu 3 — Metin konumu",
+          "type": "select",
+          "default": "bottom-center",
           "options": [
             {
               "label": "Üst sol",
@@ -2029,67 +2000,67 @@
               "label": "Görsel altı sağ",
               "value": "outside-bottom-right"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item3SubTitle",
           "label": "Kutu 3 — Üst etiket",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3Title",
           "label": "Kutu 3 — Başlık",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3Content",
           "label": "Kutu 3 — İçerik (HTML)",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3TitleColor",
           "label": "Kutu 3 — Başlık rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3SubTitleColor",
           "label": "Kutu 3 — Etiket rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3ButtonLabel",
           "label": "Kutu 3 — Düğme metni",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item3ButtonUrl",
           "label": "Kutu 3 — Düğme / kart adresi",
-          "type": "url"
+          "type": "url",
+          "default": ""
         },
         {
-          "default": false,
           "id": "item3OpenLinkInNewTab",
           "label": "Kutu 3 — Yeni sekmede aç",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": false,
           "id": "item3ShowImageOverlay",
           "label": "Kutu 3 — Koyu kaplama",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": "image",
           "id": "item4MediaType",
           "label": "Kutu 4 — Medya türü",
+          "type": "select",
+          "default": "image",
           "options": [
             {
               "label": "Görsel",
@@ -2099,37 +2070,37 @@
               "label": "Video",
               "value": "video"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item4Image",
           "label": "Kutu 4 — Görsel",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4ImageMobile",
           "label": "Kutu 4 — Görsel (mobil)",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4VideoUrl",
           "label": "Kutu 4 — Video",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4VideoUrlMobile",
           "label": "Kutu 4 — Video (mobil)",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "4",
           "id": "item4ColumnSpan",
           "label": "Kutu 4 — Sütun genişliği",
+          "type": "select",
+          "default": "4",
           "options": [
             {
               "label": "3 sütun",
@@ -2151,22 +2122,22 @@
               "label": "12 sütun",
               "value": "12"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": 1,
           "id": "item4RowSpan",
           "label": "Kutu 4 — Satır yüksekliği (birim)",
-          "max": 5,
+          "type": "range",
+          "default": 1,
           "min": 1,
-          "step": 1,
-          "type": "range"
+          "max": 5,
+          "step": 1
         },
         {
-          "default": "bottom-center",
           "id": "item4Position",
           "label": "Kutu 4 — Metin konumu",
+          "type": "select",
+          "default": "bottom-center",
           "options": [
             {
               "label": "Üst sol",
@@ -2216,67 +2187,67 @@
               "label": "Görsel altı sağ",
               "value": "outside-bottom-right"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item4SubTitle",
           "label": "Kutu 4 — Üst etiket",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4Title",
           "label": "Kutu 4 — Başlık",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4Content",
           "label": "Kutu 4 — İçerik (HTML)",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4TitleColor",
           "label": "Kutu 4 — Başlık rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4SubTitleColor",
           "label": "Kutu 4 — Etiket rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4ButtonLabel",
           "label": "Kutu 4 — Düğme metni",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item4ButtonUrl",
           "label": "Kutu 4 — Düğme / kart adresi",
-          "type": "url"
+          "type": "url",
+          "default": ""
         },
         {
-          "default": false,
           "id": "item4OpenLinkInNewTab",
           "label": "Kutu 4 — Yeni sekmede aç",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": false,
           "id": "item4ShowImageOverlay",
           "label": "Kutu 4 — Koyu kaplama",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": "image",
           "id": "item5MediaType",
           "label": "Kutu 5 — Medya türü",
+          "type": "select",
+          "default": "image",
           "options": [
             {
               "label": "Görsel",
@@ -2286,37 +2257,37 @@
               "label": "Video",
               "value": "video"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item5Image",
           "label": "Kutu 5 — Görsel",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5ImageMobile",
           "label": "Kutu 5 — Görsel (mobil)",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5VideoUrl",
           "label": "Kutu 5 — Video",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5VideoUrlMobile",
           "label": "Kutu 5 — Video (mobil)",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "4",
           "id": "item5ColumnSpan",
           "label": "Kutu 5 — Sütun genişliği",
+          "type": "select",
+          "default": "4",
           "options": [
             {
               "label": "3 sütun",
@@ -2338,22 +2309,22 @@
               "label": "12 sütun",
               "value": "12"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": 1,
           "id": "item5RowSpan",
           "label": "Kutu 5 — Satır yüksekliği (birim)",
-          "max": 5,
+          "type": "range",
+          "default": 1,
           "min": 1,
-          "step": 1,
-          "type": "range"
+          "max": 5,
+          "step": 1
         },
         {
-          "default": "bottom-center",
           "id": "item5Position",
           "label": "Kutu 5 — Metin konumu",
+          "type": "select",
+          "default": "bottom-center",
           "options": [
             {
               "label": "Üst sol",
@@ -2403,67 +2374,67 @@
               "label": "Görsel altı sağ",
               "value": "outside-bottom-right"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item5SubTitle",
           "label": "Kutu 5 — Üst etiket",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5Title",
           "label": "Kutu 5 — Başlık",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5Content",
           "label": "Kutu 5 — İçerik (HTML)",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5TitleColor",
           "label": "Kutu 5 — Başlık rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5SubTitleColor",
           "label": "Kutu 5 — Etiket rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5ButtonLabel",
           "label": "Kutu 5 — Düğme metni",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item5ButtonUrl",
           "label": "Kutu 5 — Düğme / kart adresi",
-          "type": "url"
+          "type": "url",
+          "default": ""
         },
         {
-          "default": false,
           "id": "item5OpenLinkInNewTab",
           "label": "Kutu 5 — Yeni sekmede aç",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": false,
           "id": "item5ShowImageOverlay",
           "label": "Kutu 5 — Koyu kaplama",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": "image",
           "id": "item6MediaType",
           "label": "Kutu 6 — Medya türü",
+          "type": "select",
+          "default": "image",
           "options": [
             {
               "label": "Görsel",
@@ -2473,37 +2444,37 @@
               "label": "Video",
               "value": "video"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item6Image",
           "label": "Kutu 6 — Görsel",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6ImageMobile",
           "label": "Kutu 6 — Görsel (mobil)",
-          "type": "image"
+          "type": "image",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6VideoUrl",
           "label": "Kutu 6 — Video",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6VideoUrlMobile",
           "label": "Kutu 6 — Video (mobil)",
-          "type": "video"
+          "type": "video",
+          "default": ""
         },
         {
-          "default": "4",
           "id": "item6ColumnSpan",
           "label": "Kutu 6 — Sütun genişliği",
+          "type": "select",
+          "default": "4",
           "options": [
             {
               "label": "3 sütun",
@@ -2525,22 +2496,22 @@
               "label": "12 sütun",
               "value": "12"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": 1,
           "id": "item6RowSpan",
           "label": "Kutu 6 — Satır yüksekliği (birim)",
-          "max": 5,
+          "type": "range",
+          "default": 1,
           "min": 1,
-          "step": 1,
-          "type": "range"
+          "max": 5,
+          "step": 1
         },
         {
-          "default": "bottom-center",
           "id": "item6Position",
           "label": "Kutu 6 — Metin konumu",
+          "type": "select",
+          "default": "bottom-center",
           "options": [
             {
               "label": "Üst sol",
@@ -2590,62 +2561,61 @@
               "label": "Görsel altı sağ",
               "value": "outside-bottom-right"
             }
-          ],
-          "type": "select"
+          ]
         },
         {
-          "default": "",
           "id": "item6SubTitle",
           "label": "Kutu 6 — Üst etiket",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6Title",
           "label": "Kutu 6 — Başlık",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6Content",
           "label": "Kutu 6 — İçerik (HTML)",
-          "type": "textarea"
+          "type": "textarea",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6TitleColor",
           "label": "Kutu 6 — Başlık rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6SubTitleColor",
           "label": "Kutu 6 — Etiket rengi",
-          "type": "color"
+          "type": "color",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6ButtonLabel",
           "label": "Kutu 6 — Düğme metni",
-          "type": "text"
+          "type": "text",
+          "default": ""
         },
         {
-          "default": "",
           "id": "item6ButtonUrl",
           "label": "Kutu 6 — Düğme / kart adresi",
-          "type": "url"
+          "type": "url",
+          "default": ""
         },
         {
-          "default": false,
           "id": "item6OpenLinkInNewTab",
           "label": "Kutu 6 — Yeni sekmede aç",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         },
         {
-          "default": false,
           "id": "item6ShowImageOverlay",
           "label": "Kutu 6 — Koyu kaplama",
-          "type": "boolean"
+          "type": "boolean",
+          "default": false
         }
       ],
       "type": "SectionMediaGrid"

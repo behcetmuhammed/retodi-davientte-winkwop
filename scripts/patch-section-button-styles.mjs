@@ -42,8 +42,7 @@ hero.settings = injectAfter(hero.settings, 'openLinksInNewTab', [
 ]);
 
 const mg = manifest.sections.find((s) => s.type === 'SectionMediaGrid');
-mg.settings = injectAfter(mg.settings, 'openHeaderLinkInNewTab', [
-  field('headerButtonStyle', 'Üst düğme stili', 'outline'),
+mg.settings = injectAfter(mg.settings, 'enableMediaHoverZoom', [
   field('itemButtonStyle', 'Kutu düğme stili', 'solid'),
 ]);
 
@@ -95,13 +94,9 @@ addToType(
 
 if (types.includes('SectionMediaGridProps')) {
   const mgRe = /(export type SectionMediaGridProps = \{[\s\S]*?)(  page: WinkwopPageContext;\n\};)/;
-  if (!types.match(mgRe)[0].includes('headerButtonStyle')) {
-    types = types.replace(
-      mgRe,
-      `$1  headerButtonStyle: ${styleUnion};
-  itemButtonStyle: ${styleUnion};
-$2`,
-    );
+  const block = types.match(mgRe)?.[0] ?? '';
+  if (block && !block.includes('itemButtonStyle')) {
+    types = types.replace(mgRe, `$1  itemButtonStyle: ${styleUnion};\n$2`);
   }
 }
 

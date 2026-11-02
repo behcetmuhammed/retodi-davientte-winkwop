@@ -44,18 +44,29 @@ const sectionContainerWidthSelect = {
 
 const section = [
   sectionContainerWidthSelect,
-  { id: 'headerTitle', label: 'Bölüm başlığı', type: 'text', default: '' },
-  { id: 'headerSubTitle', label: 'Bölüm alt başlığı', type: 'text', default: '' },
+  { id: 'headerEyebrow', label: 'Etiket', type: 'text', default: '' },
+  { id: 'headerEyebrowColor', label: 'Etiket rengi', type: 'color', default: '' },
+  { id: 'headerTitle', label: 'Başlık', type: 'text', default: '' },
   { id: 'headerTitleColor', label: 'Başlık rengi', type: 'color', default: '' },
-  { id: 'headerSubTitleColor', label: 'Alt başlık rengi', type: 'color', default: '' },
-  { id: 'headerButtonLabel', label: 'Üst düğme metni', type: 'text', default: '' },
-  { id: 'headerButtonUrl', label: 'Üst düğme adresi', type: 'url', default: '' },
-  { id: 'openHeaderLinkInNewTab', label: 'Üst düğme yeni sekme', type: 'boolean', default: false },
+  { id: 'headerSubTitle', label: 'Alt başlık (sağ sütun)', type: 'textarea', default: '' },
+  { id: 'headerSubTitleColor', label: 'Sağ metin rengi', type: 'color', default: '' },
   { id: 'bgColor', label: 'Arka plan rengi', type: 'color', default: '' },
   { id: 'desktopRowHeight', label: 'Satır yüksekliği (masaüstü)', type: 'range', default: 290, min: 120, max: 600, step: 10, unit: 'px' },
   { id: 'mobileRowHeight', label: 'Satır yüksekliği (mobil)', type: 'range', default: 180, min: 80, max: 400, step: 10, unit: 'px' },
   { id: 'columnSpacing', label: 'Kutu aralığı', type: 'range', default: 24, min: 0, max: 64, step: 2, unit: 'px' },
   { id: 'enableMediaHoverZoom', label: 'Hover zoom', type: 'boolean', default: true },
+  {
+    id: 'itemButtonStyle',
+    label: 'Kutu düğme stili',
+    type: 'select',
+    default: 'solid',
+    options: [
+      { label: 'Dolu', value: 'solid' },
+      { label: 'Çerçeveli', value: 'outline' },
+      { label: 'Etiket (altı çizili)', value: 'label' },
+      { label: 'İkincil', value: 'secondary' },
+    ],
+  },
   { id: 'useFullWidth', label: 'Tam genişlik (masaüstü)', type: 'boolean', default: true },
   { id: 'useFullWidthMobile', label: 'Tam genişlik (mobil)', type: 'boolean', default: true },
   { id: 'hideOnDesktop', label: 'Masaüstünde gizle', type: 'boolean', default: false },
@@ -121,13 +132,13 @@ const widthUnion = '"default" | "extraSmall" | "small" | "medium" | "wide" | "ex
 
 const propsType = `export type SectionMediaGridProps = {
   sectionContainerWidth: ${widthUnion};
+  headerEyebrow: string;
+  headerEyebrowColor: string;
   headerTitle: string;
-  headerSubTitle: string;
   headerTitleColor: string;
+  headerSubTitle: string;
   headerSubTitleColor: string;
-  headerButtonLabel: string;
-  headerButtonUrl: string;
-  openHeaderLinkInNewTab: boolean;
+  itemButtonStyle: "solid" | "outline" | "label" | "secondary";
   bgColor: string;
   desktopRowHeight: number;
   mobileRowHeight: number;

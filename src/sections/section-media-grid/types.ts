@@ -24,13 +24,12 @@ export type MediaGridItem = {
 
 export type MediaGridSectionConfig = Pick<
   SectionMediaGridProps,
+  | 'headerEyebrow'
+  | 'headerEyebrowColor'
   | 'headerTitle'
-  | 'headerSubTitle'
   | 'headerTitleColor'
+  | 'headerSubTitle'
   | 'headerSubTitleColor'
-  | 'headerButtonLabel'
-  | 'headerButtonUrl'
-  | 'openHeaderLinkInNewTab'
   | 'bgColor'
   | 'desktopRowHeight'
   | 'mobileRowHeight'

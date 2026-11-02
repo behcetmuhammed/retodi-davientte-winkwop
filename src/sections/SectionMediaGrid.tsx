@@ -48,13 +48,13 @@ export default function SectionMediaGrid(props: SectionMediaGridProps) {
     : marginStyle;
 
   const hasHeaderContent =
+    !!props.headerEyebrow?.trim() ||
     !!props.headerTitle?.trim() ||
-    !!props.headerSubTitle?.trim() ||
-    (!!props.headerButtonLabel?.trim() && !!props.headerButtonUrl?.trim());
+    !!props.headerSubTitle?.trim();
 
   const headerWrapClass = cn(
     insetClass,
-    bgColor ? 'pt-4 pb-6 md:pt-6 md:pb-8' : 'mb-4 md:mb-6',
+    bgColor ? 'pt-4 pb-6 md:pt-6 md:pb-8' : 'mb-8 md:mb-10',
   );
 
   const content = (
@@ -62,14 +62,12 @@ export default function SectionMediaGrid(props: SectionMediaGridProps) {
       {hasHeaderContent ? (
         <SectionHeader
           className={headerWrapClass}
+          eyebrow={props.headerEyebrow.trim()}
+          eyebrowColor={props.headerEyebrowColor.trim()}
           title={props.headerTitle.trim()}
-          subTitle={props.headerSubTitle.trim()}
           titleColor={props.headerTitleColor.trim()}
-          subTitleColor={props.headerSubTitleColor.trim()}
-          buttonLabel={props.headerButtonLabel.trim()}
-          buttonUrl={props.headerButtonUrl.trim()}
-          openInNewTab={props.openHeaderLinkInNewTab}
-          buttonStyle={props.headerButtonStyle}
+          description={props.headerSubTitle.trim()}
+          descriptionColor={props.headerSubTitleColor.trim()}
         />
       ) : null}
       <div className={cn(MEDIA_GRID_CLASSNAME, insetClass)} style={gridStyle}>
@@ -86,17 +84,12 @@ export default function SectionMediaGrid(props: SectionMediaGridProps) {
     </>
   );
 
-  const containerSize = fullWidth ? 'full' : 'page';
   const containerPadding = fullWidth ? 'none' : 'default';
 
   if (bgColor) {
     return (
       <section data-slot="section-media-grid" className="w-full" style={sectionStyle}>
-        <Container
-          size={containerSize}
-          padding={containerPadding}
-          widthPreset={fullWidth ? undefined : props.sectionContainerWidth}
-        >
+        <Container size="page" padding={containerPadding} widthPreset={props.sectionContainerWidth}>
           {content}
         </Container>
       </section>
@@ -106,9 +99,9 @@ export default function SectionMediaGrid(props: SectionMediaGridProps) {
   return (
     <section data-slot="section-media-grid">
       <Container
-        size={containerSize}
+        size="page"
         padding={containerPadding}
-        widthPreset={fullWidth ? undefined : props.sectionContainerWidth}
+        widthPreset={props.sectionContainerWidth}
         style={sectionStyle}
       >
         {content}
