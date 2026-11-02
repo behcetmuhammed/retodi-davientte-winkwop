@@ -12,6 +12,8 @@ import SectionFeaturedCollection from '../sections/SectionFeaturedCollection';
 import SectionPageIntro from '../sections/SectionPageIntro';
 import SectionImageText from '../sections/SectionImageText';
 import SectionContact from '../sections/SectionContact';
+import SectionNumberedList from '../sections/SectionNumberedList';
+import SectionFaq from '../sections/SectionFaq';
 import Footer from '../sections/Footer';
 
 /** Winkwop bu haritayı kullanarak bölümlerinizi çizer. */
@@ -25,5 +27,7 @@ export const sections: Record<string, ComponentType<any>> = {
   SectionPageIntro,
   SectionImageText,
   SectionContact,
+  SectionNumberedList,
+  SectionFaq,
   Footer,
 };

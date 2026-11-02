@@ -52,8 +52,8 @@
                 "url": "/pages/hakkimizda"
               },
               {
-                "label": "Koleksiyon",
-                "url": "/collections/all"
+                "label": "Hizmetlerimiz",
+                "url": "/pages/hizmetlerimiz"
               },
               {
                 "label": "İletişim",
@@ -312,12 +312,12 @@
             "headerTitleColor": "",
             "headerSubTitle": "A selection of garments developed and produced by Wagner Atelier. Select an image to view it in full.",
             "headerSubTitleColor": "",
-            "itemButtonStyle": "solid",
             "bgColor": "#ffffff",
             "desktopRowHeight": 160,
             "mobileRowHeight": 180,
             "columnSpacing": 26,
             "enableMediaHoverZoom": true,
+            "itemButtonStyle": "solid",
             "useFullWidth": true,
             "useFullWidthMobile": true,
             "hideOnDesktop": false,
@@ -565,8 +565,8 @@
                 "url": "/pages/hakkimizda"
               },
               {
-                "label": "Koleksiyon",
-                "url": "/collections/all"
+                "label": "Hizmetlerimiz",
+                "url": "/pages/hizmetlerimiz"
               },
               {
                 "label": "İletişim",
@@ -742,8 +742,8 @@
                 "url": "/pages/hakkimizda"
               },
               {
-                "label": "Koleksiyon",
-                "url": "/collections/all"
+                "label": "Hizmetlerimiz",
+                "url": "/pages/hizmetlerimiz"
               },
               {
                 "label": "İletişim",
@@ -890,11 +890,375 @@
           }
         }
       ]
+    },
+    "pages_hizmetlerimiz": {
+      "path": "/pages/hizmetlerimiz",
+      "title": "Hizmetlerimiz",
+      "sections": [
+        {
+          "id": "header-o6wm5d",
+          "type": "Header",
+          "settings": {
+            "headerLayout": "logoCenterMenuBelow",
+            "logo": "https://cdn.winkwop.com/uploads/themes/v/fe22a4dc63984101a3d90f33d5e36539.png",
+            "logoWidthWeb": 149,
+            "logoWidthMobile": 100,
+            "invertLogoColors": false,
+            "categories": [
+              {
+                "label": "Ana Sayfa",
+                "url": "/"
+              },
+              {
+                "label": "Hakkımızda",
+                "url": "/pages/hakkimizda"
+              },
+              {
+                "label": "Hizmetlerimiz",
+                "url": "/pages/hizmetlerimiz"
+              },
+              {
+                "label": "İletişim",
+                "url": "/pages/i-letisim"
+              }
+            ],
+            "link1LabelName": "Müşteri hizmetleri",
+            "link1": "/pages/musteri-hizmetleri",
+            "link1Icon": "https://cdn.winkwop.com/uploads/themes/v/6f0a36c76b9c49539631b74293205069.png",
+            "link1Position": "left",
+            "link2LabelName": "find store",
+            "link2": "/pages/magazalar",
+            "link2Icon": "https://cdn.winkwop.com/uploads/themes/v/a7aefaaf4d2b47088b819f0f02209598.png",
+            "link2Position": "left",
+            "openLinksInNewTab": false,
+            "facebookLink": "#",
+            "instagramLink": "https://instagram.com",
+            "whatsappLink": "#",
+            "linkedinLink": "#",
+            "xLink": "#",
+            "youtubeLink": "#",
+            "tiktokLink": "#",
+            "pinterestLink": "#",
+            "openSocialLinksInNewTab": true,
+            "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
+            "text2": "Yeni sezon koleksiyonu mağazada",
+            "text3": "Online özel %10 indirim",
+            "backgroundColor": "#000000",
+            "textAndIconColor": "#ffffff"
+          }
+        },
+        {
+          "id": "sectionpageintro-hizmetler",
+          "type": "SectionPageIntro",
+          "settings": {
+            "image": "https://cdn.winkwop.com/uploads/themes/v/269e9ef744354be7a03ddab984ca73bd.jpg",
+            "imageMobile": "https://cdn.winkwop.com/uploads/themes/v/b701c5cd556e4fc5921cc84a793de498.jpg",
+            "imageHeight": 420,
+            "imageHeightMobile": 320,
+            "showBottomFade": true,
+            "fadeHeight": 160,
+            "fadeToColor": "#ffffff",
+            "heading": "Hizmetlerimiz",
+            "eyebrow": "Rafaello İstanbul",
+            "description": "Tasarımdan üretime kadar tüm süreçlerde markanıza özel, kontrollü ve şeffaf hizmet sunuyoruz.",
+            "descriptionAlign": "center",
+            "headingStyle": "default",
+            "eyebrowColor": "",
+            "headingColor": "",
+            "bodyColor": "",
+            "sectionBgColor": "",
+            "contentAlign": "center",
+            "contentWidth": "medium",
+            "spacingPreset": "medium"
+          }
+        },
+        {
+          "id": "sectionnumberedlist-hizmetler",
+          "type": "SectionNumberedList",
+          "settings": {
+            "sectionContainerWidth": "medium",
+            "spacingPreset": "medium",
+            "sectionBgColor": "",
+            "titleColor": "",
+            "bodyColor": "",
+            "item1Title": "İlk Danışma",
+            "item1Description": "Yaratıcı geliştirme, teknik çizimler ve üretime hazır dokümantasyonla projenize net bir başlangıç noktası koyuyoruz.",
+            "item2Title": "Desen Geliştirme",
+            "item2Description": "Kalıp ve desen çalışmaları, fit iyileştirmeleri ve teknik revizyonlarla modelinizi üretime uygun hale getiriyoruz.",
+            "item3Title": "Malzeme Tedariği",
+            "item3Description": "Kumaş, aksesuar ve yardımcı malzemeleri kalite ve termin önceliğiyle tedarik ediyor; süreci sizin adınıza koordine ediyoruz.",
+            "item4Title": "Örnekleme ve Prototipleme",
+            "item4Description": "Fiziksel numuneler ve kontrollü revizyonlarla seri üretime geçmeden önce her detayı doğruluyoruz.",
+            "item5Title": "",
+            "item5Description": "",
+            "item6Title": "",
+            "item6Description": ""
+          }
+        },
+        {
+          "id": "footer-onkn20",
+          "type": "Footer",
+          "settings": {
+            "backgroundColor": "#ffffff",
+            "textColor": "#000000",
+            "barBackgroundColor": "#000000",
+            "barTextColor": "#ffffff",
+            "customerCareTitle": "CUSTOMER CARE",
+            "customerCareLinks": [
+              {
+                "label": "Contact Us",
+                "url": "/pages/iletisim"
+              },
+              {
+                "label": "Find Store",
+                "url": "/pages/magazalar"
+              },
+              {
+                "label": "Shipping",
+                "url": "/pages/kargo"
+              },
+              {
+                "label": "Returns",
+                "url": "/pages/iade"
+              }
+            ],
+            "contactPhone": "+90 212 458 35 75",
+            "contactEmail": "info@rafaello.com",
+            "corporateTitle": "CORPORATE",
+            "corporateLinks": [
+              {
+                "label": "Careers",
+                "url": "/pages/kariyer"
+              },
+              {
+                "label": "MM World",
+                "url": "/pages/mm-world"
+              },
+              {
+                "label": "Sustainability",
+                "url": "/pages/surdurulebilirlik"
+              }
+            ],
+            "legalTitle": "LEGAL AREA",
+            "legalLinks": [
+              {
+                "label": "Privacy Policy",
+                "url": "/pages/gizlilik"
+              },
+              {
+                "label": "Cookie Policy",
+                "url": "/pages/cerez"
+              },
+              {
+                "label": "Legal Notes",
+                "url": "/pages/yasal"
+              }
+            ],
+            "newsletterTitle": "NEWSLETTER",
+            "newsletterDescription": "Yeniliklerden ve özel davetlerden haberdar olun.",
+            "emailPlaceholder": "E-Posta Adresiniz",
+            "subscribeButtonLabel": "ABONE OL",
+            "instagramLink": "https://instagram.com",
+            "facebookLink": "#",
+            "xLink": "#",
+            "openSocialLinksInNewTab": true,
+            "openLinksInNewTab": false,
+            "copyrightText": "© 2026 Rafaello"
+          }
+        }
+      ]
+    },
+    "pages_sikca_sorular_sorular": {
+      "path": "/pages/sikca-sorular-sorular",
+      "title": "Sıkça Sorular Sorular",
+      "sections": [
+        {
+          "id": "header-txo5fi",
+          "type": "Header",
+          "settings": {
+            "headerLayout": "logoCenterMenuBelow",
+            "logo": "https://cdn.winkwop.com/uploads/themes/v/fe22a4dc63984101a3d90f33d5e36539.png",
+            "logoWidthWeb": 149,
+            "logoWidthMobile": 100,
+            "invertLogoColors": false,
+            "categories": [
+              {
+                "label": "Ana Sayfa",
+                "url": "/"
+              },
+              {
+                "label": "Hakkımızda",
+                "url": "/pages/hakkimizda"
+              },
+              {
+                "label": "Hizmetlerimiz",
+                "url": "/pages/hizmetlerimiz"
+              },
+              {
+                "label": "İletişim",
+                "url": "/pages/i-letisim"
+              }
+            ],
+            "link1LabelName": "Müşteri hizmetleri",
+            "link1": "/pages/musteri-hizmetleri",
+            "link1Icon": "https://cdn.winkwop.com/uploads/themes/v/6f0a36c76b9c49539631b74293205069.png",
+            "link1Position": "left",
+            "link2LabelName": "find store",
+            "link2": "/pages/magazalar",
+            "link2Icon": "https://cdn.winkwop.com/uploads/themes/v/a7aefaaf4d2b47088b819f0f02209598.png",
+            "link2Position": "left",
+            "openLinksInNewTab": false,
+            "facebookLink": "#",
+            "instagramLink": "https://instagram.com",
+            "whatsappLink": "#",
+            "linkedinLink": "#",
+            "xLink": "#",
+            "youtubeLink": "#",
+            "tiktokLink": "#",
+            "pinterestLink": "#",
+            "openSocialLinksInNewTab": true,
+            "text1": "Ücretsiz kargo — 500 ₺ ve üzeri siparişlerde",
+            "text2": "Yeni sezon koleksiyonu mağazada",
+            "text3": "Online özel %10 indirim",
+            "backgroundColor": "#000000",
+            "textAndIconColor": "#ffffff"
+          }
+        },
+        {
+          "id": "sectionpageintro-bs3su1",
+          "type": "SectionPageIntro",
+          "settings": {
+            "image": "",
+            "imageMobile": "https://cdn.winkwop.com/uploads/themes/v/dbb1c4d4bac94740a4eba31b28f2b98a.jpg",
+            "imageHeight": 730,
+            "imageHeightMobile": 320,
+            "showBottomFade": true,
+            "fadeHeight": 200,
+            "fadeToColor": "",
+            "heading": "",
+            "eyebrow": "",
+            "description": "",
+            "descriptionAlign": "center",
+            "headingStyle": "default",
+            "eyebrowColor": "",
+            "headingColor": "",
+            "bodyColor": "",
+            "sectionBgColor": "",
+            "contentAlign": "center",
+            "contentWidth": "medium",
+            "spacingPreset": "medium"
+          }
+        },
+        {
+          "id": "sectionfaq-ipco9q",
+          "type": "SectionFaq",
+          "settings": {
+            "sectionContainerWidth": "extraSmall",
+            "sectionTitle": "Sıkça Sorulan Sorular",
+            "titleAlign": "center",
+            "headingStyle": "default",
+            "spacingPreset": "small",
+            "sectionBgColor": "",
+            "titleColor": "",
+            "faq1Question": "Soru",
+            "faq1Answer": "Örnek Cevap",
+            "faq2Question": "Soru",
+            "faq2Answer": "Örnek Cevap",
+            "faq3Question": "Soru",
+            "faq3Answer": "Örnek Cevap",
+            "faq4Question": "",
+            "faq4Answer": "",
+            "faq5Question": "",
+            "faq5Answer": "",
+            "faq6Question": "",
+            "faq6Answer": "",
+            "faq7Question": "",
+            "faq7Answer": "",
+            "faq8Question": "",
+            "faq8Answer": "",
+            "faq9Question": "",
+            "faq9Answer": "",
+            "faq10Question": "",
+            "faq10Answer": ""
+          }
+        },
+        {
+          "id": "footer-0f3iij",
+          "type": "Footer",
+          "settings": {
+            "backgroundColor": "#ffffff",
+            "textColor": "#000000",
+            "barBackgroundColor": "#000000",
+            "barTextColor": "#ffffff",
+            "customerCareTitle": "CUSTOMER CARE",
+            "customerCareLinks": [
+              {
+                "label": "Contact Us",
+                "url": "/pages/iletisim"
+              },
+              {
+                "label": "Find Store",
+                "url": "/pages/magazalar"
+              },
+              {
+                "label": "Shipping",
+                "url": "/pages/kargo"
+              },
+              {
+                "label": "Returns",
+                "url": "/pages/iade"
+              }
+            ],
+            "contactPhone": "+90 212 458 35 75",
+            "contactEmail": "info@rafaello.com",
+            "corporateTitle": "CORPORATE",
+            "corporateLinks": [
+              {
+                "label": "Careers",
+                "url": "/pages/kariyer"
+              },
+              {
+                "label": "MM World",
+                "url": "/pages/mm-world"
+              },
+              {
+                "label": "Sustainability",
+                "url": "/pages/surdurulebilirlik"
+              }
+            ],
+            "legalTitle": "LEGAL AREA",
+            "legalLinks": [
+              {
+                "label": "Privacy Policy",
+                "url": "/pages/gizlilik"
+              },
+              {
+                "label": "Cookie Policy",
+                "url": "/pages/cerez"
+              },
+              {
+                "label": "Legal Notes",
+                "url": "/pages/yasal"
+              }
+            ],
+            "newsletterTitle": "NEWSLETTER",
+            "newsletterDescription": "Yeniliklerden ve özel davetlerden haberdar olun.",
+            "emailPlaceholder": "E-Posta Adresiniz",
+            "subscribeButtonLabel": "ABONE OL",
+            "instagramLink": "https://instagram.com",
+            "facebookLink": "#",
+            "xLink": "#",
+            "openSocialLinksInNewTab": true,
+            "openLinksInNewTab": false,
+            "copyrightText": "© 2026 Rafaello"
+          }
+        }
+      ]
     }
   },
   "shared": {
     "Header": {
-      "id": "header-thavrl",
+      "id": "header-kmkk0t",
       "type": "Header",
       "settings": {
         "headerLayout": "logoCenterMenuBelow",
@@ -912,8 +1276,8 @@
             "url": "/pages/hakkimizda"
           },
           {
-            "label": "Koleksiyon",
-            "url": "/collections/all"
+            "label": "Hizmetlerimiz",
+            "url": "/pages/hizmetlerimiz"
           },
           {
             "label": "İletişim",

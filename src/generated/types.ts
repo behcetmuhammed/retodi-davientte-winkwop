@@ -3,9 +3,6 @@
 
 export type WinkwopLink = { label: string; url: string };
 
-/** Panel video alanı (CDN adresi). */
-export type WinkwopVideo = string;
-
 export type WinkwopProduct = {
   id: string;
   name: string;
@@ -253,6 +250,7 @@ export type HeroBannerProps = {
 };
 
 export type TextProps = {
+  /** Genel genişlik */
   sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
   /** Üst etiket */
   eyebrow: string;
@@ -295,6 +293,7 @@ export type TextProps = {
 };
 
 export type RichTextProps = {
+  /** Genel genişlik */
   sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
   /** Üst etiket */
   eyebrow: string;
@@ -337,273 +336,620 @@ export type RichTextProps = {
 };
 
 export type SectionMediaGridProps = {
+  /** Genel genişlik */
   sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
+  /** Etiket */
   headerEyebrow: string;
+  /** Etiket rengi */
   headerEyebrowColor: string;
+  /** Başlık */
   headerTitle: string;
+  /** Başlık rengi */
   headerTitleColor: string;
+  /** Alt başlık (sağ sütun) */
   headerSubTitle: string;
+  /** Sağ metin rengi */
   headerSubTitleColor: string;
-  itemButtonStyle: "solid" | "outline" | "label" | "secondary";
+  /** Arka plan rengi */
   bgColor: string;
+  /** Satır yüksekliği (masaüstü) */
   desktopRowHeight: number;
+  /** Satır yüksekliği (mobil) */
   mobileRowHeight: number;
+  /** Kutu aralığı */
   columnSpacing: number;
+  /** Hover zoom */
   enableMediaHoverZoom: boolean;
+  /** Kutu düğme stili */
+  itemButtonStyle: "solid" | "outline" | "label" | "secondary";
+  /** Tam genişlik (masaüstü) */
   useFullWidth: boolean;
+  /** Tam genişlik (mobil) */
   useFullWidthMobile: boolean;
+  /** Masaüstünde gizle */
   hideOnDesktop: boolean;
+  /** Mobilde gizle */
   hideOnMobile: boolean;
+  /** Üst boşluk (masaüstü) */
   marginTop: number;
+  /** Alt boşluk (masaüstü) */
   marginBottom: number;
+  /** Üst boşluk (mobil) */
   marginTopMobile: number;
+  /** Alt boşluk (mobil) */
   marginBottomMobile: number;
-
+  /** Kutu 1 — Medya türü */
   item1MediaType: "image" | "video";
+  /** Kutu 1 — Görsel */
   item1Image: string;
+  /** Kutu 1 — Görsel (mobil) */
   item1ImageMobile: string;
-  item1VideoUrl: WinkwopVideo;
-  item1VideoUrlMobile: WinkwopVideo;
+  /** Kutu 1 — Video */
+  item1VideoUrl: string;
+  /** Kutu 1 — Video (mobil) */
+  item1VideoUrlMobile: string;
+  /** Kutu 1 — Sütun genişliği */
   item1ColumnSpan: "3" | "4" | "6" | "8" | "12";
+  /** Kutu 1 — Satır yüksekliği (birim) */
   item1RowSpan: number;
+  /** Kutu 1 — Metin konumu */
   item1Position: "top-left" | "top-center" | "top-right" | "middle-left" | "middle-center" | "middle-right" | "bottom-left" | "bottom-center" | "bottom-right" | "outside-bottom-left" | "outside-bottom-center" | "outside-bottom-right";
+  /** Kutu 1 — Üst etiket */
   item1SubTitle: string;
+  /** Kutu 1 — Başlık */
   item1Title: string;
+  /** Kutu 1 — İçerik (HTML) */
   item1Content: string;
+  /** Kutu 1 — Başlık rengi */
   item1TitleColor: string;
+  /** Kutu 1 — Etiket rengi */
   item1SubTitleColor: string;
+  /** Kutu 1 — Düğme metni */
   item1ButtonLabel: string;
+  /** Kutu 1 — Düğme / kart adresi */
   item1ButtonUrl: string;
+  /** Kutu 1 — Yeni sekmede aç */
   item1OpenLinkInNewTab: boolean;
+  /** Kutu 1 — Koyu kaplama */
   item1ShowImageOverlay: boolean;
+  /** Kutu 2 — Medya türü */
   item2MediaType: "image" | "video";
+  /** Kutu 2 — Görsel */
   item2Image: string;
+  /** Kutu 2 — Görsel (mobil) */
   item2ImageMobile: string;
-  item2VideoUrl: WinkwopVideo;
-  item2VideoUrlMobile: WinkwopVideo;
+  /** Kutu 2 — Video */
+  item2VideoUrl: string;
+  /** Kutu 2 — Video (mobil) */
+  item2VideoUrlMobile: string;
+  /** Kutu 2 — Sütun genişliği */
   item2ColumnSpan: "3" | "4" | "6" | "8" | "12";
+  /** Kutu 2 — Satır yüksekliği (birim) */
   item2RowSpan: number;
+  /** Kutu 2 — Metin konumu */
   item2Position: "top-left" | "top-center" | "top-right" | "middle-left" | "middle-center" | "middle-right" | "bottom-left" | "bottom-center" | "bottom-right" | "outside-bottom-left" | "outside-bottom-center" | "outside-bottom-right";
+  /** Kutu 2 — Üst etiket */
   item2SubTitle: string;
+  /** Kutu 2 — Başlık */
   item2Title: string;
+  /** Kutu 2 — İçerik (HTML) */
   item2Content: string;
+  /** Kutu 2 — Başlık rengi */
   item2TitleColor: string;
+  /** Kutu 2 — Etiket rengi */
   item2SubTitleColor: string;
+  /** Kutu 2 — Düğme metni */
   item2ButtonLabel: string;
+  /** Kutu 2 — Düğme / kart adresi */
   item2ButtonUrl: string;
+  /** Kutu 2 — Yeni sekmede aç */
   item2OpenLinkInNewTab: boolean;
+  /** Kutu 2 — Koyu kaplama */
   item2ShowImageOverlay: boolean;
+  /** Kutu 3 — Medya türü */
   item3MediaType: "image" | "video";
+  /** Kutu 3 — Görsel */
   item3Image: string;
+  /** Kutu 3 — Görsel (mobil) */
   item3ImageMobile: string;
-  item3VideoUrl: WinkwopVideo;
-  item3VideoUrlMobile: WinkwopVideo;
+  /** Kutu 3 — Video */
+  item3VideoUrl: string;
+  /** Kutu 3 — Video (mobil) */
+  item3VideoUrlMobile: string;
+  /** Kutu 3 — Sütun genişliği */
   item3ColumnSpan: "3" | "4" | "6" | "8" | "12";
+  /** Kutu 3 — Satır yüksekliği (birim) */
   item3RowSpan: number;
+  /** Kutu 3 — Metin konumu */
   item3Position: "top-left" | "top-center" | "top-right" | "middle-left" | "middle-center" | "middle-right" | "bottom-left" | "bottom-center" | "bottom-right" | "outside-bottom-left" | "outside-bottom-center" | "outside-bottom-right";
+  /** Kutu 3 — Üst etiket */
   item3SubTitle: string;
+  /** Kutu 3 — Başlık */
   item3Title: string;
+  /** Kutu 3 — İçerik (HTML) */
   item3Content: string;
+  /** Kutu 3 — Başlık rengi */
   item3TitleColor: string;
+  /** Kutu 3 — Etiket rengi */
   item3SubTitleColor: string;
+  /** Kutu 3 — Düğme metni */
   item3ButtonLabel: string;
+  /** Kutu 3 — Düğme / kart adresi */
   item3ButtonUrl: string;
+  /** Kutu 3 — Yeni sekmede aç */
   item3OpenLinkInNewTab: boolean;
+  /** Kutu 3 — Koyu kaplama */
   item3ShowImageOverlay: boolean;
+  /** Kutu 4 — Medya türü */
   item4MediaType: "image" | "video";
+  /** Kutu 4 — Görsel */
   item4Image: string;
+  /** Kutu 4 — Görsel (mobil) */
   item4ImageMobile: string;
-  item4VideoUrl: WinkwopVideo;
-  item4VideoUrlMobile: WinkwopVideo;
+  /** Kutu 4 — Video */
+  item4VideoUrl: string;
+  /** Kutu 4 — Video (mobil) */
+  item4VideoUrlMobile: string;
+  /** Kutu 4 — Sütun genişliği */
   item4ColumnSpan: "3" | "4" | "6" | "8" | "12";
+  /** Kutu 4 — Satır yüksekliği (birim) */
   item4RowSpan: number;
+  /** Kutu 4 — Metin konumu */
   item4Position: "top-left" | "top-center" | "top-right" | "middle-left" | "middle-center" | "middle-right" | "bottom-left" | "bottom-center" | "bottom-right" | "outside-bottom-left" | "outside-bottom-center" | "outside-bottom-right";
+  /** Kutu 4 — Üst etiket */
   item4SubTitle: string;
+  /** Kutu 4 — Başlık */
   item4Title: string;
+  /** Kutu 4 — İçerik (HTML) */
   item4Content: string;
+  /** Kutu 4 — Başlık rengi */
   item4TitleColor: string;
+  /** Kutu 4 — Etiket rengi */
   item4SubTitleColor: string;
+  /** Kutu 4 — Düğme metni */
   item4ButtonLabel: string;
+  /** Kutu 4 — Düğme / kart adresi */
   item4ButtonUrl: string;
+  /** Kutu 4 — Yeni sekmede aç */
   item4OpenLinkInNewTab: boolean;
+  /** Kutu 4 — Koyu kaplama */
   item4ShowImageOverlay: boolean;
+  /** Kutu 5 — Medya türü */
   item5MediaType: "image" | "video";
+  /** Kutu 5 — Görsel */
   item5Image: string;
+  /** Kutu 5 — Görsel (mobil) */
   item5ImageMobile: string;
-  item5VideoUrl: WinkwopVideo;
-  item5VideoUrlMobile: WinkwopVideo;
+  /** Kutu 5 — Video */
+  item5VideoUrl: string;
+  /** Kutu 5 — Video (mobil) */
+  item5VideoUrlMobile: string;
+  /** Kutu 5 — Sütun genişliği */
   item5ColumnSpan: "3" | "4" | "6" | "8" | "12";
+  /** Kutu 5 — Satır yüksekliği (birim) */
   item5RowSpan: number;
+  /** Kutu 5 — Metin konumu */
   item5Position: "top-left" | "top-center" | "top-right" | "middle-left" | "middle-center" | "middle-right" | "bottom-left" | "bottom-center" | "bottom-right" | "outside-bottom-left" | "outside-bottom-center" | "outside-bottom-right";
+  /** Kutu 5 — Üst etiket */
   item5SubTitle: string;
+  /** Kutu 5 — Başlık */
   item5Title: string;
+  /** Kutu 5 — İçerik (HTML) */
   item5Content: string;
+  /** Kutu 5 — Başlık rengi */
   item5TitleColor: string;
+  /** Kutu 5 — Etiket rengi */
   item5SubTitleColor: string;
+  /** Kutu 5 — Düğme metni */
   item5ButtonLabel: string;
+  /** Kutu 5 — Düğme / kart adresi */
   item5ButtonUrl: string;
+  /** Kutu 5 — Yeni sekmede aç */
   item5OpenLinkInNewTab: boolean;
+  /** Kutu 5 — Koyu kaplama */
   item5ShowImageOverlay: boolean;
+  /** Kutu 6 — Medya türü */
   item6MediaType: "image" | "video";
+  /** Kutu 6 — Görsel */
   item6Image: string;
+  /** Kutu 6 — Görsel (mobil) */
   item6ImageMobile: string;
-  item6VideoUrl: WinkwopVideo;
-  item6VideoUrlMobile: WinkwopVideo;
+  /** Kutu 6 — Video */
+  item6VideoUrl: string;
+  /** Kutu 6 — Video (mobil) */
+  item6VideoUrlMobile: string;
+  /** Kutu 6 — Sütun genişliği */
   item6ColumnSpan: "3" | "4" | "6" | "8" | "12";
+  /** Kutu 6 — Satır yüksekliği (birim) */
   item6RowSpan: number;
+  /** Kutu 6 — Metin konumu */
   item6Position: "top-left" | "top-center" | "top-right" | "middle-left" | "middle-center" | "middle-right" | "bottom-left" | "bottom-center" | "bottom-right" | "outside-bottom-left" | "outside-bottom-center" | "outside-bottom-right";
+  /** Kutu 6 — Üst etiket */
   item6SubTitle: string;
+  /** Kutu 6 — Başlık */
   item6Title: string;
+  /** Kutu 6 — İçerik (HTML) */
   item6Content: string;
+  /** Kutu 6 — Başlık rengi */
   item6TitleColor: string;
+  /** Kutu 6 — Etiket rengi */
   item6SubTitleColor: string;
+  /** Kutu 6 — Düğme metni */
   item6ButtonLabel: string;
+  /** Kutu 6 — Düğme / kart adresi */
   item6ButtonUrl: string;
+  /** Kutu 6 — Yeni sekmede aç */
   item6OpenLinkInNewTab: boolean;
+  /** Kutu 6 — Koyu kaplama */
   item6ShowImageOverlay: boolean;
+  /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };
 
 export type SectionFeaturedCollectionProps = {
+  /** Genel genişlik */
   sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
+  /** Kutu yazıları (caption) */
   captionDisplay: "always" | "hover";
+  /** Bölüm başlığı */
   sectionTitle: string;
+  /** Başlık hizası */
   titleAlign: "left" | "center";
+  /** Başlık stili */
   headingStyle: "editorial" | "default";
+  /** Başlık rengi */
   titleColor: string;
+  /** Bölüm arka plan rengi */
   sectionBgColor: string;
+  /** Düzen */
   layoutPreset: "fourEqual" | "threeNarrowWideNarrow" | "threeWideNarrowWide";
+  /** Sütun aralığı */
   columnGap: number;
+  /** Satır yüksekliği (masaüstü) */
   rowHeight: number;
+  /** Satır yüksekliği (mobil) */
   rowHeightMobile: number;
+  /** Tam genişlik (masaüstü) */
   useFullWidth: boolean;
+  /** Tam genişlik (mobil) */
   useFullWidthMobile: boolean;
+  /** Masaüstünde gizle */
   hideOnDesktop: boolean;
+  /** Mobilde gizle */
   hideOnMobile: boolean;
+  /** Üst boşluk (masaüstü) */
   marginTop: number;
+  /** Alt boşluk (masaüstü) */
   marginBottom: number;
+  /** Üst boşluk (mobil) */
   marginTopMobile: number;
+  /** Alt boşluk (mobil) */
   marginBottomMobile: number;
+  /** Kutu düğme stili */
   itemButtonStyle: "solid" | "outline" | "label" | "secondary";
+  /** Bağlantıları yeni sekmede aç */
   openLinksInNewTab: boolean;
-
+  /** Kutu 1 — Görsel */
   item1Image: string;
+  /** Kutu 1 — Görsel (mobil) */
   item1ImageMobile: string;
+  /** Kutu 1 — Kart adresi */
   item1LinkUrl: string;
+  /** Kutu 1 — Beyaz caption kartı */
   item1ShowCaptionCard: boolean;
+  /** Kutu 1 — Caption üst etiket */
   item1CaptionEyebrow: string;
+  /** Kutu 1 — Caption başlık */
   item1CaptionTitle: string;
+  /** Kutu 1 — Düğme metni */
   item1ButtonLabel: string;
+  /** Kutu 1 — Düğme adresi */
   item1ButtonUrl: string;
+  /** Kutu 2 — Görsel */
   item2Image: string;
+  /** Kutu 2 — Görsel (mobil) */
   item2ImageMobile: string;
+  /** Kutu 2 — Kart adresi */
   item2LinkUrl: string;
+  /** Kutu 2 — Beyaz caption kartı */
   item2ShowCaptionCard: boolean;
+  /** Kutu 2 — Caption üst etiket */
   item2CaptionEyebrow: string;
+  /** Kutu 2 — Caption başlık */
   item2CaptionTitle: string;
+  /** Kutu 2 — Düğme metni */
   item2ButtonLabel: string;
+  /** Kutu 2 — Düğme adresi */
   item2ButtonUrl: string;
+  /** Kutu 3 — Görsel */
   item3Image: string;
+  /** Kutu 3 — Görsel (mobil) */
   item3ImageMobile: string;
+  /** Kutu 3 — Kart adresi */
   item3LinkUrl: string;
+  /** Kutu 3 — Beyaz caption kartı */
   item3ShowCaptionCard: boolean;
+  /** Kutu 3 — Caption üst etiket */
   item3CaptionEyebrow: string;
+  /** Kutu 3 — Caption başlık */
   item3CaptionTitle: string;
+  /** Kutu 3 — Düğme metni */
   item3ButtonLabel: string;
+  /** Kutu 3 — Düğme adresi */
   item3ButtonUrl: string;
+  /** Kutu 4 — Görsel */
   item4Image: string;
+  /** Kutu 4 — Görsel (mobil) */
   item4ImageMobile: string;
+  /** Kutu 4 — Kart adresi */
   item4LinkUrl: string;
+  /** Kutu 4 — Beyaz caption kartı */
   item4ShowCaptionCard: boolean;
+  /** Kutu 4 — Caption üst etiket */
   item4CaptionEyebrow: string;
+  /** Kutu 4 — Caption başlık */
   item4CaptionTitle: string;
+  /** Kutu 4 — Düğme metni */
   item4ButtonLabel: string;
+  /** Kutu 4 — Düğme adresi */
   item4ButtonUrl: string;
-  page: WinkwopPageContext;
-};
-
-export type SectionImageTextProps = {
-  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
-  image: string;
-  imageMobile: string;
-  imageMinHeight: number;
-  reverseLayout: boolean;
-  heading: string;
-  description: string;
-  headingStyle: "default" | "editorial";
-  primaryLabel: string;
-  primaryUrl: string;
-  primaryButtonStyle: "solid" | "outline" | "label" | "secondary";
-  openLinksInNewTab: boolean;
-  showBottomBorder: boolean;
-  sectionBgColor: string;
-  headingColor: string;
-  bodyColor: string;
-  spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };
 
 export type SectionPageIntroProps = {
+  /** Görsel */
   image: string;
+  /** Görsel (mobil) */
   imageMobile: string;
+  /** Görsel yüksekliği (masaüstü) */
   imageHeight: number;
+  /** Görsel yüksekliği (mobil) */
   imageHeightMobile: number;
+  /** Alt sis geçişi */
   showBottomFade: boolean;
+  /** Sis yüksekliği */
   fadeHeight: number;
+  /** Sis hedef rengi */
   fadeToColor: string;
+  /** Başlık */
   heading: string;
+  /** Etiket (başlık altında) */
   eyebrow: string;
+  /** Açıklama */
   description: string;
+  /** Açıklama hizası */
   descriptionAlign: "left" | "center" | "right" | "justify";
+  /** Başlık stili */
   headingStyle: "default" | "editorial";
+  /** Etiket rengi */
   eyebrowColor: string;
+  /** Başlık rengi */
   headingColor: string;
+  /** Açıklama rengi */
   bodyColor: string;
+  /** Bölüm arka plan rengi */
   sectionBgColor: string;
+  /** Başlık ve etiket hizası */
   contentAlign: "left" | "center" | "right";
+  /** Metin genişliği */
   contentWidth: "narrow" | "medium" | "wide";
+  /** Metin alt boşluk */
   spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  /** Bu sayfanın neyle ilgili olduğu */
+  page: WinkwopPageContext;
+};
+
+export type SectionImageTextProps = {
+  /** Genel genişlik */
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
+  /** Görsel */
+  image: string;
+  /** Görsel (mobil) */
+  imageMobile: string;
+  /** Görsel minimum yükseklik */
+  imageMinHeight: number;
+  /** Görsel sağda (ters düzen) */
+  reverseLayout: boolean;
+  /** Başlık */
+  heading: string;
+  /** Açıklama */
+  description: string;
+  /** Başlık stili */
+  headingStyle: "default" | "editorial";
+  /** Düğme metni */
+  primaryLabel: string;
+  /** Düğme adresi */
+  primaryUrl: string;
+  /** Düğme stili */
+  primaryButtonStyle: "solid" | "outline" | "label" | "secondary";
+  /** Bağlantıları yeni sekmede aç */
+  openLinksInNewTab: boolean;
+  /** Alt ayırıcı çizgi */
+  showBottomBorder: boolean;
+  /** Bölüm arka plan rengi */
+  sectionBgColor: string;
+  /** Başlık rengi */
+  headingColor: string;
+  /** Açıklama rengi */
+  bodyColor: string;
+  /** Dikey boşluk */
+  spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };
 
 export type SectionContactProps = {
+  /** Genel genişlik */
   sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
+  /** Bilgi 1 — başlık */
   group1Title: string;
+  /** Bilgi 1 — metin */
   group1Body: string;
+  /** Bilgi 2 — başlık */
   group2Title: string;
+  /** Bilgi 2 — metin */
   group2Body: string;
+  /** Bilgi 3 — başlık */
   group3Title: string;
+  /** Bilgi 3 — metin */
   group3Body: string;
+  /** Ad alanı placeholder */
   namePlaceholder: string;
+  /** E-posta placeholder */
   emailPlaceholder: string;
+  /** Mesaj placeholder */
   messagePlaceholder: string;
+  /** Gönder düğmesi */
   submitButtonLabel: string;
+  /** Bölüm arka plan rengi */
   sectionBgColor: string;
+  /** Bu sayfanın neyle ilgili olduğu */
+  page: WinkwopPageContext;
+};
+
+export type SectionNumberedListProps = {
+  /** Genel genişlik */
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
+  /** Dikey boşluk */
+  spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  /** Bölüm arka plan rengi */
+  sectionBgColor: string;
+  /** Başlık rengi */
+  titleColor: string;
+  /** Açıklama rengi */
+  bodyColor: string;
+  /** Madde 1 — Başlık */
+  item1Title: string;
+  /** Madde 1 — Açıklama */
+  item1Description: string;
+  /** Madde 2 — Başlık */
+  item2Title: string;
+  /** Madde 2 — Açıklama */
+  item2Description: string;
+  /** Madde 3 — Başlık */
+  item3Title: string;
+  /** Madde 3 — Açıklama */
+  item3Description: string;
+  /** Madde 4 — Başlık */
+  item4Title: string;
+  /** Madde 4 — Açıklama */
+  item4Description: string;
+  /** Madde 5 — Başlık */
+  item5Title: string;
+  /** Madde 5 — Açıklama */
+  item5Description: string;
+  /** Madde 6 — Başlık */
+  item6Title: string;
+  /** Madde 6 — Açıklama */
+  item6Description: string;
+  /** Bu sayfanın neyle ilgili olduğu */
+  page: WinkwopPageContext;
+};
+
+export type SectionFaqProps = {
+  /** Genel genişlik */
+  sectionContainerWidth: "default" | "extraSmall" | "small" | "medium" | "wide" | "extraWide";
+  /** Bölüm başlığı */
+  sectionTitle: string;
+  /** Başlık hizası */
+  titleAlign: "left" | "center";
+  /** Başlık stili */
+  headingStyle: "default" | "editorial";
+  /** Dikey boşluk */
+  spacingPreset: "small" | "medium" | "large" | "extraLarge";
+  /** Bölüm arka plan rengi */
+  sectionBgColor: string;
+  /** Başlık rengi */
+  titleColor: string;
+  /** Soru 1 — Soru */
+  faq1Question: string;
+  /** Soru 1 — Cevap */
+  faq1Answer: string;
+  /** Soru 2 — Soru */
+  faq2Question: string;
+  /** Soru 2 — Cevap */
+  faq2Answer: string;
+  /** Soru 3 — Soru */
+  faq3Question: string;
+  /** Soru 3 — Cevap */
+  faq3Answer: string;
+  /** Soru 4 — Soru */
+  faq4Question: string;
+  /** Soru 4 — Cevap */
+  faq4Answer: string;
+  /** Soru 5 — Soru */
+  faq5Question: string;
+  /** Soru 5 — Cevap */
+  faq5Answer: string;
+  /** Soru 6 — Soru */
+  faq6Question: string;
+  /** Soru 6 — Cevap */
+  faq6Answer: string;
+  /** Soru 7 — Soru */
+  faq7Question: string;
+  /** Soru 7 — Cevap */
+  faq7Answer: string;
+  /** Soru 8 — Soru */
+  faq8Question: string;
+  /** Soru 8 — Cevap */
+  faq8Answer: string;
+  /** Soru 9 — Soru */
+  faq9Question: string;
+  /** Soru 9 — Cevap */
+  faq9Answer: string;
+  /** Soru 10 — Soru */
+  faq10Question: string;
+  /** Soru 10 — Cevap */
+  faq10Answer: string;
+  /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
 };
 
 export type FooterProps = {
+  /** Arka plan rengi */
   backgroundColor: string;
+  /** Metin rengi */
   textColor: string;
+  /** Alt şerit arka plan */
   barBackgroundColor: string;
+  /** Alt şerit metin rengi */
   barTextColor: string;
+  /** Müşteri hizmetleri — başlık */
   customerCareTitle: string;
+  /** Müşteri hizmetleri — bağlantılar */
   customerCareLinks: WinkwopLink[];
+  /** Telefon */
   contactPhone: string;
+  /** E-posta */
   contactEmail: string;
+  /** Kurumsal — başlık */
   corporateTitle: string;
+  /** Kurumsal — bağlantılar */
   corporateLinks: WinkwopLink[];
+  /** Yasal — başlık */
   legalTitle: string;
+  /** Yasal — bağlantılar */
   legalLinks: WinkwopLink[];
+  /** Bülten — başlık */
   newsletterTitle: string;
+  /** Bülten — açıklama */
   newsletterDescription: string;
+  /** Bülten — e-posta placeholder */
   emailPlaceholder: string;
+  /** Bülten — abone ol metni */
   subscribeButtonLabel: string;
+  /** Instagram */
   instagramLink: string;
+  /** Facebook */
   facebookLink: string;
+  /** X (Twitter) */
   xLink: string;
+  /** Sosyal bağlantıları yeni sekmede aç */
   openSocialLinksInNewTab: boolean;
+  /** Menü bağlantılarını yeni sekmede aç */
   openLinksInNewTab: boolean;
+  /** Telif metni */
   copyrightText: string;
   /** Bu sayfanın neyle ilgili olduğu */
   page: WinkwopPageContext;
